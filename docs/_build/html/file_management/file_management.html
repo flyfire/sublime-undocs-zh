@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>File Navigation and File Management &mdash; Sublime Text Unofficial Documentation 3.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Sublime Text Unofficial Documentation 3.0 documentation" href="../index.html" />
+    <link rel="next" title="Customizing Sublime Text" href="../customization/customization.html" />
+    <link rel="prev" title="Build Systems (Batch Processing)" href="../file_processing/build_systems.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../customization/customization.html" title="Customizing Sublime Text"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../file_processing/build_systems.html" title="Build Systems (Batch Processing)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Sublime Text Unofficial Documentation 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="file-navigation-and-file-management">
+<h1>File Navigation and File Management<a class="headerlink" href="#file-navigation-and-file-management" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="goto-anything">
+<h2>Goto Anything<a class="headerlink" href="#goto-anything" title="Permalink to this headline">¶</a></h2>
+<p>Use Goto Anything to <strong>navigate your project&#8217;s files</strong> swiftly. (More about
+projects later.)</p>
+<p>To open Goto Anything, press <tt class="kbd docutils literal"><span class="pre">Ctrl+P</span></tt>. As you type into the input area,
+all file names of files open within the editor (and of files in added folders
+too) will be searched, and a preview of the best match will be shown. This
+preview is <em>transient</em>; that is, it won&#8217;t become the actual active view until
+you perform some operation on it. Transient views go away when you press
+<tt class="kbd docutils literal"><span class="pre">Esc</span></tt>. You will see transient views in other situations too.</p>
+<p>But Goto Anything lives up to its name&#8212;there&#8217;s more to it than searching
+files:</p>
+<p>To perform a <strong>fuzzy text search</strong> using Goto Anything, append <tt class="docutils literal"><span class="pre">#</span></tt> and
+keep typing, like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">isl</span><span class="c">#trsr</span>
+</pre></div>
+</div>
+<p>This makes Sublime Text perform a fuzzy search for <em>trsr</em> in files whose name
+loosely matches <em>isl</em>. For example, you could find the word <em>treasure</em> inside
+a file named <em>island</em>.</p>
+<p>To perform a fuzzy search in the current view, press <tt class="kbd docutils literal"><span class="pre">Ctrl+;</span></tt>.</p>
+<p>Fuzzy searches can detect transposed characters for clumsy fingers.</p>
+<p>And there&#8217;s more:</p>
+<p>To <strong>search symbols</strong> in the current view, press <tt class="kbd docutils literal"><span class="pre">Ctrl+R</span></tt>. As in the case
+of <tt class="docutils literal"><span class="pre">#</span></tt>, the <tt class="docutils literal"><span class="pre">&#64;</span></tt> operator can be used after file names too.</p>
+<p>To <strong>go to a line number</strong>, press <tt class="kbd docutils literal"><span class="pre">Ctrl+G</span></tt>. Again, the operator <tt class="docutils literal"><span class="pre">:</span></tt> can
+be used after file names, just as <tt class="docutils literal"><span class="pre">#</span></tt> and <tt class="docutils literal"><span class="pre">&#64;</span></tt>.</p>
+<p>Searching for symbols will only work if the active file type has symbols
+defined for it. Symbols are defined in <em>.tmLanguage</em> files.</p>
+</div>
+<div class="section" id="sidebar">
+<h2>Sidebar<a class="headerlink" href="#sidebar" title="Permalink to this headline">¶</a></h2>
+<p>The sidebar gives an overview of the active project. Files and folders added
+to the sidebar will be available in Goto Anything as well as for project-wide
+actions (like project-wide searches).</p>
+<p>Projects and the sidebar are very closely related. It&#8217;s important to note that
+there&#8217;s always an active project, whether it&#8217;s explicit or implicit.</p>
+<p>To <strong>toggle</strong> the sidebar, press <tt class="kbd docutils literal"><span class="pre">Ctrl+K,</span> <span class="pre">Ctrl+B</span></tt>.</p>
+<p>The sidebar can be navigated with the arrow keys, but first you need to give
+it the <strong>focus</strong> by pressing <tt class="kbd docutils literal"><span class="pre">Ctrl+0</span></tt>. To return the focus to the view,
+press <tt class="kbd docutils literal"><span class="pre">Esc</span></tt>. Alternatively, you can use the mouse to the same effect.</p>
+<p>Files opened from the sidebar create <em>semi-transient</em> views. Unlike transient
+views, <em>semi-transient</em> views show up as a new tab. You will be able to tell
+semi-transient views from other views because their tab text is shown in
+italics. When a new semi-transient view is opnened, any existing semi-
+transient view in the same pane gets automatically closed.</p>
+<p>The sidebar provides basic file management operations through its context
+menu.</p>
+</div>
+<div class="section" id="projects">
+<h2>Projects<a class="headerlink" href="#projects" title="Permalink to this headline">¶</a></h2>
+<p>Projects group sets of files and folders to keep your work organized. Set up a
+project by adding folders in a way that suits you, and then save your new
+configuration.</p>
+<p>To save a project, go to <strong>Project | Save Project As...</strong>.</p>
+<p>To switch projects quickly, press <tt class="kbd docutils literal"><span class="pre">Ctrl+Alt+P</span></tt>.</p>
+<p>Project data is stored in JSON files with a <cite>.sublime-project</cite> extension.
+Wherever there&#8217;s a <cite>.sublime-project</cite> file, you may find one or more
+<cite>.sublime-workspace</cite> files. Workspaces are explained later.</p>
+<p>Project files can define settings specific to that project. More
+information in the <a class="reference external" href="http://www.sublimetext.com/docs/2/projects.html">official documentation</a>.</p>
+<p>You can open a project from the <strong>command line</strong> by passing the <em>.sublime-
+project</em> file as an argument to the Sublime Text executable.</p>
+</div>
+<div class="section" id="workspaces">
+<h2>Workspaces<a class="headerlink" href="#workspaces" title="Permalink to this headline">¶</a></h2>
+<p>Workspaces can be seen as different <em>views</em> into the same project. For
+example, you may want to have only a selected few files open while working on
+<em>Feature A</em>. Or perhaps you use a different pane layout when you&#8217;re writing
+tests, etc. Workspaces help in these situations.</p>
+<p><a href="#id1"><span class="problematic" id="id2">**</span></a>Workspaces behave very much like projects. To create a new workspace, select
+<a href="#id3"><span class="problematic" id="id4">**</span></a>Project | New Workspace for Project. To save the current workspace, select
+<a href="#id5"><span class="problematic" id="id6">**</span></a>Project | Save Workspace As....</p>
+<p>Workspaces data is stored in JSON files with the <em>.sublime-workspace</em>
+extension.</p>
+<p>Contrary to <em>.sublime-project</em> files, <em>.sublime-workspace</em> files <strong>are not</strong>
+meant to be shared or edited manually. <strong>Never</strong> commit <em>.sublime-workspace</em>
+files into a source code repository.</p>
+<p>To switch between different workspaces, use <tt class="kbd docutils literal"><span class="pre">Ctrl+Alt+P</span></tt>, exactly as you
+do with projects.</p>
+<p>As with projects, you can open a workspace from the <strong>command line</strong> by
+passing the desired <em>.sublime-workspace</em> file as an argument to the Sublime
+Text executable.</p>
+</div>
+<div class="section" id="panes">
+<h2>Panes<a class="headerlink" href="#panes" title="Permalink to this headline">¶</a></h2>
+<p>Panes are groups of Views. In Sublime Text you can have multiple panes open
+at the same time.</p>
+<p>To create a new pane, press <tt class="kbd docutils literal"><span class="pre">Ctrl+K,</span> <span class="pre">Ctrl+Up</span></tt>. To destroy a pane,
+press <tt class="kbd docutils literal"><span class="pre">Ctrl+K,</span> <span class="pre">Ctrl+Down</span></tt>.</p>
+<p>To find further pane management commands, look under <strong>View | Layout</strong> and
+related submenus.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">File Navigation and File Management</a><ul>
+<li><a class="reference internal" href="#goto-anything">Goto Anything</a></li>
+<li><a class="reference internal" href="#sidebar">Sidebar</a></li>
+<li><a class="reference internal" href="#projects">Projects</a></li>
+<li><a class="reference internal" href="#workspaces">Workspaces</a></li>
+<li><a class="reference internal" href="#panes">Panes</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../file_processing/build_systems.html"
+                        title="previous chapter">Build Systems (Batch Processing)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../customization/customization.html"
+                        title="next chapter">Customizing Sublime Text</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../customization/customization.html" title="Customizing Sublime Text"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../file_processing/build_systems.html" title="Build Systems (Batch Processing)"
+             >previous</a> |</li>
+        <li><a href="../index.html">Sublime Text Unofficial Documentation 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Chinese by baiting, Author:guillermooo.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b2.
+    </div>
+  </body>
+</html>

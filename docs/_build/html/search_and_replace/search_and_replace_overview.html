@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Search and Replace &mdash; Sublime Text Unofficial Documentation 3.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Sublime Text Unofficial Documentation 3.0 documentation" href="../index.html" />
+    <link rel="next" title="Search and Replace - Single File" href="search_and_replace.html" />
+    <link rel="prev" title="Editing" href="../editing/editing.html" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+  </head>
+  <body>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="search_and_replace.html" title="Search and Replace - Single File"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../editing/editing.html" title="Editing"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Sublime Text Unofficial Documentation 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="search-and-replace">
+<h1>Search and Replace<a class="headerlink" href="#search-and-replace" title="Permalink to this headline">¶</a></h1>
+<p>Sublime Text features two main types of search:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="search_and_replace.html">     Search - Single File</a></li>
+<li class="toctree-l1"><a class="reference internal" href="search_and_replace_files.html">     Search - Multiple Files</a></li>
+</ul>
+</div>
+<p>We&#8217;ll examine them in turn, but first let&#8217;s talk about a powerful tool for searching
+text: regular expressions.</p>
+<div class="section" id="regular-expressions">
+<span id="snr-regexes"></span><h2>Regular Expressions<a class="headerlink" href="#regular-expressions" title="Permalink to this headline">¶</a></h2>
+<p>Regular Expressions find complex <em>patterns</em> in text. To take full advantage of
+the search and replace facilities in Sublime Text, you should at least learn
+the basics of regular expressions. In this guide we won&#8217;t explain how to use
+regular expressions.</p>
+<p>Typing out <em>regular expression</em> gets boring fast, and saying it actually is
+even more annoying, so instead nerds usually shorten that to <em>regexp</em> or <em>regex</em>.</p>
+<p>This is how a regex might look:</p>
+<div class="highlight-python"><pre>(?:Sw|P)i(?:tch|s{2})\s(?:it\s)?of{2}!</pre>
+</div>
+<p>Regexes are known to hurt people&#8217;s feelings.</p>
+<p>To use regular expressions, first you need to activate them in the various
+search panels. Otherwise, the search term will be interpreted literally.</p>
+<p>Sublime Text uses the <a class="reference external" href="http://www.boost.org/doc/libs/1_47_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html">Boost syntax</a> for regular expressions.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Search and Replace</a><ul>
+<li><a class="reference internal" href="#regular-expressions">Regular Expressions</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../editing/editing.html"
+                        title="previous chapter">Editing</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="search_and_replace.html"
+                        title="next chapter">Search and Replace - Single File</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="search_and_replace.html" title="Search and Replace - Single File"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../editing/editing.html" title="Editing"
+             >previous</a> |</li>
+        <li><a href="../index.html">Sublime Text Unofficial Documentation 3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Chinese by baiting, Author:guillermooo.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b2.
+    </div>
+  </body>
+</html>

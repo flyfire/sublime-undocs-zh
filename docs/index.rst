@@ -3,20 +3,30 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Sublime Text 非官方文档's documentation!
-===================================================
-
-Contents:
+Sublime Text 非官方文档
+=====================================
 
 .. toctree::
    :maxdepth: 2
 
+   intro
+   Installation <getting_started/install>
+   basic_concepts
+   Editing <editing/editing>
+   Search and Replace <search_and_replace/search_and_replace_overview>
+   Build Systems (Batch Processing) <file_processing/build_systems>
+   File Navigation and File Management <file_management/file_management>
+   Customization <customization/customization>
+   Extensibility and Automation <extensibility/extensibility>
+   Command Line <command_line/command_line>
+   Reference <reference/reference>
+   Glossary <glossary/glossary>
 
+.. Indices and tables
+.. ==================
 
-Indices and tables
-==================
+.. * :ref:`genindex`
+.. * :ref:`search`
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. * :ref:`modindex`
 
