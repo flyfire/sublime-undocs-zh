@@ -49,140 +49,94 @@ Sublime Text可以无限制的自定义和扩展。在它原始的状态下你�
 其它安装版本，data目录在上面对应的位置。
 
 
- *Packages* 目录
+*Packages* 目录
 ==============================
 
-This is a **key directory**: all resources for supported programming and
-markup languages are stored here. A *package* is a directory containing
-related files having a special meaning for Sublime Text.
+这是一个 **关键目录**: 所有用于支持编程和标记语言的资源都存放在这里。一个 *package* 就是一个包含对于Sublime Text有特定意义文件的目录。
 
-You can access the packages directory from the main menu
-(**Preferences | Browse Packages...**), or by means of an API call:
-``sublime.packages_path()``. In this guide, we refer to this location as
-*Packages*, *packages path*, *packages folder* or *packages directory*.
+你可以通过(**Preferences | Browse Packages...**)菜单来访问packages目录，或者通过API调用：
+``sublime.packages_path()`` 。在这部手册中，我们把它定义为这个路径定义为 *Packages*, *packages path*, *packages folder* 或者 *packages directory*。
 
-The ``User`` Package
+``User`` 包
 ^^^^^^^^^^^^^^^^^^^^
 
-*Packages/User* is a catch-all directory for custom plugins, snippets,
-macros, etc. Consider it your personal area in the packages folder. Sublime
-Text will never overwrite the contents of *Packages/User* during upgrades.
+*Packages/User* 是一个包含自定义插件(plugins)，代码片段(snippets)，宏命令(macros)之类的目录。可以把它认为是在packages目录下你的个人区域。Sublime Text在更新时将不会覆盖 *Packages/User* 下的内容。
 
 
-The Python Console and the Python API
+Python 控制台和 Python API
 =====================================
 
-This information is especially interesting for programmers. For other users,
-you just need to know that Sublime Text enables users with programming skills
-to add their own features to the editor. (So go learn how to program; it's
-great fun!)
+这部分信息可能对于编程人员来说比较感兴趣。对已其它用户来说，你只需要知道Sublime Text允许用户利用他们的编程技能来给编辑器添加他们自己的特性。(所以学会编程吧，它真的很有趣！)
 
-Sublime Text comes with an embedded Python interpreter. It's an useful tool
-to inspect the editor's settings and to quickly test API calls while
-developing plugins.
+Sublime Text 内嵌了一个Python解析器。它是一个非常有用的工具，可用于检查编辑器的配置，开发插件时可用于快速的测试API调用。
 
-To open the Python console, press ``Ctrl+``` or select **View | Show Console**
-from the main menu.
+要打开Python控制台，``Ctrl+``` 或者通过菜单 **View | Show Console** 。
 
-Confused? Let's try again more slowly:
+还是困惑? 那我们慢点来讲述下：
 
-*Python* is a programming language known to be easy for beginners and very
-powerful at the same time. *API* is short for 'Application Programming
-Interface', which is a fancy way of saying that Sublime Text 3 is prepared to
-be programmed by the user. Put differently, Subime Text gives the user access
-to its internals through Python. Finally, a *console* is a little window
-inside Sublime Text that lets you type in short snippets of Python code and
-run them. The console also shows text output by Sublime Text or its plugins.
+*Python* 是一个对于初学者来说容易上手且强大的编程语言。 *API* 是'Application Programming
+Interface'的简称，换句话说Sublime Text 3就是用这种方式为用户提供可编程性。Subime Text让用户通过Python来访问其内部。*console(控制台)* 是Sublime Text内的一个小窗口，你可以输入Python代码并运行它们。控制台同时也会显示Sublime Text或者其插件的输出。
 
-Your System's Python vs the Sublime Text 3 Embedded Python
+系统的Python vs Sublime Text 3内置的Python
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. XXX Double check this
-On **Windows** and **Linux**, Sublime Text 3 comes with its own Python
-interpreter and it's separate from your system's Python installation.
+在 **Windows** 和 **Linux**下，Sublime Text 3有它自己的Python解析器，而且是与系统安装的Python是分开的。
 
-On **OS X**, the system Python is used instead. Modifying your system version
-of Python, such as replacing it with the MacPorts version, can cause problems
-for Sublime Text.
+**OS X** 下使用的是系统给的Python。修改系统的Python版本，比如替换成MacPorts版本，将会导致Sublime Text出问题。
 
-The embedded interpreter is intended only to interact with the plugin API, not
-for general development.
+内置的解析器仅是为与插件API交互而准备的，而不是为一般性编程准备的。
 
 
-Packages, Plugins, Resources and Other Things That May Not Make Sense to You Now
+Packages, Plugins, Resources以及其它一些你现在可能还能用得上的东西
 ================================================================================
 
-Almost every aspect of Sublime Text can be tweaked, extended or customized.
-This is all you need to understand for now. Well, that and that this vast
-flexibility is the reason why you'll learn about so many configuration files:
-there simply must be a place to specify all your preferences.
+几乎Sublime Text的所有方面都可以被修改，扩展和自定义。这一点你现在必须明白。
+正因为其广大的灵活性，所以你现在需要学些这么多的配置文件：必须要有个地方来指定你的偏好。
 
-Among other things, you can modify the editor's behavior, add macros and
-snippets, extend menus... and even create whole new features --where *feature*
-means 'anything you can think of'. OK, right, there might be things you can't
-do, but you're definitely spoiled for choice.
+此外，你可以修改编辑器的行为，添加macros(宏命令)和代码片段，扩展菜单...甚至是创建一个全新的特性 -- *特性* 的意思就是 '所有你能想到的'。好了，或许有些事情你是不能做的，不过这已经足够你选择了。
 
-These configuration files are simple text files following a special structure
-or *format*: JSON predominates, but you'll find XML files and Python files
-too.
+这些配置文件是JSON *格式*的普通文本文件，不过同时你也会发现XML文件和Python文件。
 
-In this guide, for brevity we refer collectively to all these disparate
-configuration files as *resources*.
+在这部手册中，我们统一把这些配置文件定义为 *resources(资源)*。
 
-Sublime Text will look for resources inside the packages folder. To keep
-things tidy, the editor has a notion of a *package*, which is a folder
-containing resources that belong together (maybe they all help compose emails
-faster, write HTML efficiently, enhance the coding experience for C, Ruby,
-Go...).
+Sublime Text会检查packages目录下的资源文件。为了整洁，编辑器有一个 *package(包)*的概念，它是一个把资源文件(它们可能适用于帮助编写邮件，更高效的编写HTML，提升C,Ruby,Go代码编写体验等等)归档在一起的目录。
 
 
-Textmate Compatibility
+Textmate兼容性
 ======================
 
-This information is mainly useful for Textmate expats who've found a new home
-in Sublime Text. Textmate is an editor for the Mac.
+这部分信息可能对于丢弃Textmate，在Sublime Text中找到一个全新世界的人来说比较有用。Textmate是Mac下的一个编辑器。
 
-Sublime Text compatibility with Textmate bundles is good excluding commands,
-which are incompatible. Additionally, Sublime Text requires all syntax
-definitions to have the *.tmLanguage* extension, and all preferences files to
-have the *.tmPreferences* extension. This means that *.plist* files will be
-ignored, even if they are located under a *Syntaxes* or *Preferences*
-subdirectory.
+Sublime Text与Textmate兼容的非常好，除了命令之外。另外，Sublime Text要求所有语法定义 *.tmLanguage*为格式，所有偏好设置文件为 *.tmPreferences* 格式。这意味着 *.plist* 文件将会被忽略，尽管它们放在 *Syntaxes* 或者 *Preferences* 子目录下。
 
 
-Vi/Vim Emulation
+Vi/Vim 仿真
 ================
 
-This information is mainly useful for dinosaurs and people who like to drop
-the term RSI in conversations. Vi is an ancient modal editor that lets the
-user perform all operations from the keyboard. Vim, a modern version of vi,
-is still in widespread use.
+这部分信息主要对恐龙或者那些比较喜欢与RSI术语打交道的人来说有用。
+Vi是一个可以让用户所有操作都通过键盘来完成的古老的编辑器。Vim, 是vi的一个更现代的版本，仍然在广泛使用。
 
-Sublime Text provides vi emulation through the *Vintage* package. The Vintage
-package is *ignored* by default. Read more about Vintage_ in the official
-documentation.
+Sublime Text通过 *Vintage* 包提供里vi仿真。Vintage包默认是 *ignored* 。可以在官方文档中阅读更多关于 Vintage_ 的信息。
 
-An evolution of Vintage called Vintageous_ offers a better Vi editing
-experience and is updated more often than Vintage. Vintageous_ is an open
-source project, just as Vintage_.
+一个Vintage变种，Vintageous_ 提供了更好的Vi编辑体验而且比Vintage更新更频繁。 Vintageous_ 是一个开源项目。
 
-.. _Vintage: http://www.sublimetext.com/docs/3/vintage.html
+.. _Vintage: http://feliving.github.io/Sublime-Text-3-Documentation/vintage.html
 .. _Vintageous: http://guillermooo.bitbucket.org/Vintageous
 
 
 Emacs
 =====
 
-This information is hardly useful for anyone. Emacs is... Well, nobody really
-knows what emacs is, but some people edit text with it.
+这部分信息对于所有人都很难有点用处。Emacs这玩意...，没人真的知道emacs是啥，不过确实有些人用它来编辑文本。
 
-If you are an emacs user, you're probably not reading this.
+如果你是一个emacs用户，你可能就不会阅读这些内容了。
 
 
-Be Sublime, My Friend
+用Sublime吧，骚年
 =====================
 
-Borrowing from `Bruce Lee's wisdom`_, Sublime Text can become almost anything
+借用下 `Bruce Lee's wisdom`_, Sublime Text can become almost anything
 you need it to be. In skilled hands, blah, blah, blah.
 
 Empty your mind; be sublime, my friend.

@@ -49,52 +49,35 @@ Sublime Text可以无限制的自定义和扩展。在它原始的状态下你�
 其它安装版本，data目录在上面对应的位置。
 
 
- *Packages* 目录
+*Packages* 目录
 ==============================
 
-This is a **key directory**: all resources for supported programming and
-markup languages are stored here. A *package* is a directory containing
-related files having a special meaning for Sublime Text.
+这是一个 **关键目录**: 所有用于支持编程和标记语言的资源都存放在这里。一个 *package* 就是一个包含对于Sublime Text有特定意义文件的目录。
 
-You can access the packages directory from the main menu
-(**Preferences | Browse Packages...**), or by means of an API call:
-``sublime.packages_path()``. In this guide, we refer to this location as
-*Packages*, *packages path*, *packages folder* or *packages directory*.
+你可以通过(**Preferences | Browse Packages...**)菜单来访问packages目录，或者通过API调用：
+``sublime.packages_path()`` 。在这部手册中，我们把它定义为这个路径定义为 *Packages*, *packages path*, *packages folder* 或者 *packages directory*。
 
-The ``User`` Package
+``User`` 包
 ^^^^^^^^^^^^^^^^^^^^
 
-*Packages/User* is a catch-all directory for custom plugins, snippets,
-macros, etc. Consider it your personal area in the packages folder. Sublime
-Text will never overwrite the contents of *Packages/User* during upgrades.
+*Packages/User* 是一个包含自定义插件(plugins)，代码片段(snippets)，宏命令(macros)之类的目录。可以把它认为是在packages目录下你的个人区域。Sublime Text在更新时将不会覆盖 *Packages/User* 下的内容。
 
 
-The Python Console and the Python API
+Python 控制台和 Python API
 =====================================
 
-This information is especially interesting for programmers. For other users,
-you just need to know that Sublime Text enables users with programming skills
-to add their own features to the editor. (So go learn how to program; it's
-great fun!)
+这部分信息可能对于编程人员来说比较感兴趣。对已其它用户来说，你只需要知道Sublime Text允许用户利用他们的编程技能来给编辑器添加他们自己的特性。(所以学会编程吧，它真的很有趣！)
 
-Sublime Text comes with an embedded Python interpreter. It's an useful tool
-to inspect the editor's settings and to quickly test API calls while
-developing plugins.
+Sublime Text 内嵌了一个Python解析器。它是一个非常有用的工具，可用于检查编辑器的配置，开发插件时可用于快速的测试API调用。
 
-To open the Python console, press ``Ctrl+``` or select **View | Show Console**
-from the main menu.
+要打开Python控制台，``Ctrl+``` 或者通过菜单 **View | Show Console** 。
 
-Confused? Let's try again more slowly:
+还是困惑? 那我们慢点来讲述下：
 
-*Python* is a programming language known to be easy for beginners and very
-powerful at the same time. *API* is short for 'Application Programming
-Interface', which is a fancy way of saying that Sublime Text 3 is prepared to
-be programmed by the user. Put differently, Subime Text gives the user access
-to its internals through Python. Finally, a *console* is a little window
-inside Sublime Text that lets you type in short snippets of Python code and
-run them. The console also shows text output by Sublime Text or its plugins.
+*Python* 是一个对于初学者来说容易上手且强大的编程语言。 *API* 是'Application Programming
+Interface'的简称，换句话说Sublime Text 3就是用这种方式为用户提供可编程性。Subime Text让用户通过Python来访问其内部。*console(控制台)* 是Sublime Text内的一个小窗口，你可以输入Python代码并运行它们。控制台同时也会显示Sublime Text或者其插件的输出。
 
-Your System's Python vs the Sublime Text 3 Embedded Python
+系统的Python vs Sublime Text 3内置的Python
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. XXX Double check this

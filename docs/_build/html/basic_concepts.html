@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>基本概念 &mdash; Sublime Text Unofficial Documentation 3.0 documentation</title>
+    <title>基本概念 &mdash; Sublime Text Unofficial Documentation  documentation</title>
     
     <link rel="stylesheet" href="_static/pyramid.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '3.0',
+        VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Sublime Text Unofficial Documentation 3.0 documentation" href="index.html" />
+    <link rel="top" title="Sublime Text Unofficial Documentation  documentation" href="index.html" />
     <link rel="next" title="Editing" href="editing/editing.html" />
     <link rel="prev" title="Installation" href="getting_started/install.html" />
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
@@ -47,7 +47,7 @@
         <li class="right" >
           <a href="getting_started/install.html" title="Installation"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Sublime Text Unofficial Documentation 3.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Sublime Text Unofficial Documentation  documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -89,44 +89,27 @@
 <p>如果是 <strong>portable installations(便携安装的版本)</strong>, 在子目录 <em>Sublime Text 3/Data*下。这里 *Sublime Text 3</em> 指的是你解压的便携式压缩包的目录。</p>
 <p>注意之后便携式版本有 <a href="#id5"><span class="problematic" id="id6">*</span></a>Data*子目录。
 其它安装版本，data目录在上面对应的位置。</p>
-<blockquote>
-<div><em>Packages</em> 目录</div></blockquote>
-<hr class="docutils" />
-<p>This is a <strong>key directory</strong>: all resources for supported programming and
-markup languages are stored here. A <em>package</em> is a directory containing
-related files having a special meaning for Sublime Text.</p>
-<p>You can access the packages directory from the main menu
-(<strong>Preferences | Browse Packages...</strong>), or by means of an API call:
-<tt class="docutils literal"><span class="pre">sublime.packages_path()</span></tt>. In this guide, we refer to this location as
-<em>Packages</em>, <em>packages path</em>, <em>packages folder</em> or <em>packages directory</em>.</p>
-<div class="section" id="the-user-package">
-<h3>The <tt class="docutils literal"><span class="pre">User</span></tt> Package<a class="headerlink" href="#the-user-package" title="Permalink to this headline">¶</a></h3>
-<p><em>Packages/User</em> is a catch-all directory for custom plugins, snippets,
-macros, etc. Consider it your personal area in the packages folder. Sublime
-Text will never overwrite the contents of <em>Packages/User</em> during upgrades.</p>
+</div>
+<div class="section" id="packages">
+<h2><em>Packages</em> 目录<a class="headerlink" href="#packages" title="Permalink to this headline">¶</a></h2>
+<p>这是一个 <strong>关键目录</strong>: 所有用于支持编程和标记语言的资源都存放在这里。一个 <em>package</em> 就是一个包含对于Sublime Text有特定意义文件的目录。</p>
+<p>你可以通过(<strong>Preferences | Browse Packages...</strong>)菜单来访问packages目录，或者通过API调用：
+<tt class="docutils literal"><span class="pre">sublime.packages_path()</span></tt> 。在这部手册中，我们把它定义为这个路径定义为 <em>Packages</em>, <em>packages path</em>, <em>packages folder</em> 或者 <em>packages directory</em>。</p>
+<div class="section" id="user">
+<h3><tt class="docutils literal"><span class="pre">User</span></tt> 包<a class="headerlink" href="#user" title="Permalink to this headline">¶</a></h3>
+<p><em>Packages/User</em> 是一个包含自定义插件(plugins)，代码片段(snippets)，宏命令(macros)之类的目录。可以把它认为是在packages目录下你的个人区域。Sublime Text在更新时将不会覆盖 <em>Packages/User</em> 下的内容。</p>
 </div>
 </div>
-<div class="section" id="the-python-console-and-the-python-api">
-<h2>The Python Console and the Python API<a class="headerlink" href="#the-python-console-and-the-python-api" title="Permalink to this headline">¶</a></h2>
-<p>This information is especially interesting for programmers. For other users,
-you just need to know that Sublime Text enables users with programming skills
-to add their own features to the editor. (So go learn how to program; it&#8217;s
-great fun!)</p>
-<p>Sublime Text comes with an embedded Python interpreter. It&#8217;s an useful tool
-to inspect the editor&#8217;s settings and to quickly test API calls while
-developing plugins.</p>
-<p>To open the Python console, press <tt class="docutils literal"><span class="pre">Ctrl+`</span></tt> or select <strong>View | Show Console</strong>
-from the main menu.</p>
-<p>Confused? Let&#8217;s try again more slowly:</p>
-<p><em>Python</em> is a programming language known to be easy for beginners and very
-powerful at the same time. <em>API</em> is short for &#8216;Application Programming
-Interface&#8217;, which is a fancy way of saying that Sublime Text 3 is prepared to
-be programmed by the user. Put differently, Subime Text gives the user access
-to its internals through Python. Finally, a <em>console</em> is a little window
-inside Sublime Text that lets you type in short snippets of Python code and
-run them. The console also shows text output by Sublime Text or its plugins.</p>
-<div class="section" id="your-system-s-python-vs-the-sublime-text-3-embedded-python">
-<h3>Your System&#8217;s Python vs the Sublime Text 3 Embedded Python<a class="headerlink" href="#your-system-s-python-vs-the-sublime-text-3-embedded-python" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="python-python-api">
+<h2>Python 控制台和 Python API<a class="headerlink" href="#python-python-api" title="Permalink to this headline">¶</a></h2>
+<p>这部分信息可能对于编程人员来说比较感兴趣。对已其它用户来说，你只需要知道Sublime Text允许用户利用他们的编程技能来给编辑器添加他们自己的特性。(所以学会编程吧，它真的很有趣！)</p>
+<p>Sublime Text 内嵌了一个Python解析器。它是一个非常有用的工具，可用于检查编辑器的配置，开发插件时可用于快速的测试API调用。</p>
+<p>要打开Python控制台，<tt class="docutils literal"><span class="pre">Ctrl+`</span></tt> 或者通过菜单 <strong>View | Show Console</strong> 。</p>
+<p>还是困惑? 那我们慢点来讲述下：</p>
+<p><em>Python</em> 是一个对于初学者来说容易上手且强大的编程语言。 <em>API</em> 是&#8217;Application Programming
+Interface&#8217;的简称，换句话说Sublime Text 3就是用这种方式为用户提供可编程性。Subime Text让用户通过Python来访问其内部。<em>console(控制台)</em> 是Sublime Text内的一个小窗口，你可以输入Python代码并运行它们。控制台同时也会显示Sublime Text或者其插件的输出。</p>
+<div class="section" id="python-vs-sublime-text-3python">
+<h3>系统的Python vs Sublime Text 3内置的Python<a class="headerlink" href="#python-vs-sublime-text-3python" title="Permalink to this headline">¶</a></h3>
 <p>On <strong>Windows</strong> and <strong>Linux</strong>, Sublime Text 3 comes with its own Python
 interpreter and it&#8217;s separate from your system&#8217;s Python installation.</p>
 <p>On <strong>OS X</strong>, the system Python is used instead. Modifying your system version
@@ -207,12 +190,13 @@ you need it to be. In skilled hands, blah, blah, blah.</p>
 <li><a class="reference internal" href="#id2">概述</a></li>
 <li><a class="reference internal" href="#id3">约定</a></li>
 <li><a class="reference internal" href="#id4">因强大而引发的一些问题</a></li>
-<li><a class="reference internal" href="#data"><em>Data</em> 目录</a><ul>
-<li><a class="reference internal" href="#the-user-package">The <tt class="docutils literal"><span class="pre">User</span></tt> Package</a></li>
+<li><a class="reference internal" href="#data"><em>Data</em> 目录</a></li>
+<li><a class="reference internal" href="#packages"><em>Packages</em> 目录</a><ul>
+<li><a class="reference internal" href="#user"><tt class="docutils literal"><span class="pre">User</span></tt> 包</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#the-python-console-and-the-python-api">The Python Console and the Python API</a><ul>
-<li><a class="reference internal" href="#your-system-s-python-vs-the-sublime-text-3-embedded-python">Your System&#8217;s Python vs the Sublime Text 3 Embedded Python</a></li>
+<li><a class="reference internal" href="#python-python-api">Python 控制台和 Python API</a><ul>
+<li><a class="reference internal" href="#python-vs-sublime-text-3python">系统的Python vs Sublime Text 3内置的Python</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#packages-plugins-resources-and-other-things-that-may-not-make-sense-to-you-now">Packages, Plugins, Resources and Other Things That May Not Make Sense to You Now</a></li>
@@ -259,7 +243,7 @@ you need it to be. In skilled hands, blah, blah, blah.</p>
         <li class="right" >
           <a href="getting_started/install.html" title="Installation"
              >previous</a> |</li>
-        <li><a href="index.html">Sublime Text Unofficial Documentation 3.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Sublime Text Unofficial Documentation  documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

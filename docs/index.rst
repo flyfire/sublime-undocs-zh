@@ -6,6 +6,8 @@
 Sublime Text 非官方文档
 =====================================
 
+中文翻译 by `白汀 <http://feliving.github.io/>`_ ，`英文原版 <https://sublime-text-unofficial-documentation.readthedocs.org/en/latest/>`_  by `Guillermo López-Anglada <https://github.com/guillermooo>`_
+
 .. toctree::
    :maxdepth: 2
 
