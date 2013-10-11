@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Search and Replace - Multiple Files &mdash; Sublime Text 非官方文档</title>
+    
+    <link rel="stylesheet" href="../_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Sublime Text 非官方文档" href="../index.html" />
+    <link rel="up" title="Search and Replace" href="search_and_replace_overview.html" />
+    <link rel="next" title="Build Systems (Batch Processing)" href="../file_processing/build_systems.html" />
+    <link rel="prev" title="Search and Replace - Single File" href="search_and_replace.html" />
+    
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+    <div style="visibility:hidden;">
+    <script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F7b04940b56d101fffc031b2563f59641' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    </div>
+
+  </head>
+  <body>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../file_processing/build_systems.html" title="Build Systems (Batch Processing)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="search_and_replace.html" title="Search and Replace - Single File"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Sublime Text 文档</a> &raquo;</li>
+          <li><a href="search_and_replace_overview.html" accesskey="U">Search and Replace</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="search-and-replace-multiple-files">
+<h1>Search and Replace - Multiple Files<a class="headerlink" href="#search-and-replace-multiple-files" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="searching">
+<span id="snr-search-files"></span><h2>Searching<a class="headerlink" href="#searching" title="Permalink to this headline">¶</a></h2>
+<p>To open the search panel for files, press <tt class="docutils literal"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">F</span></tt>. You can use the
+keyboard to control the search panel and some search actions:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="51%" />
+<col width="49%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Toggle Regular Expressions</td>
+<td><tt class="docutils literal"><span class="pre">Alt</span> <span class="pre">+</span> <span class="pre">R</span></tt></td>
+</tr>
+<tr class="row-even"><td>Toggle Case Sensitivity</td>
+<td><tt class="docutils literal"><span class="pre">Alt</span> <span class="pre">+</span> <span class="pre">C</span></tt></td>
+</tr>
+<tr class="row-odd"><td>Toggle Exact matches</td>
+<td><tt class="docutils literal"><span class="pre">Alt</span> <span class="pre">+</span> <span class="pre">W</span></tt></td>
+</tr>
+<tr class="row-even"><td>Find Next</td>
+<td><tt class="docutils literal"><span class="pre">Enter</span></tt></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="search-scope">
+<span id="snr-search-scope-files"></span><h2>Search Scope<a class="headerlink" href="#search-scope" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Where</strong> field in the search panel determines where to search. You can
+define the scope of the search in several ways:</p>
+<ul class="simple">
+<li>Adding individual directories (Unix-style paths, even on Windows)</li>
+<li>Adding/excluding files based on a pattern</li>
+<li>Adding  symbolic locations (<tt class="docutils literal"><span class="pre">&lt;open</span> <span class="pre">folders&gt;</span></tt>, <tt class="docutils literal"><span class="pre">&lt;open</span> <span class="pre">files&gt;</span></tt>)</li>
+</ul>
+<p>You can combine these filters separating them with commas, for example:</p>
+<blockquote>
+<div>/C/Users/Joe/Top Secret,-<a href="#id1"><span class="problematic" id="id2">*</span></a>.html,&lt;open files&gt;</div></blockquote>
+<p>Press the <strong>...</strong> button in the search panel to display a menu containing
+these options.</p>
+</div>
+<div class="section" id="results-format">
+<span id="snr-results-format-files"></span><h2>Results Format<a class="headerlink" href="#results-format" title="Permalink to this headline">¶</a></h2>
+<p>In the search panel, you can find the following options to customize the
+results format:</p>
+<ul class="simple">
+<li>Show in Separate Buffer/Output Panel</li>
+<li>Show Context</li>
+</ul>
+</div>
+<div class="section" id="navigating-results">
+<span id="snr-results-navigation-files"></span><h2>Navigating Results<a class="headerlink" href="#navigating-results" title="Permalink to this headline">¶</a></h2>
+<p>If the search yields matches, you can move through the sequence using the
+following key bindings:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="53%" />
+<col width="47%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Next match</td>
+<td><tt class="docutils literal"><span class="pre">F4</span></tt></td>
+</tr>
+<tr class="row-even"><td>Previous match</td>
+<td><tt class="docutils literal"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">F4</span></tt></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Search and Replace - Multiple Files</a><ul>
+<li><a class="reference internal" href="#searching">Searching</a></li>
+<li><a class="reference internal" href="#search-scope">Search Scope</a></li>
+<li><a class="reference internal" href="#results-format">Results Format</a></li>
+<li><a class="reference internal" href="#navigating-results">Navigating Results</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="search_and_replace.html"
+                        title="previous chapter">Search and Replace - Single File</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../file_processing/build_systems.html"
+                        title="next chapter">Build Systems (Batch Processing)</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../file_processing/build_systems.html" title="Build Systems (Batch Processing)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="search_and_replace.html" title="Search and Replace - Single File"
+             >previous</a> |</li>
+        <li><a href="../index.html">Sublime Text 文档</a> &raquo;</li>
+          <li><a href="search_and_replace_overview.html" >Search and Replace</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Sublime Text Community.
+    </div>
+  </body>
+</html>

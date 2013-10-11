@@ -1,0 +1,294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Completions &mdash; Sublime Text 非官方文档</title>
+    
+    <link rel="stylesheet" href="../_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Sublime Text 非官方文档" href="../index.html" />
+    <link rel="up" title="Extending Sublime Text" href="extensibility.html" />
+    <link rel="next" title="Command Palette" href="command_palette.html" />
+    <link rel="prev" title="Snippets" href="snippets.html" />
+    
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+    <div style="visibility:hidden;">
+    <script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F7b04940b56d101fffc031b2563f59641' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    </div>
+
+  </head>
+  <body>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="command_palette.html" title="Command Palette"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="snippets.html" title="Snippets"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Sublime Text 文档</a> &raquo;</li>
+          <li><a href="extensibility.html" accesskey="U">Extending Sublime Text</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="completions">
+<h1>Completions<a class="headerlink" href="#completions" title="Permalink to this headline">¶</a></h1>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<dl class="last docutils">
+<dt><a class="reference internal" href="../reference/completions.html"><em>Reference for completions</em></a></dt>
+<dd>Complete documentation on all available options.</dd>
+<dt><a class="reference external" href="http://www.sublimetext.com/docs/2/tab_completion.html">Sublime Text Documentation</a></dt>
+<dd>Official documentation on this topic.</dd>
+</dl>
+</div>
+<p>In the spirit of IDEs, completions suggest terms and insert snippets.
+Completions work through the completions list or, optionally, by pressing
+<tt class="kbd docutils literal"><span class="pre">Tab</span></tt>.</p>
+<p>Note that, in the broader sense of <em>words that Sublime Text will look up and
+insert for you</em>, completions aren&#8217;t limited to completions files, because other
+sources contribute to the list of words to be completed, namely:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Snippets</li>
+<li>API-injected completions</li>
+<li>Buffer contents</li>
+</ul>
+</div></blockquote>
+<p>However, the most explicit way Sublime Text provides you to feed it
+completions is by means of <tt class="docutils literal"><span class="pre">.sublime-completions</span></tt> files. This topic deals
+with the creation of a <tt class="docutils literal"><span class="pre">.sublime-completions</span></tt> file as well as with the
+interactions among all sources for completions.</p>
+<div class="section" id="file-format">
+<h2>File Format<a class="headerlink" href="#file-format" title="Permalink to this headline">¶</a></h2>
+<p>Completions are JSON files with the <tt class="docutils literal"><span class="pre">.sublime-completions</span></tt> extension.
+Entries in completions files can contain either snippets or plain strings.</p>
+<div class="section" id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<p>Here&#8217;s an excerpt from Sublime Text&#8217;s HTML completions:</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="p">{</span>
+        <span class="s2">&quot;scope&quot;</span><span class="o">:</span> <span class="s2">&quot;text.html - source - meta.tag, punctuation.definition.tag.begin&quot;</span><span class="p">,</span>
+
+        <span class="s2">&quot;completions&quot;</span><span class="o">:</span>
+        <span class="p">[</span>
+                <span class="p">{</span> <span class="s2">&quot;trigger&quot;</span><span class="o">:</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;contents&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;a href=\&quot;$1\&quot;&gt;$0&lt;/a&gt;&quot;</span> <span class="p">},</span>
+                <span class="p">{</span> <span class="s2">&quot;trigger&quot;</span><span class="o">:</span> <span class="s2">&quot;abbr&quot;</span><span class="p">,</span> <span class="s2">&quot;contents&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;abbr&gt;$0&lt;/abbr&gt;&quot;</span> <span class="p">},</span>
+                <span class="p">{</span> <span class="s2">&quot;trigger&quot;</span><span class="o">:</span> <span class="s2">&quot;acronym&quot;</span><span class="p">,</span> <span class="s2">&quot;contents&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;acronym&gt;$0&lt;/acronym&gt;&quot;</span> <span class="p">}</span>
+        <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">scope</span></tt></dt>
+<dd>Determines when the completions list will be populated with this
+list of completions. See <a class="reference internal" href="syntaxdefs.html#scopes-and-scope-selectors"><em>Scopes</em></a> for more
+information.</dd>
+</dl>
+<p>In the example above, we&#8217;ve only used trigger-based completions, but
+completions files support simple completions too. Simple completions are just
+plain strings. Expanding our example with a few simple completions results
+in a list like this:</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="p">{</span>
+        <span class="s2">&quot;scope&quot;</span><span class="o">:</span> <span class="s2">&quot;text.html - source - meta.tag, punctuation.definition.tag.begin&quot;</span><span class="p">,</span>
+
+        <span class="s2">&quot;completions&quot;</span><span class="o">:</span>
+        <span class="p">[</span>
+                <span class="p">{</span> <span class="s2">&quot;trigger&quot;</span><span class="o">:</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;contents&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;a href=\&quot;$1\&quot;&gt;$0&lt;/a&gt;&quot;</span> <span class="p">},</span>
+                <span class="p">{</span> <span class="s2">&quot;trigger&quot;</span><span class="o">:</span> <span class="s2">&quot;abbr&quot;</span><span class="p">,</span> <span class="s2">&quot;contents&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;abbr&gt;$0&lt;/abbr&gt;&quot;</span> <span class="p">},</span>
+                <span class="p">{</span> <span class="s2">&quot;trigger&quot;</span><span class="o">:</span> <span class="s2">&quot;acronym&quot;</span><span class="p">,</span> <span class="s2">&quot;contents&quot;</span><span class="o">:</span> <span class="s2">&quot;&lt;acronym&gt;$0&lt;/acronym&gt;&quot;</span> <span class="p">},</span>
+
+                <span class="s2">&quot;ninja&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;robot&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;pizza&quot;</span>
+        <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="sources-for-completions">
+<h2>Sources for Completions<a class="headerlink" href="#sources-for-completions" title="Permalink to this headline">¶</a></h2>
+<p>Completions not only originate in <tt class="docutils literal"><span class="pre">.sublime-completions</span></tt> files. Here is the
+exhaustive list of sources for completions:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Snippets</li>
+<li>API-injected completions</li>
+<li><tt class="docutils literal"><span class="pre">.sublime-completions</span></tt> files</li>
+<li>Words in buffer</li>
+</ul>
+</div></blockquote>
+<div class="section" id="priority-of-sources-for-completions">
+<h3>Priority of Sources for Completions<a class="headerlink" href="#priority-of-sources-for-completions" title="Permalink to this headline">¶</a></h3>
+<p>This is the order in which completions are prioritized:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Snippets</li>
+<li>API-injected completions</li>
+<li><tt class="docutils literal"><span class="pre">.sublime-completions</span></tt> files</li>
+<li>Words in the buffer</li>
+</ul>
+</div></blockquote>
+<p>Snippets will always win if the current prefix matches their tab trigger
+exactly. For the rest of the completion sources, a fuzzy match is performed.
+Furthermore, snippets always lose with fuzzy matches.</p>
+<p>But this is relevant only when the completion is inserted automatically. When
+a list of completions is shown, snippets will still be listed alongside the
+other items, even if the prefix only partially matches the snippets&#8217; tab
+triggers.</p>
+</div>
+</div>
+<div class="section" id="how-to-use-completions">
+<h2>How to Use Completions<a class="headerlink" href="#how-to-use-completions" title="Permalink to this headline">¶</a></h2>
+<p>There are two methods for using completions. Even though, when screening them, the
+priority given to completions always stays the same, the two methods produce
+different results, as explained next.</p>
+<p>Completions can be inserted in two ways:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Through the completions list (<tt class="kbd docutils literal"><span class="pre">Ctrl+spacebar</span></tt>).</li>
+<li>By pressing <tt class="kbd docutils literal"><span class="pre">Tab</span></tt>.</li>
+</ul>
+</div></blockquote>
+<div class="section" id="the-completions-list">
+<h3>The Completions List<a class="headerlink" href="#the-completions-list" title="Permalink to this headline">¶</a></h3>
+<p>The completions list (<tt class="kbd docutils literal"><span class="pre">Ctrl+spacebar</span></tt>) does its work in two ways: by bringing
+up a list of suggested words to be completed, or by inserting the best match
+directly.</p>
+<p>If the choice of best completion is ambiguous, an interactive list will be
+presented to the user, who then will have to select an item himself. Unlike other
+items, snippets in this list are displayed in the format:
+<tt class="docutils literal"><span class="pre">&lt;tab_trigger&gt;</span> <span class="pre">:</span> <span class="pre">&lt;name&gt;</span></tt>, where <tt class="docutils literal"><span class="pre">&lt;tab_trigger&gt;</span></tt> and <tt class="docutils literal"><span class="pre">&lt;name&gt;</span></tt> are
+variable.</p>
+<p>Using <tt class="kbd docutils literal"><span class="pre">Ctrl+spacebar</span></tt>, the completion choice will be automatic only if the list of
+completion candidates can be narrowed down to one unambiguous choice, given the
+current prefix.</p>
+</div>
+<div class="section" id="tab-completed-completions">
+<h3><tt class="kbd docutils literal"><span class="pre">Tab</span></tt>-Completed Completions<a class="headerlink" href="#tab-completed-completions" title="Permalink to this headline">¶</a></h3>
+<p>If you want to be able to tab-complete completions, the setting
+<tt class="docutils literal"><span class="pre">tab_completion</span></tt> must be <tt class="docutils literal"><span class="pre">true</span></tt>, which is the default.
+Snippets&#8217; tab-completion is unaffected by this setting: they
+always will be completed, or not, according to their tab trigger.</p>
+<p>With <tt class="docutils literal"><span class="pre">tab_completion</span></tt> enabled, completion of items is always automatic. This
+means, unlike the case of the completions list, that Sublime Text will always
+make the decision for you. The rules for selecting the best completion are the
+same as described above, but in case of ambiguity, Sublime Text will insert
+the item it deems most suitable.</p>
+<div class="section" id="inserting-a-literal-tab-character">
+<h4>Inserting a Literal Tab Character<a class="headerlink" href="#inserting-a-literal-tab-character" title="Permalink to this headline">¶</a></h4>
+<p>When <tt class="docutils literal"><span class="pre">tab_completion</span></tt> is enabled, you can press <tt class="docutils literal"><span class="pre">Shift+Tab</span></tt> to insert a
+literal tab character.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Completions</a><ul>
+<li><a class="reference internal" href="#file-format">File Format</a><ul>
+<li><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sources-for-completions">Sources for Completions</a><ul>
+<li><a class="reference internal" href="#priority-of-sources-for-completions">Priority of Sources for Completions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#how-to-use-completions">How to Use Completions</a><ul>
+<li><a class="reference internal" href="#the-completions-list">The Completions List</a></li>
+<li><a class="reference internal" href="#tab-completed-completions"><tt class="kbd docutils literal"><span class="pre">Tab</span></tt>-Completed Completions</a><ul>
+<li><a class="reference internal" href="#inserting-a-literal-tab-character">Inserting a Literal Tab Character</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="snippets.html"
+                        title="previous chapter">Snippets</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="command_palette.html"
+                        title="next chapter">Command Palette</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="command_palette.html" title="Command Palette"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="snippets.html" title="Snippets"
+             >previous</a> |</li>
+        <li><a href="../index.html">Sublime Text 文档</a> &raquo;</li>
+          <li><a href="extensibility.html" >Extending Sublime Text</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Sublime Text Community.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Snippets &mdash; Sublime Text 非官方文档</title>
+    
+    <link rel="stylesheet" href="../_static/pyramid.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Sublime Text 非官方文档" href="../index.html" />
+    <link rel="up" title="Extending Sublime Text" href="extensibility.html" />
+    <link rel="next" title="Completions" href="completions.html" />
+    <link rel="prev" title="Macros" href="macros.html" />
+    
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nobile:regular,italic,bold,bolditalic&amp;subset=latin" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+    <div style="visibility:hidden;">
+    <script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F7b04940b56d101fffc031b2563f59641' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    </div>
+
+  </head>
+  <body>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="completions.html" title="Completions"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="macros.html" title="Macros"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Sublime Text 文档</a> &raquo;</li>
+          <li><a href="extensibility.html" accesskey="U">Extending Sublime Text</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="snippets">
+<h1>Snippets<a class="headerlink" href="#snippets" title="Permalink to this headline">¶</a></h1>
+<p>Whether you are coding or writing the next vampire best-seller, you&#8217;re likely to
+need certain short fragments of text again and again. Use snippets to save yourself
+tedious typing. Snippets are smart templates that will insert text for you,
+adapting it to their context.</p>
+<p>To create a new snippet, select <strong>Tools | New Snippet...</strong> Sublime Text will
+present you with an skeleton for it.</p>
+<p>Snippets can be stored under any package&#8217;s folder, but to keep it simple while
+you&#8217;re learning, you can save them to your <tt class="docutils literal"><span class="pre">Packages/User</span></tt> folder.</p>
+<div class="section" id="snippets-file-format">
+<h2>Snippets File Format<a class="headerlink" href="#snippets-file-format" title="Permalink to this headline">¶</a></h2>
+<p>Snippets typically live in a Sublime Text package. They are simplified XML files
+with the extension <tt class="docutils literal"><span class="pre">sublime-snippet</span></tt>. For instance, you could have a
+<tt class="docutils literal"><span class="pre">greeting.sublime-snippet</span></tt> inside an <tt class="docutils literal"><span class="pre">Email</span></tt> package.</p>
+<p>The structure of a typical snippet is as follows (including the default hints
+Sublime Text inserts for your convenience):</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;snippet&gt;</span>
+    <span class="nt">&lt;content&gt;</span><span class="cp">&lt;![CDATA[Type your snippet here]]&gt;</span><span class="nt">&lt;/content&gt;</span>
+    <span class="c">&lt;!-- Optional: Tab trigger to activate the snippet --&gt;</span>
+    <span class="nt">&lt;tabTrigger&gt;</span>xyzzy<span class="nt">&lt;/tabTrigger&gt;</span>
+    <span class="c">&lt;!-- Optional: Scope the tab trigger will be active in --&gt;</span>
+    <span class="nt">&lt;scope&gt;</span>source.python<span class="nt">&lt;/scope&gt;</span>
+    <span class="c">&lt;!-- Optional: Description to show in the menu --&gt;</span>
+    <span class="nt">&lt;description&gt;</span>My Fancy Snippet<span class="nt">&lt;/description&gt;</span>
+<span class="nt">&lt;/snippet&gt;</span>
+</pre></div>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">snippet</span></tt> element contains all the information Sublime Text needs in order
+to know <em>what</em> to insert, <em>whether</em> to insert and <em>when</em>. Let&#8217;s see all of
+these parts in turn.</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">content</span></tt></dt>
+<dd><p class="first">The actual snippet. Snippets can range from simple to fairly complex
+templates. We&#8217;ll look at examples of both later.</p>
+<p>Keep the following in mind when writing your own snippets:</p>
+<blockquote class="last">
+<div><ul class="simple">
+<li>If you want to get a literal <tt class="docutils literal"><span class="pre">$</span></tt>, you have to escape it like this: <tt class="docutils literal"><span class="pre">\$</span></tt>.</li>
+<li>When writing a snippet that contains indentation, always use tabs.
+When the snippet is inserted, the tabs will be transformed into spaces
+if the option <tt class="docutils literal"><span class="pre">translateTabsToSpaces</span></tt> is <tt class="docutils literal"><span class="pre">true</span></tt>.</li>
+<li>The <tt class="docutils literal"><span class="pre">content</span></tt> must be included in a <tt class="docutils literal"><span class="pre">&lt;![CDATA[...]]&gt;</span></tt> section.
+Snippets won&#8217;t work if you don&#8217;t do this!</li>
+<li>The <tt class="docutils literal"><span class="pre">content</span></tt> of your snippet must not contain <tt class="docutils literal"><span class="pre">]]&gt;</span></tt> because this
+string of characters will prematurely close the <tt class="docutils literal"><span class="pre">&lt;![CDATA[…]]&gt;</span></tt> section,
+resulting in an XML error. To work around this pitfall, you can insert an
+undefined variable into the string like this: <tt class="docutils literal"><span class="pre">]]$NOT_DEFINED&gt;</span></tt>. This
+modified string passes through the XML parser without closing the content
+element&#8217;s <tt class="docutils literal"><span class="pre">&lt;![CDATA[…]]&gt;</span></tt> section, but Sublime Text will replace
+<tt class="docutils literal"><span class="pre">$NOT_DEFINED</span></tt> with an empty string before inserting the snippet into
+your document. In other words, <tt class="docutils literal"><span class="pre">]]$NOT_DEFINED&gt;</span></tt> in your snippet file
+<tt class="docutils literal"><span class="pre">content</span></tt> will be written as <tt class="docutils literal"><span class="pre">]]&gt;</span></tt> when you trigger the snippet.</li>
+</ul>
+</div></blockquote>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">tabTrigger</span></tt></dt>
+<dd><p class="first">Defines the sequence of keys that must be pressed to insert this snippet. After typing
+this sequence, the snippet will kick in as soon as you hit the <tt class="kbd docutils literal"><span class="pre">Tab</span></tt> key.</p>
+<p class="last">A tab trigger is an implicit key binding.</p>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">scope</span></tt></dt>
+<dd>Scope selector determining the context where the snippet will be active.
+See <a class="reference internal" href="syntaxdefs.html#scopes-and-scope-selectors"><em>Scopes</em></a> for more information.</dd>
+<dt><tt class="docutils literal"><span class="pre">description</span></tt></dt>
+<dd>Used for displaying the snippet in the Snippets menu. If unavailable, Sublime Text
+defaults to the name of the snippet.</dd>
+</dl>
+<p>With this information, you can start writing your own snippets as described in
+the next sections.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In the interest of brevity, we&#8217;re only including the <tt class="docutils literal"><span class="pre">content</span></tt>
+element&#8217;s text in examples unless otherwise noted.</p>
+</div>
+</div>
+<div class="section" id="snippet-features">
+<h2>Snippet Features<a class="headerlink" href="#snippet-features" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="environment-variables">
+<h3>Environment Variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h3>
+<p>Snippets have access to contextual information in the form of environment variables.
+Sublime Text automatically sets the values of the variables listed below.</p>
+<p>You can also add your own variables to provide extra information. These custom
+variables are defined in <tt class="docutils literal"><span class="pre">.sublime-options</span></tt> files.</p>
+<p>Let&#8217;s see a simple example of a snippet using variables:</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="o">====================================</span>
+<span class="n">USER</span> <span class="n">NAME:</span>          <span class="nv">$TM_FULLNAME</span>
+<span class="n">FILE</span> <span class="n">NAME:</span>          <span class="nv">$TM_FILENAME</span>
+ <span class="n">TAB</span> <span class="n">SIZE:</span>          <span class="nv">$TM_TAB_SIZE</span>
+<span class="n">SOFT</span> <span class="n">TABS:</span>          <span class="nv">$TM_SOFT_TABS</span>
+<span class="o">====================================</span>
+
+<span class="c1"># Output:</span>
+<span class="o">====================================</span>
+<span class="n">USER</span> <span class="n">NAME:</span>          <span class="n">guillermo</span>
+<span class="n">FILE</span> <span class="n">NAME:</span>          <span class="n">test</span><span class="o">.</span><span class="n">txt</span>
+ <span class="n">TAB</span> <span class="n">SIZE:</span>          <span class="mi">4</span>
+<span class="n">SOFT</span> <span class="n">TABS:</span>          <span class="n">YES</span>
+<span class="o">====================================</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="fields">
+<h3>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h3>
+<p>With the help of field markers, you can cycle through positions within the
+snippet by pressing the <tt class="kbd docutils literal"><span class="pre">Tab</span></tt> key. Fields are used to walk you through the
+customization of a snippet after it&#8217;s been inserted.</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">First</span> <span class="n">Name:</span> <span class="nv">$1</span>
+<span class="n">Second</span> <span class="n">Name:</span> <span class="nv">$2</span>
+<span class="n">Address:</span> <span class="nv">$3</span>
+</pre></div>
+</div>
+<p>In the example above, the cursor will jump to <tt class="docutils literal"><span class="pre">$1</span></tt> if you press <tt class="kbd docutils literal"><span class="pre">Tab</span></tt> once.
+If you press <tt class="kbd docutils literal"><span class="pre">Tab</span></tt> a second time, it will advance to <tt class="docutils literal"><span class="pre">$2</span></tt>, etc. You can also
+move backwards in the series with <tt class="kbd docutils literal"><span class="pre">Shift+Tab</span></tt>. If you press <tt class="kbd docutils literal"><span class="pre">Tab</span></tt> after the
+highest tab stop, Sublime Text will place the cursor at the end of the snippet&#8217;s
+content, enabling you to resume normal editing.</p>
+<p>If you want to control where the exit point should be, use the <tt class="docutils literal"><span class="pre">$0</span></tt> mark.</p>
+<p>You can break out of the field cycle any time by pressing <tt class="kbd docutils literal"><span class="pre">Esc</span></tt>.</p>
+</div>
+<div class="section" id="mirrored-fields">
+<h3>Mirrored Fields<a class="headerlink" href="#mirrored-fields" title="Permalink to this headline">¶</a></h3>
+<p>Identical field markers mirror each other: when you edit the first one, the rest
+will be populated in real time with the same value.</p>
+<div class="highlight-perl"><div class="highlight"><pre><span class="n">First</span> <span class="n">Name:</span> <span class="nv">$1</span>
+<span class="n">Second</span> <span class="n">Name:</span> <span class="nv">$2</span>
+<span class="n">Address:</span> <span class="nv">$3</span>
+<span class="n">User</span> <span class="n">name:</span> <span class="nv">$1</span>
+</pre></div>
+</div>
+<p>In this example, &#8220;User name&#8221; will be filled out with the same value as &#8220;First Name&#8221;.</p>
+</div>
+<div class="section" id="placeholders">
+<h3>Placeholders<a class="headerlink" href="#placeholders" title="Permalink to this headline">¶</a></h3>
+<p>By expanding the field syntax a little bit, you can define default values for
+a field. Placeholders are useful whenever there&#8217;s a general case for your snippet,
+but still you still want to keep it customizable.</p>
+<p>#####.. code-block:: perl</p>
+<blockquote>
+<div>First Name: ${1:Guillermo}
+Second Name: ${2:López}
+Address: ${3:Main Street 1234}
+User name: $1</div></blockquote>
+<p>Variables can be used as placeholders:</p>
+<p>#####.. code-block:: perl</p>
+<blockquote>
+<div>First Name: ${1:Guillermo}
+Second Name: ${2:López}
+Address: ${3:Main Street 1234}
+User name: ${4:$TM_FULLNAME}</div></blockquote>
+<p>And you can nest placeholders within other placeholders too:</p>
+<p>#####.. code-block:: perl</p>
+<blockquote>
+<div>Test: ${1:Nested ${2:Placeholder}}</div></blockquote>
+</div>
+<div class="section" id="substitutions">
+<h3>Substitutions<a class="headerlink" href="#substitutions" title="Permalink to this headline">¶</a></h3>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This section is a draft and may contain inaccurate information.</p>
+</div>
+<p>In addition to the placeholder syntax, tab stops can specify more complex operations
+with substitutions. Use substitutions to dynamically generate text based on a mirrored
+tab stop.</p>
+<p>The substitution syntax has the following syntaxes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><tt class="docutils literal"><span class="pre">${var_name/regex/format_string/}</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">${var_name/regex/format_string/options}</span></tt></li>
+</ul>
+</div></blockquote>
+<dl class="docutils">
+<dt><strong>var_name</strong></dt>
+<dd>The variable name: 1, 2, 3...</dd>
+<dt><strong>regex</strong></dt>
+<dd>Perl-style regular expression: See the <a class="reference external" href="http://www.boost.org/doc/libs/1_44_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html">Boost library reference for regular expressions</a>.</dd>
+<dt><strong>format_string</strong></dt>
+<dd>See the <a class="reference external" href="http://www.boost.org/doc/libs/1_44_0/libs/regex/doc/html/boost_regex/format/perl_format.html">Boost library reference for format strings</a>.</dd>
+<dt><strong>options</strong></dt>
+<dd><dl class="first last docutils">
+<dt>Optional. May be any of the following:</dt>
+<dd><dl class="first last docutils">
+<dt><strong>i</strong></dt>
+<dd>Case-insensitive regex.</dd>
+<dt><strong>g</strong></dt>
+<dd>Replace all occurrences of <tt class="docutils literal"><span class="pre">regex</span></tt>.</dd>
+<dt><strong>m</strong></dt>
+<dd>Don&#8217;t ignore newlines in the string.</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>With substitutions you can, for instance, underline text effortlessly:</p>
+<div class="highlight-perl"><div class="highlight"><pre>      <span class="n">Original:</span> <span class="nv">$</span><span class="p">{</span><span class="mi">1</span><span class="p">:</span><span class="n">Hey</span><span class="p">,</span> <span class="n">Joe</span><span class="o">!</span><span class="p">}</span>
+<span class="n">Transformation:</span> <span class="nv">$</span><span class="p">{</span><span class="mi">1</span><span class="sr">/./</span><span class="o">=/</span><span class="n">g</span><span class="p">}</span>
+
+<span class="c1"># Output:</span>
+
+      <span class="n">Original:</span> <span class="n">Hey</span><span class="p">,</span> <span class="n">Joe</span><span class="o">!</span>
+<span class="n">Transformation:</span> <span class="o">=========</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Snippets</a><ul>
+<li><a class="reference internal" href="#snippets-file-format">Snippets File Format</a></li>
+<li><a class="reference internal" href="#snippet-features">Snippet Features</a><ul>
+<li><a class="reference internal" href="#environment-variables">Environment Variables</a></li>
+<li><a class="reference internal" href="#fields">Fields</a></li>
+<li><a class="reference internal" href="#mirrored-fields">Mirrored Fields</a></li>
+<li><a class="reference internal" href="#placeholders">Placeholders</a></li>
+<li><a class="reference internal" href="#substitutions">Substitutions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="macros.html"
+                        title="previous chapter">Macros</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="completions.html"
+                        title="next chapter">Completions</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="completions.html" title="Completions"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="macros.html" title="Macros"
+             >previous</a> |</li>
+        <li><a href="../index.html">Sublime Text 文档</a> &raquo;</li>
+          <li><a href="extensibility.html" >Extending Sublime Text</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Sublime Text Community.
+    </div>
+  </body>
+</html>
