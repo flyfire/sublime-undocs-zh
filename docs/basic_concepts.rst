@@ -81,7 +81,7 @@ Interface'的简称，换句话说Sublime Text 3就是用这种方式为用户�
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. XXX Double check this
-在 **Windows** 和 **Linux**下，Sublime Text 3有它自己的Python解析器，而且是与系统安装的Python是分开的。
+在 **Windows** 和 **Linux** 下，Sublime Text 3有它自己的Python解析器，而且是与系统安装的Python是分开的。
 
 **OS X** 下使用的是系统给的Python。修改系统的Python版本，比如替换成MacPorts版本，将会导致Sublime Text出问题。
 
@@ -136,8 +136,7 @@ Emacs
 用Sublime吧，骚年
 =====================
 
-借用下 `Bruce Lee's wisdom`_, Sublime Text can become almost anything
-you need it to be. In skilled hands, blah, blah, blah.
+借用下 `Bruce Lee's wisdom`_, Sublime Text几乎可以成为任何你想要的东西。好帮手, blah, blah, blah.
 
 Empty your mind; be sublime, my friend.
 

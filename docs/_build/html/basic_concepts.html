@@ -110,70 +110,40 @@
 Interface&#8217;的简称，换句话说Sublime Text 3就是用这种方式为用户提供可编程性。Subime Text让用户通过Python来访问其内部。<em>console(控制台)</em> 是Sublime Text内的一个小窗口，你可以输入Python代码并运行它们。控制台同时也会显示Sublime Text或者其插件的输出。</p>
 <div class="section" id="python-vs-sublime-text-3python">
 <h3>系统的Python vs Sublime Text 3内置的Python<a class="headerlink" href="#python-vs-sublime-text-3python" title="Permalink to this headline">¶</a></h3>
-<p>On <strong>Windows</strong> and <strong>Linux</strong>, Sublime Text 3 comes with its own Python
-interpreter and it&#8217;s separate from your system&#8217;s Python installation.</p>
-<p>On <strong>OS X</strong>, the system Python is used instead. Modifying your system version
-of Python, such as replacing it with the MacPorts version, can cause problems
-for Sublime Text.</p>
-<p>The embedded interpreter is intended only to interact with the plugin API, not
-for general development.</p>
+<p>在 <strong>Windows</strong> 和 <strong>Linux</strong> 下，Sublime Text 3有它自己的Python解析器，而且是与系统安装的Python是分开的。</p>
+<p><strong>OS X</strong> 下使用的是系统给的Python。修改系统的Python版本，比如替换成MacPorts版本，将会导致Sublime Text出问题。</p>
+<p>内置的解析器仅是为与插件API交互而准备的，而不是为一般性编程准备的。</p>
 </div>
 </div>
-<div class="section" id="packages-plugins-resources-and-other-things-that-may-not-make-sense-to-you-now">
-<h2>Packages, Plugins, Resources and Other Things That May Not Make Sense to You Now<a class="headerlink" href="#packages-plugins-resources-and-other-things-that-may-not-make-sense-to-you-now" title="Permalink to this headline">¶</a></h2>
-<p>Almost every aspect of Sublime Text can be tweaked, extended or customized.
-This is all you need to understand for now. Well, that and that this vast
-flexibility is the reason why you&#8217;ll learn about so many configuration files:
-there simply must be a place to specify all your preferences.</p>
-<p>Among other things, you can modify the editor&#8217;s behavior, add macros and
-snippets, extend menus... and even create whole new features &#8211;where <em>feature</em>
-means &#8216;anything you can think of&#8217;. OK, right, there might be things you can&#8217;t
-do, but you&#8217;re definitely spoiled for choice.</p>
-<p>These configuration files are simple text files following a special structure
-or <em>format</em>: JSON predominates, but you&#8217;ll find XML files and Python files
-too.</p>
-<p>In this guide, for brevity we refer collectively to all these disparate
-configuration files as <em>resources</em>.</p>
-<p>Sublime Text will look for resources inside the packages folder. To keep
-things tidy, the editor has a notion of a <em>package</em>, which is a folder
-containing resources that belong together (maybe they all help compose emails
-faster, write HTML efficiently, enhance the coding experience for C, Ruby,
-Go...).</p>
+<div class="section" id="packages-plugins-resources">
+<h2>Packages, Plugins, Resources以及其它一些你现在可能还能用得上的东西<a class="headerlink" href="#packages-plugins-resources" title="Permalink to this headline">¶</a></h2>
+<p>几乎Sublime Text的所有方面都可以被修改，扩展和自定义。这一点你现在必须明白。
+正因为其广大的灵活性，所以你现在需要学些这么多的配置文件：必须要有个地方来指定你的偏好。</p>
+<p>此外，你可以修改编辑器的行为，添加macros(宏命令)和代码片段，扩展菜单...甚至是创建一个全新的特性 &#8211; <em>特性</em> 的意思就是 &#8216;所有你能想到的&#8217;。好了，或许有些事情你是不能做的，不过这已经足够你选择了。</p>
+<p>这些配置文件是JSON <a href="#id7"><span class="problematic" id="id8">*</span></a>格式*的普通文本文件，不过同时你也会发现XML文件和Python文件。</p>
+<p>在这部手册中，我们统一把这些配置文件定义为 <em>resources(资源)</em>。</p>
+<p>Sublime Text会检查packages目录下的资源文件。为了整洁，编辑器有一个 <a href="#id9"><span class="problematic" id="id10">*</span></a>package(包)*的概念，它是一个把资源文件(它们可能适用于帮助编写邮件，更高效的编写HTML，提升C,Ruby,Go代码编写体验等等)归档在一起的目录。</p>
 </div>
-<div class="section" id="textmate-compatibility">
-<h2>Textmate Compatibility<a class="headerlink" href="#textmate-compatibility" title="Permalink to this headline">¶</a></h2>
-<p>This information is mainly useful for Textmate expats who&#8217;ve found a new home
-in Sublime Text. Textmate is an editor for the Mac.</p>
-<p>Sublime Text compatibility with Textmate bundles is good excluding commands,
-which are incompatible. Additionally, Sublime Text requires all syntax
-definitions to have the <em>.tmLanguage</em> extension, and all preferences files to
-have the <em>.tmPreferences</em> extension. This means that <em>.plist</em> files will be
-ignored, even if they are located under a <em>Syntaxes</em> or <em>Preferences</em>
-subdirectory.</p>
+<div class="section" id="textmate">
+<h2>Textmate兼容性<a class="headerlink" href="#textmate" title="Permalink to this headline">¶</a></h2>
+<p>这部分信息可能对于丢弃Textmate，在Sublime Text中找到一个全新世界的人来说比较有用。Textmate是Mac下的一个编辑器。</p>
+<p>Sublime Text与Textmate兼容的非常好，除了命令之外。另外，Sublime Text要求所有语法定义 <em>.tmLanguage*为格式，所有偏好设置文件为 *.tmPreferences</em> 格式。这意味着 <em>.plist</em> 文件将会被忽略，尽管它们放在 <em>Syntaxes</em> 或者 <em>Preferences</em> 子目录下。</p>
 </div>
-<div class="section" id="vi-vim-emulation">
-<h2>Vi/Vim Emulation<a class="headerlink" href="#vi-vim-emulation" title="Permalink to this headline">¶</a></h2>
-<p>This information is mainly useful for dinosaurs and people who like to drop
-the term RSI in conversations. Vi is an ancient modal editor that lets the
-user perform all operations from the keyboard. Vim, a modern version of vi,
-is still in widespread use.</p>
-<p>Sublime Text provides vi emulation through the <em>Vintage</em> package. The Vintage
-package is <em>ignored</em> by default. Read more about <a class="reference external" href="http://www.sublimetext.com/docs/3/vintage.html">Vintage</a> in the official
-documentation.</p>
-<p>An evolution of Vintage called <a class="reference external" href="http://guillermooo.bitbucket.org/Vintageous">Vintageous</a> offers a better Vi editing
-experience and is updated more often than Vintage. <a class="reference external" href="http://guillermooo.bitbucket.org/Vintageous">Vintageous</a> is an open
-source project, just as <a class="reference external" href="http://www.sublimetext.com/docs/3/vintage.html">Vintage</a>.</p>
+<div class="section" id="vi-vim">
+<h2>Vi/Vim 仿真<a class="headerlink" href="#vi-vim" title="Permalink to this headline">¶</a></h2>
+<p>这部分信息主要对恐龙或者那些比较喜欢与RSI术语打交道的人来说有用。
+Vi是一个可以让用户所有操作都通过键盘来完成的古老的编辑器。Vim, 是vi的一个更现代的版本，仍然在广泛使用。</p>
+<p>Sublime Text通过 <em>Vintage</em> 包提供里vi仿真。Vintage包默认是 <em>ignored</em> 。可以在官方文档中阅读更多关于 <a class="reference external" href="http://feliving.github.io/Sublime-Text-3-Documentation/vintage.html">Vintage</a> 的信息。</p>
+<p>一个Vintage变种，<a class="reference external" href="http://guillermooo.bitbucket.org/Vintageous">Vintageous</a> 提供了更好的Vi编辑体验而且比Vintage更新更频繁。 <a class="reference external" href="http://guillermooo.bitbucket.org/Vintageous">Vintageous</a> 是一个开源项目。</p>
 </div>
 <div class="section" id="emacs">
 <h2>Emacs<a class="headerlink" href="#emacs" title="Permalink to this headline">¶</a></h2>
-<p>This information is hardly useful for anyone. Emacs is... Well, nobody really
-knows what emacs is, but some people edit text with it.</p>
-<p>If you are an emacs user, you&#8217;re probably not reading this.</p>
+<p>这部分信息对于所有人都很难有点用处。Emacs这玩意...，没人真的知道emacs是啥，不过确实有些人用它来编辑文本。</p>
+<p>如果你是一个emacs用户，你可能就不会阅读这些内容了。</p>
 </div>
-<div class="section" id="be-sublime-my-friend">
-<h2>Be Sublime, My Friend<a class="headerlink" href="#be-sublime-my-friend" title="Permalink to this headline">¶</a></h2>
-<p>Borrowing from <a class="reference external" href="http://www.youtube.com/watch?v=7ijCSu87I9k">Bruce Lee&#8217;s wisdom</a>, Sublime Text can become almost anything
-you need it to be. In skilled hands, blah, blah, blah.</p>
+<div class="section" id="sublime">
+<h2>用Sublime吧，骚年<a class="headerlink" href="#sublime" title="Permalink to this headline">¶</a></h2>
+<p>借用下 <a class="reference external" href="http://www.youtube.com/watch?v=7ijCSu87I9k">Bruce Lee&#8217;s wisdom</a>, Sublime Text几乎可以成为任何你想要的东西。好帮手, blah, blah, blah.</p>
 <p>Empty your mind; be sublime, my friend.</p>
 </div>
 </div>
@@ -199,11 +169,11 @@ you need it to be. In skilled hands, blah, blah, blah.</p>
 <li><a class="reference internal" href="#python-vs-sublime-text-3python">系统的Python vs Sublime Text 3内置的Python</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#packages-plugins-resources-and-other-things-that-may-not-make-sense-to-you-now">Packages, Plugins, Resources and Other Things That May Not Make Sense to You Now</a></li>
-<li><a class="reference internal" href="#textmate-compatibility">Textmate Compatibility</a></li>
-<li><a class="reference internal" href="#vi-vim-emulation">Vi/Vim Emulation</a></li>
+<li><a class="reference internal" href="#packages-plugins-resources">Packages, Plugins, Resources以及其它一些你现在可能还能用得上的东西</a></li>
+<li><a class="reference internal" href="#textmate">Textmate兼容性</a></li>
+<li><a class="reference internal" href="#vi-vim">Vi/Vim 仿真</a></li>
 <li><a class="reference internal" href="#emacs">Emacs</a></li>
-<li><a class="reference internal" href="#be-sublime-my-friend">Be Sublime, My Friend</a></li>
+<li><a class="reference internal" href="#sublime">用Sublime吧，骚年</a></li>
 </ul>
 </li>
 </ul>

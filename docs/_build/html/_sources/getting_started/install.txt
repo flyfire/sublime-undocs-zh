@@ -1,35 +1,32 @@
 ============
-Installation
+安装
 ============
 
-The process of installing Sublime Text is different for each platform.
+Sublime Text在每个平台的安装过程有些不一样。
 
-Make sure to read the `conditions for use`_ on the official site. Sublime Text
-is not free.
+确认阅读下官方网站的 `使用条件`_ 。Sublime Text不是免费的。
 
-.. _conditions for use: http://www.sublimetext.com/buy
+.. _使用条件: http://www.sublimetext.com/buy
 
-32 bits or 64 bits?
+32-位还是64-位?
 ===================
 
-Choose the 64-bit version if you're running a 64-bit operating system,
-otherwise the 32-bit version.
+如果你运行的是64-位系统选择64-位版本的，如果是32-位系统选择32-位版本的。
 
-On **Windows**, if in doubt, choose the 32-bit version. Modern 64-bit
-versions of Windows can run 32-bit software.
+在 **Windows**下,如果你不确定的话，可选择32-位版本。64-位Windows系统也可以运行32-位软件。译者注：建议还是使用32-位版本的，
 
-On **Linux** run this command in your terminal to check your operating
-system's type::
+(译者注：建议还是使用32-位版本的，本人64-位Windows系统使用64-位版本时，貌似Side Bar的菜单有点问题)
+
+**Linux** 下可以运行下面的命令来查看操作系统的类型：
 
     uname -m
 
-For **OS X**, you can ignore this section: there is only one version of
-Sublime Text for OS X.
+**OS X**, 可以忽略这个选项，OS X下只有一个版本的Sublime Text。
 
 Windows
 =======
 
-Portable or Not Portable?
+便携的 or 非便携的?
 -------------------------
 
 Sublime Text comes in two flavors for Windows: normal, and portable. If you
