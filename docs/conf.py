@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# Sublime Text 非官方文档 documentation build configuration file, created by
+# Sublime Text Unofficial Documentation documentation build configuration file, created by
 # sphinx-quickstart on Fri Oct 11 11:49:00 2013.
 #
 # This file is execfile()d with the current directory set to its
@@ -44,8 +44,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'Sublime Text 非官方文档'
-copyright = '2013, 中文翻译:白汀，原著:guillermooo'
+project = 'Sublime Text Unofficial Documentation'
+copyright = '2013, Chinese by baiting, Author:guillermooo'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -99,7 +99,7 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'default'
+html_theme = 'pyramid'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -197,8 +197,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'SublimeText.tex', 'Sublime Text 非官方文档 Documentation',
-   '中文翻译:白汀，原著:guillermooo', 'manual'),
+  ('index', 'SublimeText.tex', 'Sublime Text Unofficial Documentation Documentation',
+   'Chinese by baiting, Author:guillermooo', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -227,8 +227,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'sublimetext', 'Sublime Text 非官方文档 Documentation',
-     ['中文翻译:白汀，原著:guillermooo'], 1)
+    ('index', 'sublimetext', 'Sublime Text Unofficial Documentation Documentation',
+     ['Chinese by baiting, Author:guillermooo'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -241,8 +241,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'SublimeText', 'Sublime Text 非官方文档 Documentation',
-   '中文翻译:白汀，原著:guillermooo', 'SublimeText', 'One line description of project.',
+  ('index', 'SublimeText', 'Sublime Text Unofficial Documentation Documentation',
+   'Chinese by baiting, Author:guillermooo', 'SublimeText', 'One line description of project.',
    'Miscellaneous'),
 ]
 
