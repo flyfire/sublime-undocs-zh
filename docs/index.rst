@@ -6,7 +6,7 @@
 Sublime Text 非官方文档
 =====================================
 
-中文翻译 by `白汀 <http://feliving.github.io/>`_ ，`英文原版 <https://sublime-text-unofficial-documentation.readthedocs.org/en/latest/>`_  by `Guillermo López-Anglada <https://github.com/guillermooo>`_
+中文翻译 by `白汀 <http://feliving.github.io/>`_ ， `英文原版 <https://sublime-text-unofficial-documentation.readthedocs.org/en/latest/>`_  by `Guillermo López-Anglada <https://github.com/guillermooo>`_
 
 Sublime Text 3官方文档可以查看 `这里 <http://feliving.github.io/Sublime-Text-3-Documentation/index.html>`_
 
