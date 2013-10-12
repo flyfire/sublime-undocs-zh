@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>File Navigation and File Management &mdash; Sublime Text Unofficial Documentation  documentation</title>
+    <title>文件导航与文件管理 &mdash; Sublime Text Unofficial Documentation  documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="Sublime Text Unofficial Documentation  documentation" href="../index.html" />
     <link rel="next" title="Customizing Sublime Text" href="../customization/customization.html" />
-    <link rel="prev" title="Build Systems (Batch Processing)" href="../file_processing/build_systems.html" /> 
+    <link rel="prev" title="构建系统（批处理）" href="../file_processing/build_systems.html" /> 
   </head>
   <body>
     <div class="related">
@@ -38,7 +38,7 @@
           <a href="../customization/customization.html" title="Customizing Sublime Text"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../file_processing/build_systems.html" title="Build Systems (Batch Processing)"
+          <a href="../file_processing/build_systems.html" title="构建系统（批处理）"
              accesskey="P">previous</a> |</li>
         <li><a href="../index.html">Sublime Text Unofficial Documentation  documentation</a> &raquo;</li> 
       </ul>
@@ -49,10 +49,10 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="file-navigation-and-file-management">
-<h1>File Navigation and File Management<a class="headerlink" href="#file-navigation-and-file-management" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="goto-anything">
-<h2>Goto Anything<a class="headerlink" href="#goto-anything" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="id1">
+<h1>文件导航与文件管理<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>任意跳转<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>Use Goto Anything to <strong>navigate your project&#8217;s files</strong> swiftly. (More about
 projects later.)</p>
 <p>To open Goto Anything, press <tt class="kbd docutils literal"><span class="pre">Ctrl+P</span></tt>. As you type into the input area,
@@ -81,27 +81,21 @@ be used after file names, just as <tt class="docutils literal"><span class="pre"
 <p>Searching for symbols will only work if the active file type has symbols
 defined for it. Symbols are defined in <em>.tmLanguage</em> files.</p>
 </div>
-<div class="section" id="sidebar">
-<h2>Sidebar<a class="headerlink" href="#sidebar" title="Permalink to this headline">¶</a></h2>
-<p>The sidebar gives an overview of the active project. Files and folders added
-to the sidebar will be available in Goto Anything as well as for project-wide
-actions (like project-wide searches).</p>
-<p>Projects and the sidebar are very closely related. It&#8217;s important to note that
-there&#8217;s always an active project, whether it&#8217;s explicit or implicit.</p>
-<p>To <strong>toggle</strong> the sidebar, press <tt class="kbd docutils literal"><span class="pre">Ctrl+K,</span> <span class="pre">Ctrl+B</span></tt>.</p>
-<p>The sidebar can be navigated with the arrow keys, but first you need to give
-it the <strong>focus</strong> by pressing <tt class="kbd docutils literal"><span class="pre">Ctrl+0</span></tt>. To return the focus to the view,
-press <tt class="kbd docutils literal"><span class="pre">Esc</span></tt>. Alternatively, you can use the mouse to the same effect.</p>
+<div class="section" id="id3">
+<h2>侧边栏<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>侧边栏可以提供一个项目的概览视图。添加到侧边栏的文件和目录均可以通过“任意跳转”功能访问，同时也适用于项目范围的操作(比如项目范围内的搜索)。项目与侧边栏是密切相关的。不管以显式或是隐式的方式，总是有一个项目存在于侧边栏中。</p>
+<p>可以通过组合键:kbd:<a href="#id4"><span class="problematic" id="id5">`</span></a>Ctrl+K, Ctrl+B`来打开或关闭侧边栏。</p>
+<p>在侧边栏可以使用方向键来在文件间切换，但是首先需要通过按组合键:kbd:<cite>Ctrl+0</cite> 使其获得**输入焦点**。
+如果希望缓冲区重新获得输入焦点，则需要按 :kbd:<a href="#id6"><span class="problematic" id="id7">`</span></a>Esc`键。同样，你也可以使用鼠标达到同样的效果。</p>
 <p>Files opened from the sidebar create <em>semi-transient</em> views. Unlike transient
 views, <em>semi-transient</em> views show up as a new tab. You will be able to tell
 semi-transient views from other views because their tab text is shown in
 italics. When a new semi-transient view is opnened, any existing semi-
 transient view in the same pane gets automatically closed.</p>
-<p>The sidebar provides basic file management operations through its context
-menu.</p>
+<p>侧边栏可以通过菜单的方式提供基本的文件管理操作。</p>
 </div>
-<div class="section" id="projects">
-<h2>Projects<a class="headerlink" href="#projects" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h2>项目<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 <p>Projects group sets of files and folders to keep your work organized. Set up a
 project by adding folders in a way that suits you, and then save your new
 configuration.</p>
@@ -121,9 +115,9 @@ project</em> file as an argument to the Sublime Text executable.</p>
 example, you may want to have only a selected few files open while working on
 <em>Feature A</em>. Or perhaps you use a different pane layout when you&#8217;re writing
 tests, etc. Workspaces help in these situations.</p>
-<p><a href="#id1"><span class="problematic" id="id2">**</span></a>Workspaces behave very much like projects. To create a new workspace, select
-<a href="#id3"><span class="problematic" id="id4">**</span></a>Project | New Workspace for Project. To save the current workspace, select
-<a href="#id5"><span class="problematic" id="id6">**</span></a>Project | Save Workspace As....</p>
+<p><a href="#id9"><span class="problematic" id="id10">**</span></a>Workspaces behave very much like projects. To create a new workspace, select
+<a href="#id11"><span class="problematic" id="id12">**</span></a>Project | New Workspace for Project. To save the current workspace, select
+<a href="#id13"><span class="problematic" id="id14">**</span></a>Project | Save Workspace As....</p>
 <p>Workspaces data is stored in JSON files with the <em>.sublime-workspace</em>
 extension.</p>
 <p>Contrary to <em>.sublime-project</em> files, <em>.sublime-workspace</em> files <strong>are not</strong>
@@ -154,10 +148,10 @@ related submenus.</p>
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">File Navigation and File Management</a><ul>
-<li><a class="reference internal" href="#goto-anything">Goto Anything</a></li>
-<li><a class="reference internal" href="#sidebar">Sidebar</a></li>
-<li><a class="reference internal" href="#projects">Projects</a></li>
+<li><a class="reference internal" href="#">文件导航与文件管理</a><ul>
+<li><a class="reference internal" href="#id2">任意跳转</a></li>
+<li><a class="reference internal" href="#id3">侧边栏</a></li>
+<li><a class="reference internal" href="#id8">项目</a></li>
 <li><a class="reference internal" href="#workspaces">Workspaces</a></li>
 <li><a class="reference internal" href="#panes">Panes</a></li>
 </ul>
@@ -166,7 +160,7 @@ related submenus.</p>
 
   <h4>Previous topic</h4>
   <p class="topless"><a href="../file_processing/build_systems.html"
-                        title="previous chapter">Build Systems (Batch Processing)</a></p>
+                        title="previous chapter">构建系统（批处理）</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="../customization/customization.html"
                         title="next chapter">Customizing Sublime Text</a></p>
@@ -202,7 +196,7 @@ related submenus.</p>
           <a href="../customization/customization.html" title="Customizing Sublime Text"
              >next</a> |</li>
         <li class="right" >
-          <a href="../file_processing/build_systems.html" title="Build Systems (Batch Processing)"
+          <a href="../file_processing/build_systems.html" title="构建系统（批处理）"
              >previous</a> |</li>
         <li><a href="../index.html">Sublime Text Unofficial Documentation  documentation</a> &raquo;</li> 
       </ul>

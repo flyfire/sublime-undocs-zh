@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Build Systems (Batch Processing) &mdash; Sublime Text Unofficial Documentation  documentation</title>
+    <title>构建系统（批处理） &mdash; Sublime Text Unofficial Documentation  documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -24,8 +24,8 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="Sublime Text Unofficial Documentation  documentation" href="../index.html" />
-    <link rel="next" title="File Navigation and File Management" href="../file_management/file_management.html" />
-    <link rel="prev" title="Search and Replace - Multiple Files" href="../search_and_replace/search_and_replace_files.html" /> 
+    <link rel="next" title="文件导航与文件管理" href="../file_management/file_management.html" />
+    <link rel="prev" title="搜索与替换 - 多文件" href="../search_and_replace/search_and_replace_files.html" /> 
   </head>
   <body>
     <div class="related">
@@ -35,10 +35,10 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../file_management/file_management.html" title="File Navigation and File Management"
+          <a href="../file_management/file_management.html" title="文件导航与文件管理"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../search_and_replace/search_and_replace_files.html" title="Search and Replace - Multiple Files"
+          <a href="../search_and_replace/search_and_replace_files.html" title="搜索与替换 - 多文件"
              accesskey="P">previous</a> |</li>
         <li><a href="../index.html">Sublime Text Unofficial Documentation  documentation</a> &raquo;</li> 
       </ul>
@@ -49,19 +49,18 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="build-systems-batch-processing">
-<h1>Build Systems (Batch Processing)<a class="headerlink" href="#build-systems-batch-processing" title="Permalink to this headline">¶</a></h1>
-<p>Build systems let you run your files through external programs like
-<strong class="program">make</strong>, <strong class="program">tidy</strong>, interpreters, etc.</p>
-<p>Executables called from build systems must be in your <tt class="xref py py-const docutils literal"><span class="pre">PATH</span></tt>. For more
-information about making sure the <tt class="xref py py-const docutils literal"><span class="pre">PATH</span></tt> seen by Sublime Text is set
-correctly, see <a class="reference internal" href="../reference/build_systems.html#troubleshooting-build-systems"><em>Troubleshooting Build Systems</em></a>.</p>
-<div class="section" id="file-format">
-<h2>File Format<a class="headerlink" href="#file-format" title="Permalink to this headline">¶</a></h2>
-<p>Build systems are JSON files and have the extension <em>.sublime-build</em>.</p>
-<div class="section" id="example">
-<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
-<p>Here&#8217;s an example of a build system:</p>
+  <div class="section" id="id1">
+<h1>构建系统（批处理）<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>通过构建系统，你能够使用像 <strong class="program">make</strong>， <strong class="program">tidy</strong> 这样的外部程序以及各种解释器
+来运行你的文件。</p>
+<p>在构建系统中调用的外部可执行程序一定要能够通过 <tt class="xref py py-const docutils literal"><span class="pre">PATH</span></tt> 环境变量找到。请参考 <em class="xref std std-ref">构建系统常见问题</em>
+章节来了解有关如何正确设置 <tt class="xref py py-const docutils literal"><span class="pre">PATH</span></tt> 环境变量的更多信息。</p>
+<div class="section" id="id2">
+<h2>文件格式<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>构建系统是以 <em>.sublime-build</em> 作为文件扩展名的JSON文件。</p>
+<div class="section" id="id3">
+<h3>示例<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>下面是构建系统的一个小例子：</p>
 <div class="highlight-js"><div class="highlight"><pre><span class="p">{</span>
     <span class="s2">&quot;cmd&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;python&quot;</span><span class="p">,</span> <span class="s2">&quot;-u&quot;</span><span class="p">,</span> <span class="s2">&quot;$file&quot;</span><span class="p">],</span>
     <span class="s2">&quot;file_regex&quot;</span><span class="o">:</span> <span class="s2">&quot;^[ ]*File \&quot;(...*?)\&quot;, line ([0-9]*)&quot;</span><span class="p">,</span>
@@ -71,40 +70,37 @@ correctly, see <a class="reference internal" href="../reference/build_systems.ht
 </div>
 <dl class="docutils">
 <dt><tt class="docutils literal"><span class="pre">cmd</span></tt></dt>
-<dd><p class="first">Required. This option contains the actual command line to be executed:</p>
+<dd><p class="first">必填内容。这个选项的内容是实际执行的命令行语句:</p>
 <div class="last highlight-python"><div class="highlight"><pre><span class="n">python</span> <span class="o">-</span><span class="n">u</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">current</span><span class="o">/</span><span class="nb">file</span><span class="o">.</span><span class="n">ext</span>
 </pre></div>
 </div>
 </dd>
 <dt><tt class="docutils literal"><span class="pre">file_regex</span></tt></dt>
-<dd>A Perl-style regular expression to capture error information from an
-external program&#8217;s output. This information is used to help you
-navigate through error instances with <tt class="kbd docutils literal"><span class="pre">F4</span></tt>.</dd>
+<dd>存放一段用于捕获外部程序输出的错误信息的Perl风格的正则表达式。这部分信息用于帮助你在不同
+的错误实例之间使用 <tt class="kbd docutils literal"><span class="pre">F4</span></tt> 快捷键进行跳转。</dd>
 <dt><tt class="docutils literal"><span class="pre">selector</span></tt></dt>
-<dd>If the <strong>Tools | Build System | Automatic</strong> option is set, Sublime Text
-will automatically find the corresponding build system for the active file
-by matching <tt class="docutils literal"><span class="pre">selector</span></tt> to the file&#8217;s scope.</dd>
+<dd>如果你勾选了 <strong>Tools | Build System | Automatic</strong> 选项，Sublime Text会自动从构建
+系统中通过 <tt class="docutils literal"><span class="pre">selector</span></tt> 选项找到适合当前文件的构建方式。</dd>
 </dl>
-<p>In addition to options, you can use some variables in build systems too, as
-we have done above with <tt class="docutils literal"><span class="pre">$file</span></tt>, which expands to the active buffer&#8217;s
-filename.</p>
+<p>除了这些选项，在构建系统中还可以使用一些变量，例如在前面使用的 <tt class="docutils literal"><span class="pre">$file</span></tt> 变量，就能自动扩充为
+当前缓冲区对应的文件名。</p>
 </div>
 </div>
-<div class="section" id="where-to-store-build-systems">
-<h2>Where to Store Build Systems<a class="headerlink" href="#where-to-store-build-systems" title="Permalink to this headline">¶</a></h2>
-<p>Build systems must be located somewhere under the <em>Packages</em> folder
-(e.g. <em>Packages/User</em>). Many packages include their own build systems.</p>
+<div class="section" id="id4">
+<h2>构建系统存储在哪里<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>构建系统必须被放在 <em>Packages</em> 文件夹下面的某个位置（例如 <em>Packages/User</em>）。许多包都含有它们自己
+的构建系统。</p>
 </div>
-<div class="section" id="running-build-systems">
-<h2>Running Build Systems<a class="headerlink" href="#running-build-systems" title="Permalink to this headline">¶</a></h2>
-<p>Build systems can be run by pressing <tt class="kbd docutils literal"><span class="pre">F7</span></tt> or from <strong>Tools | Build</strong>.</p>
-<div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<dl class="last docutils">
-<dt><a class="reference internal" href="../reference/build_systems.html"><em>Reference for build systems</em></a></dt>
-<dd>Complete documentation on all available options, variables, etc.</dd>
+<div class="section" id="id5">
+<h2>运行构建系统<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>可以使用 <tt class="kbd docutils literal"><span class="pre">F7</span></tt> 快捷键来运行构建系统，也可以从 <strong>Tools | Build</strong> 菜单中运行。</p>
+<p>参考</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><a class="reference internal" href="../reference/build_systems.html"><em>构建系统参考手册</em></a></dt>
+<dd>包含所有可用选项、变量。</dd>
 </dl>
-</div>
+</div></blockquote>
 </div>
 </div>
 
@@ -116,23 +112,23 @@ filename.</p>
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Build Systems (Batch Processing)</a><ul>
-<li><a class="reference internal" href="#file-format">File Format</a><ul>
-<li><a class="reference internal" href="#example">Example</a></li>
+<li><a class="reference internal" href="#">构建系统（批处理）</a><ul>
+<li><a class="reference internal" href="#id2">文件格式</a><ul>
+<li><a class="reference internal" href="#id3">示例</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#where-to-store-build-systems">Where to Store Build Systems</a></li>
-<li><a class="reference internal" href="#running-build-systems">Running Build Systems</a></li>
+<li><a class="reference internal" href="#id4">构建系统存储在哪里</a></li>
+<li><a class="reference internal" href="#id5">运行构建系统</a></li>
 </ul>
 </li>
 </ul>
 
   <h4>Previous topic</h4>
   <p class="topless"><a href="../search_and_replace/search_and_replace_files.html"
-                        title="previous chapter">Search and Replace - Multiple Files</a></p>
+                        title="previous chapter">搜索与替换 - 多文件</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="../file_management/file_management.html"
-                        title="next chapter">File Navigation and File Management</a></p>
+                        title="next chapter">文件导航与文件管理</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../_sources/file_processing/build_systems.txt"
@@ -162,10 +158,10 @@ filename.</p>
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../file_management/file_management.html" title="File Navigation and File Management"
+          <a href="../file_management/file_management.html" title="文件导航与文件管理"
              >next</a> |</li>
         <li class="right" >
-          <a href="../search_and_replace/search_and_replace_files.html" title="Search and Replace - Multiple Files"
+          <a href="../search_and_replace/search_and_replace_files.html" title="搜索与替换 - 多文件"
              >previous</a> |</li>
         <li><a href="../index.html">Sublime Text Unofficial Documentation  documentation</a> &raquo;</li> 
       </ul>

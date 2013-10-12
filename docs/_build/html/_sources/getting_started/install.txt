@@ -132,7 +132,7 @@ Ubuntu下，如果你要把Sublime Text添加到Unity启动器的话，继续阅
 把 `username` 替换成你的用户名。这样就可以避免输入license之后以root权限打开Sublime Text的权限错误。
 
 
-Living Dangerously... or Not
+勇于尝试 or Not
 ============================
 
 Sublime Text 有三个发布 *通道*:

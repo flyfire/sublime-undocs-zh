@@ -1,40 +1,35 @@
 ==================
-Search and Replace
+搜索和替换
 ==================
 
-Sublime Text features two main types of search:
+Sublime Text提供2种类型的搜索：
 
 .. toctree::
    :maxdepth: 1
 
-	Search - Single File <search_and_replace>
-	Search - Multiple Files <search_and_replace_files>
+	搜索 - 单个文件 <search_and_replace>
+	搜索 - 多文件 <search_and_replace_files>
 
-We'll examine them in turn, but first let's talk about a powerful tool for searching
-text: regular expressions.
+我们将依次讲解它们，不过我们先讲下一个强大的搜索利器：正则表达式。
 
 .. _snr-regexes:
 
-Regular Expressions
+正则表达式
 ===================
 
-Regular Expressions find complex *patterns* in text. To take full advantage of
-the search and replace facilities in Sublime Text, you should at least learn
-the basics of regular expressions. In this guide we won't explain how to use
-regular expressions.
+正则表达式可查找文本中的 *复杂模式*。要全面的掌握Sublime Text的搜索功能，你至少应该学会基本的正则表达式。本手册中我们不讲解如何使用正则表达式。
 
-Typing out *regular expression* gets boring fast, and saying it actually is
-even more annoying, so instead nerds usually shorten that to *regexp* or *regex*.
 
-This is how a regex might look::
+下面就是一个正则的样子::
 
 	(?:Sw|P)i(?:tch|s{2})\s(?:it\s)?of{2}!
 
-Regexes are known to hurt people's feelings.
+正则以令人痛苦而出名。
 
-To use regular expressions, first you need to activate them in the various
-search panels. Otherwise, the search term will be interpreted literally.
+要使用正则，首先你要在搜索面板的模式中激活它。否则，搜索词将按字面意思查找。
 
-Sublime Text uses the `Boost syntax`_ for regular expressions.
+Sublime Text使用正则表达式中的 `Boost语法`_ 。
 
-.. _Boost syntax: http://www.boost.org/doc/libs/1_47_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html
+.. _Boost语法: http://www.boost.org/doc/libs/1_47_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html
+
+（译者注：正则表达式有很多类型的方言）

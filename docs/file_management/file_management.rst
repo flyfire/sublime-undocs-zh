@@ -1,8 +1,8 @@
 ===================================
-File Navigation and File Management
+文件导航与文件管理
 ===================================
 
-Goto Anything
+任意跳转
 =============
 
 Use Goto Anything to **navigate your project's files** swiftly. (More about
@@ -47,21 +47,15 @@ defined for it. Symbols are defined in *.tmLanguage* files.
 .. todo: Explain how to create symbols.
 
 
-Sidebar
+侧边栏
 =======
 
-The sidebar gives an overview of the active project. Files and folders added
-to the sidebar will be available in Goto Anything as well as for project-wide
-actions (like project-wide searches).
+侧边栏可以提供一个项目的概览视图。添加到侧边栏的文件和目录均可以通过“任意跳转”功能访问，同时也适用于项目范围的操作(比如项目范围内的搜索)。项目与侧边栏是密切相关的。不管以显式或是隐式的方式，总是有一个项目存在于侧边栏中。
 
-Projects and the sidebar are very closely related. It's important to note that
-there's always an active project, whether it's explicit or implicit.
+可以通过组合键:kbd:`Ctrl+K, Ctrl+B`来打开或关闭侧边栏。
 
-To **toggle** the sidebar, press :kbd:`Ctrl+K, Ctrl+B`.
-
-The sidebar can be navigated with the arrow keys, but first you need to give
-it the **focus** by pressing :kbd:`Ctrl+0`. To return the focus to the view,
-press :kbd:`Esc`. Alternatively, you can use the mouse to the same effect.
+在侧边栏可以使用方向键来在文件间切换，但是首先需要通过按组合键:kbd:`Ctrl+0` 使其获得**输入焦点**。
+如果希望缓冲区重新获得输入焦点，则需要按 :kbd:`Esc`键。同样，你也可以使用鼠标达到同样的效果。
 
 Files opened from the sidebar create *semi-transient* views. Unlike transient
 views, *semi-transient* views show up as a new tab. You will be able to tell
@@ -69,11 +63,9 @@ semi-transient views from other views because their tab text is shown in
 italics. When a new semi-transient view is opnened, any existing semi-
 transient view in the same pane gets automatically closed.
 
-The sidebar provides basic file management operations through its context
-menu.
+侧边栏可以通过菜单的方式提供基本的文件管理操作。
 
-
-Projects
+项目
 ========
 
 Projects group sets of files and folders to keep your work organized. Set up a

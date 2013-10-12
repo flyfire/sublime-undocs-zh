@@ -76,8 +76,7 @@ OS X: ``⌃ + ⇧ + Up`` and ``⌃ + ⇧ + Down``
 其它选择文本的方式
 ============================
 
-The list is long; all available options can be found under **Selection**. To
-name a few:
+方式有很多种，可以在 **Selection**菜单下找到。举几个例子:
 
 * Select subwords (``Alt + Shift + <arrow>``)
 * Expand selection to brackets (``Ctrl + Shift + M``)
@@ -85,16 +84,13 @@ name a few:
 * Expand selection to scope (``Ctrl + Shift + Space``)
 
 
-Transposing Things
+置换
 ==================
 
-Need to swap two letters or, better yet, two words? Experiment with
-``Ctrl + T``.
+``Ctrl + T``可以将光标位置前后2个字符位置置换.
 
 
 更多...
 ======================
 
-The **Edit**, **Selection**, **Find** and **Goto** menus are good places to
-look for handy editing tools. You might end up using just a few of them,
-but the rest will still be there for when you need them.
+**Edit**, **Selection**, **Find** 和 **Goto** 这些菜单下面包含了大量的编辑指令。可能最终你只会用到其中的少部分，不过当你需要的时候仍有大量的方式可供选择。

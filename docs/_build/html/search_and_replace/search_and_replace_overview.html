@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Search and Replace &mdash; Sublime Text Unofficial Documentation  documentation</title>
+    <title>搜索和替换 &mdash; Sublime Text Unofficial Documentation  documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -24,8 +24,8 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="Sublime Text Unofficial Documentation  documentation" href="../index.html" />
-    <link rel="next" title="Search and Replace - Single File" href="search_and_replace.html" />
-    <link rel="prev" title="Editing" href="../editing/editing.html" /> 
+    <link rel="next" title="搜索和替换 - 单个文件" href="search_and_replace.html" />
+    <link rel="prev" title="编辑" href="../editing/editing.html" /> 
   </head>
   <body>
     <div class="related">
@@ -35,10 +35,10 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="search_and_replace.html" title="Search and Replace - Single File"
+          <a href="search_and_replace.html" title="搜索和替换 - 单个文件"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../editing/editing.html" title="Editing"
+          <a href="../editing/editing.html" title="编辑"
              accesskey="P">previous</a> |</li>
         <li><a href="../index.html">Sublime Text Unofficial Documentation  documentation</a> &raquo;</li> 
       </ul>
@@ -49,32 +49,26 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="search-and-replace">
-<h1>Search and Replace<a class="headerlink" href="#search-and-replace" title="Permalink to this headline">¶</a></h1>
-<p>Sublime Text features two main types of search:</p>
+  <div class="section" id="id1">
+<h1>搜索和替换<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Sublime Text提供2种类型的搜索：</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="search_and_replace.html">     Search - Single File</a></li>
-<li class="toctree-l1"><a class="reference internal" href="search_and_replace_files.html">     Search - Multiple Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="search_and_replace.html">     搜索 - 单个文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="search_and_replace_files.html">     搜索 - 多文件</a></li>
 </ul>
 </div>
-<p>We&#8217;ll examine them in turn, but first let&#8217;s talk about a powerful tool for searching
-text: regular expressions.</p>
-<div class="section" id="regular-expressions">
-<span id="snr-regexes"></span><h2>Regular Expressions<a class="headerlink" href="#regular-expressions" title="Permalink to this headline">¶</a></h2>
-<p>Regular Expressions find complex <em>patterns</em> in text. To take full advantage of
-the search and replace facilities in Sublime Text, you should at least learn
-the basics of regular expressions. In this guide we won&#8217;t explain how to use
-regular expressions.</p>
-<p>Typing out <em>regular expression</em> gets boring fast, and saying it actually is
-even more annoying, so instead nerds usually shorten that to <em>regexp</em> or <em>regex</em>.</p>
-<p>This is how a regex might look:</p>
+<p>我们将依次讲解它们，不过我们先讲下一个强大的搜索利器：正则表达式。</p>
+<div class="section" id="snr-regexes">
+<span id="id2"></span><h2>正则表达式<a class="headerlink" href="#snr-regexes" title="Permalink to this headline">¶</a></h2>
+<p>正则表达式可查找文本中的 <em>复杂模式</em>。要全面的掌握Sublime Text的搜索功能，你至少应该学会基本的正则表达式。本手册中我们不讲解如何使用正则表达式。</p>
+<p>下面就是一个正则的样子:</p>
 <div class="highlight-python"><pre>(?:Sw|P)i(?:tch|s{2})\s(?:it\s)?of{2}!</pre>
 </div>
-<p>Regexes are known to hurt people&#8217;s feelings.</p>
-<p>To use regular expressions, first you need to activate them in the various
-search panels. Otherwise, the search term will be interpreted literally.</p>
-<p>Sublime Text uses the <a class="reference external" href="http://www.boost.org/doc/libs/1_47_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html">Boost syntax</a> for regular expressions.</p>
+<p>正则以令人痛苦而出名。</p>
+<p>要使用正则，首先你要在搜索面板的模式中激活它。否则，搜索词将按字面意思查找。</p>
+<p>Sublime Text使用正则表达式中的 <a class="reference external" href="http://www.boost.org/doc/libs/1_47_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html">Boost语法</a> 。</p>
+<p>（译者注：正则表达式有很多类型的方言）</p>
 </div>
 </div>
 
@@ -86,18 +80,18 @@ search panels. Otherwise, the search term will be interpreted literally.</p>
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Search and Replace</a><ul>
-<li><a class="reference internal" href="#regular-expressions">Regular Expressions</a></li>
+<li><a class="reference internal" href="#">搜索和替换</a><ul>
+<li><a class="reference internal" href="#snr-regexes">正则表达式</a></li>
 </ul>
 </li>
 </ul>
 
   <h4>Previous topic</h4>
   <p class="topless"><a href="../editing/editing.html"
-                        title="previous chapter">Editing</a></p>
+                        title="previous chapter">编辑</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="search_and_replace.html"
-                        title="next chapter">Search and Replace - Single File</a></p>
+                        title="next chapter">搜索和替换 - 单个文件</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../_sources/search_and_replace/search_and_replace_overview.txt"
@@ -127,10 +121,10 @@ search panels. Otherwise, the search term will be interpreted literally.</p>
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="search_and_replace.html" title="Search and Replace - Single File"
+          <a href="search_and_replace.html" title="搜索和替换 - 单个文件"
              >next</a> |</li>
         <li class="right" >
-          <a href="../editing/editing.html" title="Editing"
+          <a href="../editing/editing.html" title="编辑"
              >previous</a> |</li>
         <li><a href="../index.html">Sublime Text Unofficial Documentation  documentation</a> &raquo;</li> 
       </ul>

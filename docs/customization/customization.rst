@@ -1,4 +1,4 @@
-Customizing Sublime Text
+定制Sublime Text
 ========================
 
 Sublime Text is highly customizable. In the topics below, we'll explain to you how

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Editing &mdash; Sublime Text Unofficial Documentation  documentation</title>
+    <title>编辑 &mdash; Sublime Text Unofficial Documentation  documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -24,7 +24,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="Sublime Text Unofficial Documentation  documentation" href="../index.html" />
-    <link rel="next" title="Search and Replace" href="../search_and_replace/search_and_replace_overview.html" />
+    <link rel="next" title="搜索和替换" href="../search_and_replace/search_and_replace_overview.html" />
     <link rel="prev" title="基本概念" href="../basic_concepts.html" /> 
   </head>
   <body>
@@ -35,7 +35,7 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../search_and_replace/search_and_replace_overview.html" title="Search and Replace"
+          <a href="../search_and_replace/search_and_replace_overview.html" title="搜索和替换"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="../basic_concepts.html" title="基本概念"
@@ -49,79 +49,71 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="editing">
-<h1>Editing<a class="headerlink" href="#editing" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p>Sublime Text is brim-full of editing features. This topic just
-scratches the surface of what&#8217;s possible.</p>
+  <div class="section" id="id1">
+<h1>编辑<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>概述<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Sublime Text充满着各种编辑功能。这里只粗浅的讲述下哪些是可以做的。</p>
 </div>
-<div class="section" id="column-selection">
-<h2>Column Selection<a class="headerlink" href="#column-selection" title="Permalink to this headline">¶</a></h2>
-<p>Column Selection can be used to select a rectangular area of a file.
-Column selection doesn&#8217;t operate via a separate mode, instead it makes
-use of multiple selections.</p>
-<p>You can use additive selections to select multiple blocks of text, or
-subtractive selections to remove a block.</p>
-<div class="section" id="using-the-mouse">
-<h3>Using the Mouse<a class="headerlink" href="#using-the-mouse" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h2>列选择<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>列选择可用于选择一个文件里的矩形区域。列选择并不是通过一个单独模式完成的，而是使用多重选择。</p>
+<p>你可以添加选区域来选择多个文本块，或者减少选区来移除选择块。</p>
+<div class="section" id="id4">
+<h3>使用鼠标<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>Windows</p>
 <ul class="simple">
-<li>Right Mouse Button <tt class="docutils literal"><span class="pre">+</span> <span class="pre">⇧</span></tt></li>
-<li>OR: Middle Mouse Button</li>
+<li>鼠标右键 <a href="#id5"><span class="problematic" id="id6">``</span></a>+ ⇧ ``</li>
+<li>或: 鼠标中键</li>
 </ul>
 <p></p>
 <ul class="simple">
-<li>Add to selection: <tt class="docutils literal"><span class="pre">Ctrl</span></tt></li>
-<li>Subtract from selection: <tt class="docutils literal"><span class="pre">Alt</span></tt></li>
+<li>添加到选区: <tt class="docutils literal"><span class="pre">Ctrl</span></tt></li>
+<li>从选区移除: <tt class="docutils literal"><span class="pre">Alt</span></tt></li>
 </ul>
 <p>Linux</p>
 <ul class="simple">
-<li>Right Mouse Button <tt class="docutils literal"><span class="pre">+</span> <span class="pre">⇧</span></tt></li>
+<li>鼠标右键 <tt class="docutils literal"><span class="pre">+</span> <span class="pre">⇧</span></tt></li>
 </ul>
 <p></p>
 <ul class="simple">
-<li>Add to selection: <tt class="docutils literal"><span class="pre">Ctrl</span></tt></li>
-<li>Subtract from selection: <tt class="docutils literal"><span class="pre">Alt</span></tt></li>
+<li>添加到选区: <tt class="docutils literal"><span class="pre">Ctrl</span></tt></li>
+<li>从选区移除: <tt class="docutils literal"><span class="pre">Alt</span></tt></li>
 </ul>
 <p>OS X</p>
 <ul class="simple">
-<li>Left Mouse Button + <tt class="docutils literal"><span class="pre">⌥</span></tt></li>
-<li>OR: Middle Mouse Button</li>
+<li>鼠标左键  + <tt class="docutils literal"><span class="pre">⌥</span></tt></li>
+<li>或: 鼠标中键</li>
 </ul>
 <p></p>
 <ul class="simple">
-<li>Add to selection: <tt class="docutils literal"><span class="pre">⌘</span></tt></li>
-<li>Subtract from selection: <tt class="docutils literal"><span class="pre">⌘</span> <span class="pre">+</span> <span class="pre">⇧</span></tt></li>
+<li>添加到选区: <tt class="docutils literal"><span class="pre">⌘</span></tt></li>
+<li>从选区移除: <tt class="docutils literal"><span class="pre">⌘</span> <span class="pre">+</span> <span class="pre">⇧</span></tt></li>
 </ul>
 </div>
-<div class="section" id="using-the-keyboard">
-<h3>Using the Keyboard<a class="headerlink" href="#using-the-keyboard" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id7">
+<h3>使用键盘<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <p>Windows: <tt class="docutils literal"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Alt</span> <span class="pre">+</span> <span class="pre">Up</span></tt> and <tt class="docutils literal"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Alt</span> <span class="pre">+</span> <span class="pre">Down</span></tt></p>
 <p>Linux: <tt class="docutils literal"><span class="pre">Alt</span> <span class="pre">+</span> <span class="pre">⇧</span> <span class="pre">+</span> <span class="pre">Up</span></tt> and <tt class="docutils literal"><span class="pre">Alt</span> <span class="pre">+</span> <span class="pre">⇧</span> <span class="pre">+</span> <span class="pre">Down</span></tt></p>
 <p>OS X: <tt class="docutils literal"><span class="pre">⌃</span> <span class="pre">+</span> <span class="pre">⇧</span> <span class="pre">+</span> <span class="pre">Up</span></tt> and <tt class="docutils literal"><span class="pre">⌃</span> <span class="pre">+</span> <span class="pre">⇧</span> <span class="pre">+</span> <span class="pre">Down</span></tt></p>
 </div>
 </div>
-<div class="section" id="multiple-selections">
-<h2>Multiple Selections<a class="headerlink" href="#multiple-selections" title="Permalink to this headline">¶</a></h2>
-<p>Multiple selections let you make sweeping changes to your text efficiently.
-Any praise about multiple selections is an understatement. This is why:</p>
-<p>Select some text and press <tt class="docutils literal"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">D</span></tt> to <strong>add more</strong> instances. If
-you want <strong>to skip the current instance</strong>, press <tt class="docutils literal"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">K,</span> <span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">D</span></tt>.</p>
-<p>If you go too far, press <tt class="docutils literal"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">U</span></tt> to <strong>deselect</strong> the current instance.</p>
+<div class="section" id="id8">
+<h2>多区域选择<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>多重选择可以让你有效率的进行大范围的文本修改。</p>
+<p>对多重选择的任何赞美都过于轻淡了，这是因为：</p>
+<p>你可以选择某个文本然后 <tt class="docutils literal"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">D</span></tt>  <strong>添加更多</strong> 实体(可参考 <a class="reference external" href="http://feliving.github.io/Sublime-Text-3-Documentation/multiple_selection_with_the_keyboard.html">官方文档部分</a>)。 如果想 <strong>跳过当前实体</strong>, 可以 <tt class="docutils literal"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">K,</span> <span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">D</span></tt>。</p>
+<p>如果选择过多, <tt class="docutils literal"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">U</span></tt> 来 <strong>取消选择</strong> 当前实体。</p>
 </div>
-<div class="section" id="transforming-multiple-selections-into-lines">
-<h2>Transforming Multiple Selections into Lines<a class="headerlink" href="#transforming-multiple-selections-into-lines" title="Permalink to this headline">¶</a></h2>
-<p><tt class="docutils literal"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">L</span></tt> expands the selections to the end of the line. <tt class="docutils literal"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">L</span></tt>
-splits the selections into lines.</p>
-<p>You can copy multiple selected lines to a separate buffer, edit them there,
-select the content again as multiple lines and then paste them back into
-place in the first buffer.</p>
+<div class="section" id="id10">
+<h2>把多选区分割成行<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">L</span></tt> 扩展选择到行。 <tt class="docutils literal"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">L</span></tt> 把选区分割成行。</p>
+<p>你可以把多重选择的行复制到一个单独的缓冲区，编辑它们，然后再复制编辑后的内容，然后把它们在原来的地方粘贴回去。像下面这样：</p>
+<img alt="../_images/copy_edit.gif" src="../_images/copy_edit.gif" />
 </div>
-<div class="section" id="other-ways-of-selecting-text">
-<h2>Other Ways of Selecting Text<a class="headerlink" href="#other-ways-of-selecting-text" title="Permalink to this headline">¶</a></h2>
-<p>The list is long; all available options can be found under <strong>Selection</strong>. To
-name a few:</p>
+<div class="section" id="id11">
+<h2>其它选择文本的方式<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<p>方式有很多种，可以在 <a href="#id12"><span class="problematic" id="id13">**</span></a>Selection**菜单下找到。举几个例子:</p>
 <ul class="simple">
 <li>Select subwords (<tt class="docutils literal"><span class="pre">Alt</span> <span class="pre">+</span> <span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">&lt;arrow&gt;</span></tt>)</li>
 <li>Expand selection to brackets (<tt class="docutils literal"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">M</span></tt>)</li>
@@ -129,16 +121,13 @@ name a few:</p>
 <li>Expand selection to scope (<tt class="docutils literal"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Space</span></tt>)</li>
 </ul>
 </div>
-<div class="section" id="transposing-things">
-<h2>Transposing Things<a class="headerlink" href="#transposing-things" title="Permalink to this headline">¶</a></h2>
-<p>Need to swap two letters or, better yet, two words? Experiment with
-<tt class="docutils literal"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">T</span></tt>.</p>
+<div class="section" id="id14">
+<h2>置换<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<p><a href="#id15"><span class="problematic" id="id16">``</span></a>Ctrl + T``可以将光标位置前后2个字符位置置换.</p>
 </div>
-<div class="section" id="and-much-much-more">
-<h2>And much, much more...<a class="headerlink" href="#and-much-much-more" title="Permalink to this headline">¶</a></h2>
-<p>The <strong>Edit</strong>, <strong>Selection</strong>, <strong>Find</strong> and <strong>Goto</strong> menus are good places to
-look for handy editing tools. You might end up using just a few of them,
-but the rest will still be there for when you need them.</p>
+<div class="section" id="id17">
+<h2>更多...<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
+<p><strong>Edit</strong>, <strong>Selection</strong>, <strong>Find</strong> 和 <strong>Goto</strong> 这些菜单下面包含了大量的编辑指令。可能最终你只会用到其中的少部分，不过当你需要的时候仍有大量的方式可供选择。</p>
 </div>
 </div>
 
@@ -150,18 +139,18 @@ but the rest will still be there for when you need them.</p>
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Editing</a><ul>
-<li><a class="reference internal" href="#overview">Overview</a></li>
-<li><a class="reference internal" href="#column-selection">Column Selection</a><ul>
-<li><a class="reference internal" href="#using-the-mouse">Using the Mouse</a></li>
-<li><a class="reference internal" href="#using-the-keyboard">Using the Keyboard</a></li>
+<li><a class="reference internal" href="#">编辑</a><ul>
+<li><a class="reference internal" href="#id2">概述</a></li>
+<li><a class="reference internal" href="#id3">列选择</a><ul>
+<li><a class="reference internal" href="#id4">使用鼠标</a></li>
+<li><a class="reference internal" href="#id7">使用键盘</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#multiple-selections">Multiple Selections</a></li>
-<li><a class="reference internal" href="#transforming-multiple-selections-into-lines">Transforming Multiple Selections into Lines</a></li>
-<li><a class="reference internal" href="#other-ways-of-selecting-text">Other Ways of Selecting Text</a></li>
-<li><a class="reference internal" href="#transposing-things">Transposing Things</a></li>
-<li><a class="reference internal" href="#and-much-much-more">And much, much more...</a></li>
+<li><a class="reference internal" href="#id8">多区域选择</a></li>
+<li><a class="reference internal" href="#id10">把多选区分割成行</a></li>
+<li><a class="reference internal" href="#id11">其它选择文本的方式</a></li>
+<li><a class="reference internal" href="#id14">置换</a></li>
+<li><a class="reference internal" href="#id17">更多...</a></li>
 </ul>
 </li>
 </ul>
@@ -171,7 +160,7 @@ but the rest will still be there for when you need them.</p>
                         title="previous chapter">基本概念</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="../search_and_replace/search_and_replace_overview.html"
-                        title="next chapter">Search and Replace</a></p>
+                        title="next chapter">搜索和替换</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../_sources/editing/editing.txt"
@@ -201,7 +190,7 @@ but the rest will still be there for when you need them.</p>
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../search_and_replace/search_and_replace_overview.html" title="Search and Replace"
+          <a href="../search_and_replace/search_and_replace_overview.html" title="搜索和替换"
              >next</a> |</li>
         <li class="right" >
           <a href="../basic_concepts.html" title="基本概念"

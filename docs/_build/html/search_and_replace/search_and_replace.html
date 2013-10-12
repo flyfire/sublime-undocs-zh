@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Search and Replace - Single File &mdash; Sublime Text Unofficial Documentation  documentation</title>
+    <title>搜索和替换 - 单个文件 &mdash; Sublime Text Unofficial Documentation  documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -24,9 +24,9 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="Sublime Text Unofficial Documentation  documentation" href="../index.html" />
-    <link rel="up" title="Search and Replace" href="search_and_replace_overview.html" />
-    <link rel="next" title="Search and Replace - Multiple Files" href="search_and_replace_files.html" />
-    <link rel="prev" title="Search and Replace" href="search_and_replace_overview.html" /> 
+    <link rel="up" title="搜索和替换" href="search_and_replace_overview.html" />
+    <link rel="next" title="搜索与替换 - 多文件" href="search_and_replace_files.html" />
+    <link rel="prev" title="搜索和替换" href="search_and_replace_overview.html" /> 
   </head>
   <body>
     <div class="related">
@@ -36,13 +36,13 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="search_and_replace_files.html" title="Search and Replace - Multiple Files"
+          <a href="search_and_replace_files.html" title="搜索与替换 - 多文件"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="search_and_replace_overview.html" title="Search and Replace"
+          <a href="search_and_replace_overview.html" title="搜索和替换"
              accesskey="P">previous</a> |</li>
         <li><a href="../index.html">Sublime Text Unofficial Documentation  documentation</a> &raquo;</li>
-          <li><a href="search_and_replace_overview.html" accesskey="U">Search and Replace</a> &raquo;</li> 
+          <li><a href="search_and_replace_overview.html" accesskey="U">搜索和替换</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -51,95 +51,67 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="search-and-replace-single-file">
-<h1>Search and Replace - Single File<a class="headerlink" href="#search-and-replace-single-file" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="searching">
-<span id="snr-search-buffer"></span><h2>Searching<a class="headerlink" href="#searching" title="Permalink to this headline">¶</a></h2>
-<p>To open the <strong>search panel</strong> for buffers, press <tt class="docutils literal"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">F</span></tt>. Some options in
-the search panel and search actions can be controlled with the keyboard:</p>
+  <div class="section" id="id1">
+<h1>搜索和替换 - 单个文件<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="snr-search-buffer">
+<span id="id2"></span><h2>搜索<a class="headerlink" href="#snr-search-buffer" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">F</span></tt> 可以打开当前缓冲区的 <strong>搜索面板</strong>。可通过下面这些指令对搜索面板进行控制：</p>
+<p>（译者注：关于缓冲区，请参考 <a class="reference internal" href="../glossary/glossary.html"><em>词汇表</em></a> 这个章节）</p>
+</div>
+<div class="section" id="snr-incremental-search-buffer">
+<span id="id3"></span><h2>增量搜索<a class="headerlink" href="#snr-incremental-search-buffer" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><strong>增量搜索面板</strong> 可以通过``Ctrl + I``打开。与正常的搜索面板相比，唯一的区别在于 <tt class="docutils literal"><span class="pre">回车</span></tt></div></blockquote>
+<p>键的作用：在增量搜索中，按下回车键将选中缓冲区中下一段与搜索条件匹配的文字，并自动关闭面板。
+一般来说，可以根据个人的喜好来决定是选择增量搜索面板还是普通搜索面板。</p>
+</div>
+<div class="section" id="snr-replace-buffer">
+<span id="id4"></span><h2>替换文本<a class="headerlink" href="#snr-replace-buffer" title="Permalink to this headline">¶</a></h2>
+<p>可以通过 <tt class="docutils literal"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">H</span></tt> 来打开替换面板。</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="46%" />
-<col width="54%" />
+<col width="48%" />
+<col width="52%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>Toggle Regular Expressions</td>
-<td><tt class="docutils literal"><span class="pre">Alt</span> <span class="pre">+</span> <span class="pre">R</span></tt></td>
-</tr>
-<tr class="row-even"><td>Toggle Case Sensitivity</td>
-<td><tt class="docutils literal"><span class="pre">Alt</span> <span class="pre">+</span> <span class="pre">C</span></tt></td>
-</tr>
-<tr class="row-odd"><td>Toggle Exact Match</td>
-<td><tt class="docutils literal"><span class="pre">Alt</span> <span class="pre">+</span> <span class="pre">W</span></tt></td>
-</tr>
-<tr class="row-even"><td>Find Next</td>
-<td><tt class="docutils literal"><span class="pre">Enter</span></tt></td>
-</tr>
-<tr class="row-odd"><td>Find Previous</td>
-<td><tt class="docutils literal"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">Enter</span></tt></td>
-</tr>
-<tr class="row-even"><td>Find All</td>
-<td><tt class="docutils literal"><span class="pre">Alt</span> <span class="pre">+</span> <span class="pre">Enter</span></tt></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="incremental-search">
-<span id="snr-incremental-search-buffer"></span><h2>Incremental Search<a class="headerlink" href="#incremental-search" title="Permalink to this headline">¶</a></h2>
-<p>The <strong>incremental search panel</strong> can be brought up with <tt class="docutils literal"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">I</span></tt>. The only
-difference with the regular search panel lies in the behavior of the <tt class="docutils literal"><span class="pre">Enter</span></tt>
-key: in incremental searches, it will select the next match in the buffer and
-dismiss the search panel for you. Choosing between this panel or the regular
-search panel is mainly a matter of preference.</p>
-</div>
-<div class="section" id="replacing-text">
-<span id="snr-replace-buffer"></span><h2>Replacing Text<a class="headerlink" href="#replacing-text" title="Permalink to this headline">¶</a></h2>
-<p>You can open the replace planel with <tt class="docutils literal"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">H</span></tt>.</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="46%" />
-<col width="54%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td>Replace All:</td>
+<tr class="row-odd"><td>替换全部内容:</td>
 <td><tt class="docutils literal"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Alt</span> <span class="pre">+</span> <span class="pre">Enter</span></tt></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="section" id="tips">
-<span id="snr-tips-buffer"></span><h2>Tips<a class="headerlink" href="#tips" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="other-ways-of-searching-in-buffers">
-<h3>Other Ways of Searching in Buffers<a class="headerlink" href="#other-ways-of-searching-in-buffers" title="Permalink to this headline">¶</a></h3>
-<p>Goto Anything provides the operator <tt class="docutils literal"><span class="pre">#</span></tt> to search in the current
-buffer. The search term will be the part following the <tt class="docutils literal"><span class="pre">#</span></tt> operator.</p>
+<div class="section" id="snr-tips-buffer">
+<span id="id5"></span><h2>小技巧<a class="headerlink" href="#snr-tips-buffer" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h3>搜索文本的其他方法<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>可以在Goto Anything（快速跳转）(译者注：ctrl+P唤出，或者菜单栏-&gt;Goto-&gt;Goto Anything)面板中使用 <tt class="docutils literal"><span class="pre">#</span></tt> 操作符在当前缓冲区中进行搜索。跟在 <tt class="docutils literal"><span class="pre">#</span></tt>
+操作符后面的内容将被识别为搜索关键字。</p>
 </div>
-<div class="section" id="other-key-bindings-to-search-in-buffers">
-<h3>Other Key Bindings to Search in Buffers<a class="headerlink" href="#other-key-bindings-to-search-in-buffers" title="Permalink to this headline">¶</a></h3>
-<p>These key bindings work when the search panel is hidden.</p>
+<div class="section" id="id7">
+<h3>文本搜索的其他快捷键<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>下面的这些快捷键在搜索面板不可见的情况下仍然有效。</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="68%" />
-<col width="32%" />
+<col width="67%" />
+<col width="33%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td>Search Forward Using Most Recent Pattern</td>
+<tr class="row-odd"><td>使用最近一次的搜索模式进行前向搜索</td>
 <td><tt class="docutils literal"><span class="pre">F3</span></tt></td>
 </tr>
-<tr class="row-even"><td>Search Backwards Using Most Recent Pattern</td>
+<tr class="row-even"><td>使用最近一次的搜索模式进行后向搜索</td>
 <td><tt class="docutils literal"><span class="pre">Shift</span> <span class="pre">+</span> <span class="pre">F3</span></tt></td>
 </tr>
-<tr class="row-odd"><td>Select All Matches Using Most Recent Pattern</td>
+<tr class="row-odd"><td>使用最近一次的搜索模式进行全搜索</td>
 <td><tt class="docutils literal"><span class="pre">Alt</span> <span class="pre">+</span> <span class="pre">F3</span></tt></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="section" id="multiline-search">
-<h3>Multiline Search<a class="headerlink" href="#multiline-search" title="Permalink to this headline">¶</a></h3>
-<p>You can type a multiline search pattern. To enter a newline character, press
-<tt class="docutils literal"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">Enter</span></tt> in the search panel. Note that the search panel is resizable
-too.</p>
+<div class="section" id="id8">
+<h3>多行搜索<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p>你可以输入一个多行搜素模式。在搜索面板中使用 <tt class="docutils literal"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">回车</span></tt> 键来输入换行符。值得一提的是，
+搜索面板的大小是可以调整的。</p>
 </div>
 </div>
 </div>
@@ -152,14 +124,14 @@ too.</p>
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Search and Replace - Single File</a><ul>
-<li><a class="reference internal" href="#searching">Searching</a></li>
-<li><a class="reference internal" href="#incremental-search">Incremental Search</a></li>
-<li><a class="reference internal" href="#replacing-text">Replacing Text</a></li>
-<li><a class="reference internal" href="#tips">Tips</a><ul>
-<li><a class="reference internal" href="#other-ways-of-searching-in-buffers">Other Ways of Searching in Buffers</a></li>
-<li><a class="reference internal" href="#other-key-bindings-to-search-in-buffers">Other Key Bindings to Search in Buffers</a></li>
-<li><a class="reference internal" href="#multiline-search">Multiline Search</a></li>
+<li><a class="reference internal" href="#">搜索和替换 - 单个文件</a><ul>
+<li><a class="reference internal" href="#snr-search-buffer">搜索</a></li>
+<li><a class="reference internal" href="#snr-incremental-search-buffer">增量搜索</a></li>
+<li><a class="reference internal" href="#snr-replace-buffer">替换文本</a></li>
+<li><a class="reference internal" href="#snr-tips-buffer">小技巧</a><ul>
+<li><a class="reference internal" href="#id6">搜索文本的其他方法</a></li>
+<li><a class="reference internal" href="#id7">文本搜索的其他快捷键</a></li>
+<li><a class="reference internal" href="#id8">多行搜索</a></li>
 </ul>
 </li>
 </ul>
@@ -168,10 +140,10 @@ too.</p>
 
   <h4>Previous topic</h4>
   <p class="topless"><a href="search_and_replace_overview.html"
-                        title="previous chapter">Search and Replace</a></p>
+                        title="previous chapter">搜索和替换</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="search_and_replace_files.html"
-                        title="next chapter">Search and Replace - Multiple Files</a></p>
+                        title="next chapter">搜索与替换 - 多文件</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../_sources/search_and_replace/search_and_replace.txt"
@@ -201,13 +173,13 @@ too.</p>
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="search_and_replace_files.html" title="Search and Replace - Multiple Files"
+          <a href="search_and_replace_files.html" title="搜索与替换 - 多文件"
              >next</a> |</li>
         <li class="right" >
-          <a href="search_and_replace_overview.html" title="Search and Replace"
+          <a href="search_and_replace_overview.html" title="搜索和替换"
              >previous</a> |</li>
         <li><a href="../index.html">Sublime Text Unofficial Documentation  documentation</a> &raquo;</li>
-          <li><a href="search_and_replace_overview.html" >Search and Replace</a> &raquo;</li> 
+          <li><a href="search_and_replace_overview.html" >搜索和替换</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

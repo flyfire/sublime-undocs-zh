@@ -6,7 +6,13 @@
 Sublime Text 非官方文档
 =====================================
 
-中文翻译 by `白汀 <http://feliving.github.io/>`_ ， `英文原版 <https://sublime-text-unofficial-documentation.readthedocs.org/en/latest/>`_  by `Guillermo López-Anglada <https://github.com/guillermooo>`_
+中文翻译 by `白汀 <http://feliving.github.io/>`_
+
+部分章节里的内容(搜索和替换，构建系统)引用了 `这个项目 <https://github.com/void-main/UnofficialDocs>`_ 的成果
+
+`英文原版 <https://sublime-text-unofficial-documentation.readthedocs.org/en/latest/>`_  by `Guillermo López-Anglada <https://github.com/guillermooo>`_
+
+本文档适用于Sublime Text 3
 
 Sublime Text 3官方文档可以查看 `这里 <http://feliving.github.io/Sublime-Text-3-Documentation/index.html>`_
 
@@ -18,7 +24,7 @@ Sublime Text 3官方文档可以查看 `这里 <http://feliving.github.io/Sublim
    basic_concepts
    编辑 <editing/editing>
    搜索和替换 <search_and_replace/search_and_replace_overview>
-   构建熊 (Batch Processing) <file_processing/build_systems>
+   构建系统 (批处理) <file_processing/build_systems>
    文件导航和文件管理 <file_management/file_management>
    定制化 <customization/customization>
    扩展性和自动化 <extensibility/extensibility>
