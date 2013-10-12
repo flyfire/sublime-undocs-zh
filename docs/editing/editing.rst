@@ -1,53 +1,49 @@
 =======
-Editing
+编辑
 =======
 
-Overview
+概述
 ========
 
-Sublime Text is brim-full of editing features. This topic just
-scratches the surface of what's possible.
+Sublime Text充满着各种编辑功能。这里只粗浅的讲述下哪些是可以做的。
 
-Column Selection
+列选择
 ================
 
-Column Selection can be used to select a rectangular area of a file.
-Column selection doesn't operate via a separate mode, instead it makes
-use of multiple selections.
+列选择可用于选择一个文件里的矩形区域。列选择并不是通过一个单独模式完成的，而是使用多重选择。
 
-You can use additive selections to select multiple blocks of text, or
-subtractive selections to remove a block.
+你可以添加选区域来选择多个文本块，或者减少选区来移除选择块。
 
-Using the Mouse
+使用鼠标
 ---------------
 
 Windows
 
-* Right Mouse Button ``+ ⇧``
-* OR: Middle Mouse Button
+* 鼠标右键 ``+ ⇧ ``
+* 或: 鼠标中键
 \
 
-* Add to selection: ``Ctrl``
-* Subtract from selection: ``Alt``
+* 添加到选区: ``Ctrl``
+* 从选区移除: ``Alt``
 
 Linux
 
-* Right Mouse Button ``+ ⇧``
+* 鼠标右键 ``+ ⇧``
 \
 
-* Add to selection: ``Ctrl``
-* Subtract from selection: ``Alt``
+* 添加到选区: ``Ctrl``
+* 从选区移除: ``Alt``
 
 OS X
 
-* Left Mouse Button + ``⌥``
-* OR: Middle Mouse Button
+* 鼠标左键  + ``⌥``
+* 或: 鼠标中键
 \
 
-* Add to selection: ``⌘``
-* Subtract from selection: ``⌘ + ⇧``
+* 添加到选区: ``⌘``
+* 从选区移除: ``⌘ + ⇧``
 
-Using the Keyboard
+使用键盘
 ------------------
 
 Windows: ``Ctrl + Alt + Up`` and ``Ctrl + Alt + Down``
@@ -56,30 +52,28 @@ Linux: ``Alt + ⇧ + Up`` and ``Alt + ⇧ + Down``
 
 OS X: ``⌃ + ⇧ + Up`` and ``⌃ + ⇧ + Down``
 
-Multiple Selections
+多区域选择
 ===================
 
-Multiple selections let you make sweeping changes to your text efficiently.
-Any praise about multiple selections is an understatement. This is why:
+多重选择可以让你有效率的进行大范围的文本修改。
 
-Select some text and press ``Ctrl + D`` to **add more** instances. If
-you want **to skip the current instance**, press ``Ctrl + K, Ctrl + D``.
+对多重选择的任何赞美都过于轻淡了，这是因为：
 
-If you go too far, press ``Ctrl + U`` to **deselect** the current instance.
+你可以选择某个文本然后 ``Ctrl + D``  **添加更多** 实体(可参考 `官方文档部分 <http://feliving.github.io/Sublime-Text-3-Documentation/multiple_selection_with_the_keyboard.html>`_)。 如果想 **跳过当前实体**, 可以 ``Ctrl + K, Ctrl + D``。
+
+如果选择过多, ``Ctrl + U`` 来 **取消选择** 当前实体。
 
 
-Transforming Multiple Selections into Lines
+把多选区分割成行
 ===========================================
 
-``Ctrl + L`` expands the selections to the end of the line. ``Ctrl + Shift + L``
-splits the selections into lines.
+``Ctrl + L`` 扩展选择到行。 ``Ctrl + Shift + L`` 把选区分割成行。
 
-You can copy multiple selected lines to a separate buffer, edit them there,
-select the content again as multiple lines and then paste them back into
-place in the first buffer.
+你可以把多重选择的行复制到一个单独的缓冲区，编辑它们，然后再复制编辑后的内容，然后把它们在原来的地方粘贴回去。像下面这样：
 
+.. image:: /_images/copy_edit.gif
 
-Other Ways of Selecting Text
+其它选择文本的方式
 ============================
 
 The list is long; all available options can be found under **Selection**. To
@@ -98,7 +92,7 @@ Need to swap two letters or, better yet, two words? Experiment with
 ``Ctrl + T``.
 
 
-And much, much more...
+更多...
 ======================
 
 The **Edit**, **Selection**, **Find** and **Goto** menus are good places to

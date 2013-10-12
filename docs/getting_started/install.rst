@@ -29,42 +29,36 @@ Windows
 便携的 or 非便携的?
 -------------------------
 
-Sublime Text comes in two flavors for Windows: normal, and portable. If you
-need the portable installation, you probably know already. Otherwise, go with
-the normal one.
+Sublime Text对Windows有两种风格的版本：普通版，和便携版。如果你对便携版有所了解可以使用它，否则最好使用普通版本。
 
-**Normal installations** separate data between two folders: the installation
-folder proper, and the *data directory*. These concepts are explained later
-in this guide. Normal installations also integrate Sublime Text with the
-Windows context menu.
+**普通安装版** 把数据分开在两个目录：对应的安装文件夹，和 *data 目录*。后面会解释这些概念。普通安装版同时也会集成Sublime Text到Windows菜单。
 
-**Portable installations** will keep all files Sublime Text needs to run in
-one single folder. You can then move this folder around and the editor will
-still work.
+**便携安装版** 把所有Sublime Text所有需要运行的文件都放在一个目录下。 你可以把这个文件夹移动到其它地方，编辑器仍可以正常工作。
 
-How to Install the Normal Version of Sublime Text
+如何安装普通版Sublime Text
 -------------------------------------------------
 
-Download the installer, doubleclick on it and follow the onscreen
-instructions.
+下载安装程序，运行并按界面提示安装。
 
-How to Install the Portable Version of Sublime Text
+如何安装便携版Sublime Text
 ----------------------------------------------------
 
-Download the package and uncompress it to a folder of your choice. You will
-find the *sublime_text.exe* executable inside that folder.
+下载压缩吧，解压到指定位置。
+解压目录下会有 *sublime_text.exe* 可执行文件。
 
 OS X
 ====
 
-Download and open the *.dmg* file, and then drag the Sublime Text 2 bundle
-into the *Applications* folder.
+以Sublime Text 2为例
+
+下载并打开 *.dmg*文件，然后把Sublime Text 2拖拽到 *Applications*文件夹下。
 
 Linux
 =====
 
-You can download the package and uncompress it manually. Alternatively, you
-can use the command line.
+以Sublime Text 2为例
+
+你可以手动下载安装包并解压。不过你可以通过命令行来完成。
 
 **For i386**
 
@@ -83,30 +77,30 @@ can use the command line.
     tar vxjf Sublime\ Text\ 2.0.1\ x64.tar.bz2
 
 
-Now we should move the uncompressed files to an appropriate location.
+把解压的目录转移到合适的位置。
 
 ::
 
     sudo mv Sublime\ Text\ 2 /opt/
 
 
-Lastly, we create a `symbolic link` to use at the command line.
+最后，给命令行调用创建一个 `符号链接(symbolic link)`。
 
 ::
 
     sudo ln -s /opt/Sublime\ Text\ 2/sublime_text /usr/bin/sublime
 
 
-In Ubuntu, if you also want to add Sublime Text to the Unity luncher, read on.
+Ubuntu下，如果你要把Sublime Text添加到Unity启动器的话，继续阅读。
 
-First we need to create a new file.
+首先需要创建一个新的文件。
 
 ::
 
     sudo sublime /usr/share/applications/sublime.desktop
 
 
-Then copy the following into it.
+把下面这些内容复制进去。
 
 ::
 
@@ -129,24 +123,21 @@ Then copy the following into it.
     Exec=sublime -n
     TargetEnvironment=Unity
 
-If you've registered your copy of Sublime Text, but every time you open it
-you're asked to enter your license, you should try running this command.
+如果你已经注册了Sublime Text许可，但是每次启动时都要你输入license,可以尝试执行下面这个命令。
 
 ::
 
     sudo chown -R username:username /home/username/.config /sublime-text-2
 
-Just replace `username` with your account's username. This should fix the
-permission error in the case that you opened up Sublime Text as root when you
-first entered the license.
+把 `username` 替换成你的用户名。这样就可以避免输入license之后以root权限打开Sublime Text的权限错误。
 
 
-Living Dangerously... or Not
+勇于尝试 or Not
 ============================
 
-Sublime Text has three release *channels*:
+Sublime Text 有三个发布 *通道*:
 
-* `Stable`_ (default)
+* `Stable`_ (默认)
 * `Dev`_
 * `Nightly`_
 
@@ -154,21 +145,10 @@ Sublime Text has three release *channels*:
 .. _Dev: http://www.sublimetext.com/dev
 .. _Nightly: http://www.sublimetext.com/nightly
 
-If you are working on a NASA project or are on a tight deadline, keep using
-the stable releases and stop reading here. **Stable releases** are better
-tested and more reliable for everyday use than the others. They come out
-roughly once a month. **The majority of users will want to use stable releases
-only.**
+如果你做的是NASA项目或者正处于deadline的话，你还是使用stable releases吧。 **Stable releases** 经过良好的测试，比其它版本都更加稳定。大于一个月会发布一次更新。 **大多数用户都只需要使用稳定版本**。
 
-The *dev* and *nightly* channels are unstable, which likely means that builds
-published through them will contain bugs and not work reliably.
-They are updated more often than stable releases.
+*dev* 和 *nightly* 通道是不稳定版本，意味着他们可能有很多bug，不那么可靠。它们比stable releases更新得更频繁。
 
-**Dev builds** are available for everyone. On average, they're released twice
-a month. While not yet ready for everyday use, they showcase new features in a
-mostly unbroken fashion.
+**Dev builds** 所有人都可以使用。平均来看，每2个月会发布一次。它并不是给所有人准备的，它们会展现一些新功能。
 
-Finally, **nightly builds** are the bleeding edge, with frequent updates and
-also frequent problems of various degrees of severity. They are fun to try
-out, but do so at your own risk. Nightly builds are **only available for
-registered users**.
+**nightly builds** 是一个边缘版本，会频繁的更新，同时也会频繁的引发问题。尝试它们会非常的有趣，不过你要自己承担风险。Nightly 版本 **只开放给注册用户使用**。

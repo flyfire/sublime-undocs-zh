@@ -6,7 +6,7 @@
 Sublime Text 非官方文档
 =====================================
 
-中文翻译 by `白汀 <http://feliving.github.io/>`_ ，`英文原版 <https://sublime-text-unofficial-documentation.readthedocs.org/en/latest/>`_  by `Guillermo López-Anglada <https://github.com/guillermooo>`_
+中文翻译 by `白汀 <http://feliving.github.io/>`_ ， `英文原版 <https://sublime-text-unofficial-documentation.readthedocs.org/en/latest/>`_  by `Guillermo López-Anglada <https://github.com/guillermooo>`_
 
 Sublime Text 3官方文档可以查看 `这里 <http://feliving.github.io/Sublime-Text-3-Documentation/index.html>`_
 
@@ -14,17 +14,17 @@ Sublime Text 3官方文档可以查看 `这里 <http://feliving.github.io/Sublim
    :maxdepth: 2
 
    intro
-   Installation <getting_started/install>
+   安装 <getting_started/install>
    basic_concepts
-   Editing <editing/editing>
-   Search and Replace <search_and_replace/search_and_replace_overview>
-   Build Systems (Batch Processing) <file_processing/build_systems>
-   File Navigation and File Management <file_management/file_management>
-   Customization <customization/customization>
-   Extensibility and Automation <extensibility/extensibility>
-   Command Line <command_line/command_line>
-   Reference <reference/reference>
-   Glossary <glossary/glossary>
+   编辑 <editing/editing>
+   搜索和替换 <search_and_replace/search_and_replace_overview>
+   构建熊 (Batch Processing) <file_processing/build_systems>
+   文件导航和文件管理 <file_management/file_management>
+   定制化 <customization/customization>
+   扩展性和自动化 <extensibility/extensibility>
+   命令行 <command_line/command_line>
+   参考手册 <reference/reference>
+   术语 <glossary/glossary>
 
 .. Indices and tables
 .. ==================
