@@ -8,7 +8,7 @@ Sublime Text 非官方文档
 
 中文翻译 by `白汀 <http://feliving.github.io/>`_
 
-部分章节里的内容(搜索和替换，构建系统)引用了 `这个项目 <https://github.com/void-main/UnofficialDocs>`_ 的成果
+部分章节里的内容(搜索和替换，构建系统，定制化，参考手册，术语)引用了 `这个项目 <https://github.com/void-main/UnofficialDocs>`_ 的成果
 
 `英文原版 <https://sublime-text-unofficial-documentation.readthedocs.org/en/latest/>`_  by `Guillermo López-Anglada <https://github.com/guillermooo>`_
 

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Settings &mdash; Sublime Text Unofficial Documentation  documentation</title>
+    <title>配置 &mdash; Sublime Text Unofficial Documentation  documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -23,10 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="Sublime Text Unofficial Documentation  documentation" href="../index.html" />
-    <link rel="up" title="Customizing Sublime Text" href="customization.html" />
-    <link rel="next" title="Indentation" href="indentation.html" />
-    <link rel="prev" title="Customizing Sublime Text" href="customization.html" /> 
+    <link rel="top" title="Sublime Text Unofficial Documentation  documentation" href="../index.html" /> 
   </head>
   <body>
     <div class="related">
@@ -35,14 +32,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="indentation.html" title="Indentation"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="customization.html" title="Customizing Sublime Text"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">Sublime Text Unofficial Documentation  documentation</a> &raquo;</li>
-          <li><a href="customization.html" accesskey="U">Customizing Sublime Text</a> &raquo;</li> 
+        <li><a href="../index.html">Sublime Text Unofficial Documentation  documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -51,105 +41,92 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="settings">
-<h1>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h1>
-<p>Sublime Text stores configuration data in <em>.sublime-settings</em> files.
-Flexibility comes at the price of a slightly complex system for applying
-settings. However, here&#8217;s a rule of thumb:</p>
-<p>Always place your personal settings files under <em>Packages/User</em> to guarantee
-they will take precedence over any other conflicting settings files.</p>
-<p>With that out of the way, let&#8217;s unveil, to please masochistic readers,
-the mysteries of how settings work.</p>
-<div class="section" id="format">
-<h2>Format<a class="headerlink" href="#format" title="Permalink to this headline">¶</a></h2>
-<p>Settings files use JSON and have the <em>.sublime-settings</em> extension.</p>
+  <div class="section" id="id1">
+<h1>配置<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Sublime Text把配置信息保存在 <em>.sublime-settings</em> 文件中。为了拥有较好的灵活性，作为代价，
+需要一个略显繁琐的系统来管理配置项。我们先来说一条基本原则吧：</p>
+<p>个人定义的配置项文件一定要保存到 <em>Packages/User</em> 目录下，这样就能保证在发生冲突的时候，你定
+义的文件拥有较高的优先级。</p>
+<p>那咱们就来揭开配置项工作的具体原理了，从而满足部分喜欢受虐读者的需求。</p>
+<div class="section" id="id2">
+<h2>格式<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>配置项文件是以 <em>.sublime-settings</em> 作为扩展名的的JSON文件。</p>
 </div>
-<div class="section" id="types-of-settings">
-<h2>Types of Settings<a class="headerlink" href="#types-of-settings" title="Permalink to this headline">¶</a></h2>
-<p>The purpose of each <em>.sublime-settings</em> file is determined by its name. These
-names can be descriptive (like <em>Preferences (Windows).sublime-settings</em>
-or <em>Minimap.sublime-settings</em>), or they can be related to what the settings
-file is controlling. For example, file type settings need to carry the name
-of the <em>.tmLanguage</em> syntax definition for the file type. Thus, for the</p>
-<blockquote>
-<div><em>.py</em> file type, whose syntax definition is contained in <em>Python.tmLanguage</em>,
-the corresponding settings file would be called <em>Python.sublime-settings</em>.</div></blockquote>
-<p>Also, some settings files only apply to specific platforms. This can be
-inferred from the filenames: <em>Preferences (Windows).sublime-settings</em>,
-<em>Preferences (Linux).sublime-settings</em>, etc.</p>
-<p><strong>This is important:</strong> Platform-specific settings files in the <em>Packages/User</em>
-folder are ignored. In this way, you can be sure that a single Platform-specific
-settings file will override all others.</p>
+<div class="section" id="id3">
+<h2>配置文件的类型<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>可以通过 <em>.sublime-settings</em> 文件的名字看出它的用途。这些文件的名字可能具有一定的描述性（例如
+<em>Preferences (Windows).sublime-settings</em> 或者 <em>Minimap.sublime-settings</em>），亦或是跟
+它所控制的内容有关联。以控制文件类型的配置项文件为例，命名时要求必须有与之对应的 <em>.tmLanguage</em>
+语法定义文件。因此，对于 <em>.py</em> 文件类型，它的语法定义信息存放在 <em>Python.tmLanguage</em> 文件中，
+那么对应的文件类型配置项文件就该被叫做 <em>Python.sublime-settings</em> 。</p>
+<p>除此之外，某些配置文件只能作用于某个特定的平台。可以通过文件名进行推断，例如：
+<em>Preferences (Windows).sublime-settings</em> 和 <em>Preferences (Linux).sublime-settings</em> 。</p>
+<p>有一点特别 <strong>重要</strong> ：存放在 <em>Packages/User</em> 目录中的平台相关的配置文件将被忽略。通过这种方式，
+就可以保证单个配置文件内容可以覆盖其他所有配置文件的内容了。</p>
 </div>
-<div class="section" id="how-to-access-and-edit-common-settings-files">
-<h2>How to Access and Edit Common Settings Files<a class="headerlink" href="#how-to-access-and-edit-common-settings-files" title="Permalink to this headline">¶</a></h2>
-<p>Unless you need very fine-grained control over settings, you can access the main
-configuration files through the <strong>Preferences | Settings - User</strong> and
-<strong>Preferences | Settings - More</strong> menu items. Editing <strong>Preferences - Settings Default</strong>
-isn&#8217;t a smart thing to do, because changes will be reverted with every update
-to the software. However, you can use that file for reference: it contains comments
-explaining the purpose of all available global and file type settings.</p>
+<div class="section" id="id4">
+<h2>如何访问并修改公共的配置文件<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>除非你对配置项有非常精确的掌控力，否则，你只需要通过 <strong>Preferences | Settings - User</strong> 和
+<strong>Preferences | Settings - More</strong> 菜单项来访问主要的配置文件。编辑
+<strong>Preferences - Settings Default</strong> 这个文件并不是一件明智的事情，因为每次版本升级这些修改都
+将被重置。不过，你确实可以把这些文件当作一个不错的参考资料：默认配置项文件里面包含了解释所有能
+为你所用的全局配置项和文件类型配置项的说明注释。</p>
 </div>
-<div class="section" id="order-of-precedence-of-sublime-settings-files">
-<h2>Order of Precedence of <em>.sublime-settings</em> Files<a class="headerlink" href="#order-of-precedence-of-sublime-settings-files" title="Permalink to this headline">¶</a></h2>
-<p>The same settings file (such as <em>Python.sublime-settings</em>) can appear in multiple
-places. All settings defined in identically named files will be merged together
-and overwritten according to predefined rules. See
-<a class="reference internal" href="../extensibility/packages.html#merging-and-order-of-precedence"><em>Merging and Order of Precedence</em></a> for more information.</p>
-<p>Let us remember again that any given settings file in <em>Packages/User</em> ultimately
-overrides every other settings file of the same name.</p>
-<p>In addition to settings files, Sublime Text maintains <em>session</em> data&#8212;settings
-for the particular set of files being currently edited. Session data is updated
-as you work on files, so if you adjust settings for a particular file in any
-way (mainly through API calls), they will be recorded in the session and will
-take precedence over any applicable <em>.sublime-settings</em> files.</p>
-<p>To check the value of a setting for a particular file being edited, use
-<em>view.settings().get(&lt;setting_name&gt;)</em> from the console.</p>
-<p>Finally, it&#8217;s also worth noting that some settings may be automatically adjusted
-for you. Keep this in mind if you&#8217;re puzzled about some setting&#8217;s value. For
-instance, this is the case for certain whitespace-related settings and the
-<tt class="docutils literal"><span class="pre">syntax</span></tt> setting.</p>
-<p>Below, you can see the order in which Sublime Text would process a
-hypothetical hierarchy of settings for Python files on Windows:</p>
+<div class="section" id="sublime-settings">
+<h2><em>.sublime-settings</em> 文件的优先级顺序<a class="headerlink" href="#sublime-settings" title="Permalink to this headline">¶</a></h2>
+<p>名字相同的配置项文件（例如，都叫 <em>Python.sublime-settings</em> 的文件）可以在多个位置出现。以相同
+名称命名的配置项文件中的内容都将按预定义的规则进行合并或者覆盖。请参考 <em class="xref std std-ref">合并与优先级顺序</em>
+这一小节以了解更多信息。</p>
+<p>再说明一次，在 <em>Packages/User</em> 目录下的配置项文件拥有最高优先级，并且最终会覆盖其他同名配置项
+文件中的相同内容。</p>
+<p>除了配置项文件以外，Sublime Text还维护 <em>会话</em> 数据 —— 一些针对正在编辑的文件集所应用的配置项。
+会话数据是在你编辑文件的过程中发生变化的，所以，无论你通过何种方式调整了一个特定文件的配置项
+（主要是通过API调用的方式），这些配置项的变更将被记录在当前的会话中，并且将拥有比所有符合条件的
+<em>.sublime-settings</em> 文件更高的优先级。</p>
+<p>如果想要检查针对特定文件当前正在发挥作用的配置项的值，可以在控制台中输入
+<em>view.settings().get(&lt;配置项名称&gt;)</em> 命令。</p>
+<p>最后需要注意的是，某些配置项的值可能会被系统自动进行调整。请记住这一点，这样一来你就能够解释某
+些令你困惑的配置项内容了。举例来说，在查看某些与空格相关的配置项的值，以及某些 <tt class="docutils literal"><span class="pre">语法</span></tt> 配置项
+内容的时候，就有可能遇到这种问题。</p>
+<p>接下来你将看到Sublime Text是如何处理Windows平台上Python相关的配置项文件的，这里的配置项文件
+目录结构是虚构的：</p>
 <ul class="simple">
 <li><em>Packages/Default/Preferences.sublime-settings</em></li>
 <li><em>Packages/Default/Preferences (Windows).sublime-settings</em></li>
 <li><em>Packages/User/Preferences.sublime-settings</em></li>
 <li><em>Packages/Python/Python.sublime-settings</em></li>
 <li><em>Packages/User/Python.sublime-settings</em></li>
-<li>Session data for the current file</li>
-<li>Auto adjusted settings</li>
+<li>当前文件的会话数据</li>
+<li>由系统自动调整的配置项内容</li>
 </ul>
+<p>（译者注：分析下优先级，可以得到结论：全局默认项 &lt; 平台默认项  &lt; 用户配置项 &lt; 语言相关的配置
+&lt; 由用户指定的语言相关的配置 &lt; 会话数据 &lt; 系统调整的数据）</p>
 </div>
-<div class="section" id="global-editor-settings-and-global-file-settings">
-<h2>Global Editor Settings and Global File Settings<a class="headerlink" href="#global-editor-settings-and-global-file-settings" title="Permalink to this headline">¶</a></h2>
-<p>These settings are stored in <em>Preferences.sublime-settings</em> and
-<em>Preferences (&lt;platform&gt;).sublime-settings</em> files. The defaults can be
-found in <em>Packages/Default</em>.</p>
-<p>Valid names for <em>&lt;platform&gt;</em> are <tt class="docutils literal"><span class="pre">Linux</span></tt>, <tt class="docutils literal"><span class="pre">OSX</span></tt>, and <tt class="docutils literal"><span class="pre">Windows</span></tt>.</p>
+<div class="section" id="id5">
+<h2>全局编辑器配置以及全局文件配置<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>这类全局配置项内容一般被保存在名为 <em>Preferences.sublime-settings</em> 和
+<em>Preferences (&lt;platform&gt;).sublime-settings</em> 的文件中。默认的全局配置项存放在
+<em>Packages/Default</em> 目录中。</p>
+<p>上面所说的 <em>&lt;platform&gt;</em> 可能是 <tt class="docutils literal"><span class="pre">Linux</span></tt>, <tt class="docutils literal"><span class="pre">OSX</span></tt>, 或者 <tt class="docutils literal"><span class="pre">Windows</span></tt>.</p>
 </div>
-<div class="section" id="file-type-settings">
-<h2>File Type Settings<a class="headerlink" href="#file-type-settings" title="Permalink to this headline">¶</a></h2>
-<p>If you want to target a specific file type, name the <em>.sublime-settings</em> file
-after the file type&#8217;s syntax definition. For example, if our syntax definition
-was called <em>Python.tmLanguage</em>, we&#8217;d need to call our settings file
-<em>Python.sublime-settings</em>.</p>
-<p>Settings files for specific file types usually live in packages, like
-<em>Packages/Python</em>, but there can be multiple settings files in separate
-locations for the same file type.</p>
-<p>Similarly to global settings, one can establish platform-specific settings for
-file types. For example, <em>Python (Linux).sublime-settings</em> would be
-consulted only under Linux.</p>
-<p>Also, let us stress that, under <em>Packages/User</em>, only <em>Python.sublime-settings</em>
-would be read, but not any <em>Python (&lt;platform&gt;).sublime-settings</em> variants.</p>
-<p>Regardless of its location, any file-type-specific settings file has precedence
-over every global settings file affecting the file type.</p>
+<div class="section" id="id6">
+<h2>文件类型配置<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>如果你想针对某个特定的文件类型进行一些配置，那请根据这个文件类型的语法定义文件名称来对应的命名
+<em>.sublime-settings</em> 文件。举例来说，如果我们的语法定义文件叫 <em>Python.tmLanguage</em> ，那么
+配置项文件的名称就应该叫 <em>Python.sublime-settings</em> 。</p>
+<p>通常情况下，某个特定文件类型的配置项信息一般存放在包组文件夹的一个目录中，例如 <em>Packages/Python</em>，
+但是，与同一个文件类型相关的多个配置项文件也有可能被存放在不同的位置。</p>
+<p>与全局配置项类似，也可以为文件类型配置项信息创建平台相关的内容。例如只有在Linux平台下，保存在
+<em>Python (Linux).sublime-settings</em> 中的配置项内容才会被系统考虑。</p>
+<p>需要特别指出的一点是，在 <em>Packages/User</em> 目录下，只有 <em>Python.sublime-settings</em> 文件会被
+加载，所有以 <em>Python (&lt;platform&gt;).sublime-settings</em> 命名的平台相关的变种都不会被考虑。</p>
+<p>不管文件类型配置项信息保存在哪里，它拥有比保存在全局配置项文件中的、影响文件类型的配置项都高的
+优先级。</p>
 </div>
-<div class="section" id="where-to-store-user-settings-once-again">
-<h2>Where to Store User Settings (Once Again)<a class="headerlink" href="#where-to-store-user-settings-once-again" title="Permalink to this headline">¶</a></h2>
-<p>Whenever you want to save settings, especially if they should be preserved
-between software updates, place the corresponding <em>.sublime-settings</em> file in
-<em>Packages/User</em>.</p>
+<div class="section" id="id7">
+<h2>用户配置信息应该保存到哪里<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>无论何时，当你想要保存一些配置的时候，尤其是那些在软件升级前后应该被保留的配置，就把它们保存在
+<em>Packages/User</em> 目录下的对应 <em>.sublime-settings</em> 文件中吧。</p>
 </div>
 </div>
 
@@ -161,24 +138,18 @@ between software updates, place the corresponding <em>.sublime-settings</em> fil
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Settings</a><ul>
-<li><a class="reference internal" href="#format">Format</a></li>
-<li><a class="reference internal" href="#types-of-settings">Types of Settings</a></li>
-<li><a class="reference internal" href="#how-to-access-and-edit-common-settings-files">How to Access and Edit Common Settings Files</a></li>
-<li><a class="reference internal" href="#order-of-precedence-of-sublime-settings-files">Order of Precedence of <em>.sublime-settings</em> Files</a></li>
-<li><a class="reference internal" href="#global-editor-settings-and-global-file-settings">Global Editor Settings and Global File Settings</a></li>
-<li><a class="reference internal" href="#file-type-settings">File Type Settings</a></li>
-<li><a class="reference internal" href="#where-to-store-user-settings-once-again">Where to Store User Settings (Once Again)</a></li>
+<li><a class="reference internal" href="#">配置</a><ul>
+<li><a class="reference internal" href="#id2">格式</a></li>
+<li><a class="reference internal" href="#id3">配置文件的类型</a></li>
+<li><a class="reference internal" href="#id4">如何访问并修改公共的配置文件</a></li>
+<li><a class="reference internal" href="#sublime-settings"><em>.sublime-settings</em> 文件的优先级顺序</a></li>
+<li><a class="reference internal" href="#id5">全局编辑器配置以及全局文件配置</a></li>
+<li><a class="reference internal" href="#id6">文件类型配置</a></li>
+<li><a class="reference internal" href="#id7">用户配置信息应该保存到哪里</a></li>
 </ul>
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="customization.html"
-                        title="previous chapter">Customizing Sublime Text</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="indentation.html"
-                        title="next chapter">Indentation</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../_sources/customization/settings.txt"
@@ -207,14 +178,7 @@ between software updates, place the corresponding <em>.sublime-settings</em> fil
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="indentation.html" title="Indentation"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="customization.html" title="Customizing Sublime Text"
-             >previous</a> |</li>
-        <li><a href="../index.html">Sublime Text Unofficial Documentation  documentation</a> &raquo;</li>
-          <li><a href="customization.html" >Customizing Sublime Text</a> &raquo;</li> 
+        <li><a href="../index.html">Sublime Text Unofficial Documentation  documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

@@ -1,8 +1,7 @@
-Indentation
+缩进
 ===========
 
-.. seealso::
+参考
 
-   `Indentation <http://www.sublimetext.com/docs/2/indentation.html>`_
-      Official Sublime Text Documentation.
+   官方Sublime Text文档 `缩进 <http://feliving.github.io/Sublime-Text-3-Documentation/indentation.html>`_
 

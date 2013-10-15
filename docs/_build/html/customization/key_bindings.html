@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Key Bindings &mdash; Sublime Text Unofficial Documentation  documentation</title>
+    <title>键盘绑定 &mdash; Sublime Text Unofficial Documentation  documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -23,10 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="Sublime Text Unofficial Documentation  documentation" href="../index.html" />
-    <link rel="up" title="Customizing Sublime Text" href="customization.html" />
-    <link rel="next" title="Menus" href="menus.html" />
-    <link rel="prev" title="Indentation" href="indentation.html" /> 
+    <link rel="top" title="Sublime Text Unofficial Documentation  documentation" href="../index.html" /> 
   </head>
   <body>
     <div class="related">
@@ -35,14 +32,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="menus.html" title="Menus"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="indentation.html" title="Indentation"
-             accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">Sublime Text Unofficial Documentation  documentation</a> &raquo;</li>
-          <li><a href="customization.html" accesskey="U">Customizing Sublime Text</a> &raquo;</li> 
+        <li><a href="../index.html">Sublime Text Unofficial Documentation  documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -51,25 +41,16 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="key-bindings">
-<h1>Key Bindings<a class="headerlink" href="#key-bindings" title="Permalink to this headline">¶</a></h1>
-<div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<dl class="last docutils">
-<dt><a class="reference internal" href="../reference/key_bindings.html"><em>Reference for key bindings</em></a></dt>
-<dd>Complete documentation on key bindings.</dd>
-</dl>
-</div>
-<p>Key bindings let you map sequences of key presses to actions.</p>
-<div class="section" id="file-format">
-<h2>File Format<a class="headerlink" href="#file-format" title="Permalink to this headline">¶</a></h2>
-<p>Key bindings are defined in JSON and stored in <tt class="docutils literal"><span class="pre">.sublime-keymap</span></tt> files. In
-order to integrate better with each platform, there are separate key map files
-for Linux, OSX and Windows. Only key maps for the corresponding platform will
-be loaded.</p>
-<div class="section" id="example">
-<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
-<p>Here&#8217;s an excerpt from the default key map for Windows:</p>
+  <div class="section" id="id1">
+<h1>键盘绑定<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>键盘绑定使得你能够将按键与动作进行映射。</p>
+<div class="section" id="id2">
+<h2>文件格式<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>键盘绑定是以 <tt class="docutils literal"><span class="pre">.sublime-keymap</span></tt> 作为扩展名的JSON文件。为了让键盘能够更好的与各平台融合，系统为
+Linux，OSX以及Windows平台分别提供了不同的文件。只有与当前系统相符的键盘映射文件才会生效。</p>
+<div class="section" id="id3">
+<h3>示例<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>下面这段代码是从Windows平台默认的按键映射文件中截取出来的:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">[</span>
         <span class="p">{</span> <span class="s">&quot;keys&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s">&quot;ctrl+shift+n&quot;</span><span class="p">],</span> <span class="s">&quot;command&quot;</span><span class="p">:</span> <span class="s">&quot;new_window&quot;</span> <span class="p">},</span>
         <span class="p">{</span> <span class="s">&quot;keys&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s">&quot;ctrl+o&quot;</span><span class="p">],</span> <span class="s">&quot;command&quot;</span><span class="p">:</span> <span class="s">&quot;prompt_open_file&quot;</span> <span class="p">}</span>
@@ -78,33 +59,28 @@ be loaded.</p>
 </div>
 </div>
 </div>
-<div class="section" id="defining-and-overriding-key-bindings">
-<h2>Defining and Overriding Key Bindings<a class="headerlink" href="#defining-and-overriding-key-bindings" title="Permalink to this headline">¶</a></h2>
-<p>Sublime Text ships with a default key map (for example,
-<tt class="file docutils literal"><span class="pre">Packages/Default/Default</span> <span class="pre">(Windows).sublime-keymap)</span></tt>. In order to
-override the key bindings defined there, or to add new ones, you can store
-them in a separate key map of higher precedence: for example
-<tt class="file docutils literal"><span class="pre">Packages/User/Default</span> <span class="pre">(Windows).sublime-keymap</span></tt>.</p>
-<p>See <a class="reference internal" href="../extensibility/packages.html#merging-and-order-of-precedence"><em>Merging and Order of Precedence</em></a> for more information on how
-Sublime Text sorts files for merging.</p>
+<div class="section" id="id4">
+<h2>定义与重载键盘绑定<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Sublime Text自带一套默认的键盘绑定（一般对应这个文件：
+<tt class="file docutils literal"><span class="pre">Packages/Default/Default</span> <span class="pre">(Windows).sublime-keymap)</span></tt>）。如果你想重载其中的部分键盘
+或者添加新的键盘绑定，你可以在具有更高文件优先级的位置重新存储一个文件，例如
+<tt class="file docutils literal"><span class="pre">Packages/User/Default</span> <span class="pre">(Windows).sublime-keymap</span></tt>。</p>
+<p>请参考 <em class="xref std std-ref">合并与优先级顺序</em> 来了解Sublime Text中关于文件优先级以及文件合并的更多信息</p>
 </div>
-<div class="section" id="advanced-key-bindings">
-<h2>Advanced Key Bindings<a class="headerlink" href="#advanced-key-bindings" title="Permalink to this headline">¶</a></h2>
-<p>Simple key bindings consist of a key combination and a command to be executed.
-However, there are more complex syntaxes for passing arguments and
-contextual awareness.</p>
-<div class="section" id="passing-arguments">
-<h3>Passing Arguments<a class="headerlink" href="#passing-arguments" title="Permalink to this headline">¶</a></h3>
-<p>Arguments are specified in the <tt class="docutils literal"><span class="pre">args</span></tt> key:</p>
+<div class="section" id="id5">
+<h2>高级键盘绑定<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>对于简单的键盘绑定，就是一个键盘组合对应一个命令。除此之外，还有一些传递参数和上下文信息的复杂语法。</p>
+<div class="section" id="id6">
+<h3>参数传递<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>通过 <tt class="docutils literal"><span class="pre">args</span></tt> 键可以指定需要的参数:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">{</span> <span class="s">&quot;keys&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s">&quot;shift+enter&quot;</span><span class="p">],</span> <span class="s">&quot;command&quot;</span><span class="p">:</span> <span class="s">&quot;insert&quot;</span><span class="p">,</span> <span class="s">&quot;args&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s">&quot;characters&quot;</span><span class="p">:</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">}</span> <span class="p">}</span>
 </pre></div>
 </div>
-<p>Here, <tt class="docutils literal"><span class="pre">\n</span></tt> is passed to the <tt class="docutils literal"><span class="pre">insert</span></tt> command when you press <tt class="kbd docutils literal"><span class="pre">Shift+Enter</span></tt>.</p>
+<p>在这个例子中当你按下 <tt class="kbd docutils literal"><span class="pre">Shift+Enter</span></tt> 的时候， <tt class="docutils literal"><span class="pre">\n</span></tt> 将会作为参数传递给 <tt class="docutils literal"><span class="pre">insert</span></tt> 命令</p>
 </div>
-<div class="section" id="contexts">
-<h3>Contexts<a class="headerlink" href="#contexts" title="Permalink to this headline">¶</a></h3>
-<p>Contexts determine whether a given key binding will be enabled based on the
-caret&#8217;s position or some other state.</p>
+<div class="section" id="id7">
+<h3>上下文<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>利用上下文，可以通过插入符的位置及其他状态信息来决定某种键盘组合是否可以发挥作用。</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">{</span> <span class="s">&quot;keys&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s">&quot;escape&quot;</span><span class="p">],</span> <span class="s">&quot;command&quot;</span><span class="p">:</span> <span class="s">&quot;clear_fields&quot;</span><span class="p">,</span> <span class="s">&quot;context&quot;</span><span class="p">:</span>
         <span class="p">[</span>
                 <span class="p">{</span> <span class="s">&quot;key&quot;</span><span class="p">:</span> <span class="s">&quot;has_next_field&quot;</span><span class="p">,</span> <span class="s">&quot;operator&quot;</span><span class="p">:</span> <span class="s">&quot;equal&quot;</span><span class="p">,</span> <span class="s">&quot;operand&quot;</span><span class="p">:</span> <span class="n">true</span> <span class="p">}</span>
@@ -112,11 +88,10 @@ caret&#8217;s position or some other state.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>This key binding translates to <em>clear snippet fields and resume normal editing
-if there is a next field available</em>. Thus, unless you are cycling through snippet
-fields, pressing <tt class="kbd docutils literal"><span class="pre">ESC</span></tt> will <strong>not</strong> trigger this key binding. (However,
-something else might occur instead if <tt class="kbd docutils literal"><span class="pre">ESC</span></tt> happens to be bound to a
-different context too&#8212;and that&#8217;s likely to be the case for <tt class="kbd docutils literal"><span class="pre">ESC</span></tt>.)</p>
+<p>这段代码的作用是 <em>当有下一个可用域的时候就清空当前代码片段，并返回正常编辑模式</em> 。因此，当你
+没有在代码域中循环切换的时候，按下 <tt class="kbd docutils literal"><span class="pre">ESC</span></tt> 键就 <em>不会</em> 触发这个按键绑定（然而，如果 <tt class="kbd docutils literal"><span class="pre">ESC</span></tt>
+恰巧与另外的上下文进行了绑定，那么那个动作仍然会被触发——事实上，对于 <tt class="kbd docutils literal"><span class="pre">ESC</span></tt> 来说，这种情况
+并不少见）。</p>
 </div>
 </div>
 </div>
@@ -129,27 +104,21 @@ different context too&#8212;and that&#8217;s likely to be the case for <tt class
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Key Bindings</a><ul>
-<li><a class="reference internal" href="#file-format">File Format</a><ul>
-<li><a class="reference internal" href="#example">Example</a></li>
+<li><a class="reference internal" href="#">键盘绑定</a><ul>
+<li><a class="reference internal" href="#id2">文件格式</a><ul>
+<li><a class="reference internal" href="#id3">示例</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#defining-and-overriding-key-bindings">Defining and Overriding Key Bindings</a></li>
-<li><a class="reference internal" href="#advanced-key-bindings">Advanced Key Bindings</a><ul>
-<li><a class="reference internal" href="#passing-arguments">Passing Arguments</a></li>
-<li><a class="reference internal" href="#contexts">Contexts</a></li>
+<li><a class="reference internal" href="#id4">定义与重载键盘绑定</a></li>
+<li><a class="reference internal" href="#id5">高级键盘绑定</a><ul>
+<li><a class="reference internal" href="#id6">参数传递</a></li>
+<li><a class="reference internal" href="#id7">上下文</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="indentation.html"
-                        title="previous chapter">Indentation</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="menus.html"
-                        title="next chapter">Menus</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../_sources/customization/key_bindings.txt"
@@ -178,14 +147,7 @@ different context too&#8212;and that&#8217;s likely to be the case for <tt class
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="menus.html" title="Menus"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="indentation.html" title="Indentation"
-             >previous</a> |</li>
-        <li><a href="../index.html">Sublime Text Unofficial Documentation  documentation</a> &raquo;</li>
-          <li><a href="customization.html" >Customizing Sublime Text</a> &raquo;</li> 
+        <li><a href="../index.html">Sublime Text Unofficial Documentation  documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

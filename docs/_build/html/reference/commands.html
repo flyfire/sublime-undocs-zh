@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Commands &mdash; Sublime Text Unofficial Documentation  documentation</title>
+    <title>命令 &mdash; Sublime Text Unofficial Documentation  documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -51,60 +51,57 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="commands">
-<h1>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p>This list of commands is a work in progress.</p>
+  <div class="section" id="id1">
+<h1>命令<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>概述<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>命令列表的整理仍在进行中。</p>
 </div>
-<div class="section" id="about-paths-in-command-arguments">
-<h2>About Paths in Command Arguments<a class="headerlink" href="#about-paths-in-command-arguments" title="Permalink to this headline">¶</a></h2>
-<p>Some commands take paths as parameters. Among these, some support snippet-like
-syntax, while others don&#8217;t. A command of the first kind would take a parameter
-like <em>${packages}/SomeDir/SomeFile.Ext</em> whereas a command of the second kind
-would take a parameter like <em>Packages/SomeDir/SomeFile.Ext</em>.</p>
-<p>Generally, newer commands support the snippet-like syntax.</p>
-<p>Often, relative paths in arguments to commands are assumed to start at the
-<tt class="docutils literal"><span class="pre">Data</span></tt> directory.</p>
-<div class="section" id="variables-in-paths-as-arguments">
-<h3>Variables in Paths as Arguments<a class="headerlink" href="#variables-in-paths-as-arguments" title="Permalink to this headline">¶</a></h3>
-<p>The same variables available to build systems are expanded in arguments to
-commands. See <a class="reference internal" href="build_systems.html#build-system-variables"><em>Build System Variables</em></a> for more information.</p>
+<div class="section" id="id3">
+<h2>关于命令参数中的路径<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>有些命令把路径作为参数。这些命令中，有些支持代码片段那样的语法，有些则不支持。第一中类型的命令
+可以接受类似 <em>${packages}/SomeDir/SomeFile.Ext</em> 这样的参数，而第二种类型的命令可以接受类似
+<em>Packages/SomeDir/SomeFile.Ext</em> 这样的参数。</p>
+<p>大体上来说，较新引入的命令支持类似代码片段的语法。</p>
+<p>通常情况下，认为命令参数中的相对路径是相对与 <tt class="docutils literal"><span class="pre">Data</span></tt> 目录来说的。</p>
+<div class="section" id="id4">
+<h3>参数中路径包含的变量<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>构建系统中使用的变量在参数中也可以使用。参考 <em class="xref std std-ref">构建系统</em> 来了解更多信息。</p>
 </div>
 </div>
-<div class="section" id="id1">
-<h2>Commands<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h2>命令列表<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
 <dt><strong>build</strong></dt>
-<dd><p class="first">Runs a build system.</p>
+<dd><p class="first">运行某个构件系统。</p>
 <ul class="last simple">
-<li><strong>variant</strong> [String]: Optional. The name of the variant to be run.</li>
+<li><strong>variant</strong> [String]: 可选参数。要运行配置的名称</li>
 </ul>
 </dd>
 <dt><strong>run_macro_file</strong></dt>
-<dd><p class="first">Runs a <em>.sublime-macro</em> file.</p>
+<dd><p class="first">运行一个 <em>.sublime-macro</em> 文件。</p>
 <ul class="last simple">
-<li><strong>file</strong> [String]: Path to the macro file.</li>
+<li><strong>file</strong> [String]: 宏文件路径。</li>
 </ul>
 </dd>
 <dt><strong>insert_snippet</strong></dt>
-<dd><p class="first">Inserts a snippet from a string or <em>.sublime-snippet</em> file.</p>
+<dd><p class="first">从字符串或者 <em>.sublime-snippet</em> 文件中插入一个代码片段。</p>
 <ul class="last simple">
-<li><strong>contents</strong> [String]: Snippet as a string to be inserted.</li>
-<li><strong>name</strong> [String]: Path to the <em>.sublime-snippet</em> file to be inserted.</li>
+<li><strong>contents</strong> [String]: 要插入的代码片段的字符串内容。</li>
+<li><strong>name</strong> [String]: 要插入的 <em>.sublime-snippet</em> 文件的路径。</li>
 </ul>
 </dd>
 <dt><strong>insert</strong></dt>
-<dd><p class="first">Inserts a string.</p>
+<dd><p class="first">插入一个字符串。</p>
 <ul class="last simple">
-<li><strong>characters</strong> [String]: String to be inserted.</li>
+<li><strong>characters</strong> [String]: 要插入的字符串内容。</li>
 </ul>
 </dd>
 <dt><strong>move</strong></dt>
-<dd><p class="first">Advances the caret by predefined units.</p>
+<dd><p class="first">根据指定的单位移动光标。</p>
 <ul class="last simple">
-<li><strong>by</strong> [Enum]: Values: <em>characters</em>, <em>words</em>, <em>word_ends</em>, <em>subwords</em>, <em>subword_ends</em>, <em>lines</em>, <em>pages</em>, <em>stops</em>.</li>
-<li><strong>forward</strong> [Bool]: Whether to advance or reverse in the buffer.</li>
+<li><strong>by</strong> [Enum]: 可选值: <em>characters</em>, <em>words</em>, <em>word_ends</em>, <em>subwords</em>, <em>subword_ends</em>, <em>lines</em>, <em>pages</em>, <em>stops</em>.</li>
+<li><strong>forward</strong> [Bool]: 在缓冲区中向前或向后移动。</li>
 <li><strong>word_begin</strong> [Bool]</li>
 <li><strong>empty_line</strong> [Bool]</li>
 <li><strong>punct_begin</strong> [Bool]</li>
@@ -112,229 +109,219 @@ commands. See <a class="reference internal" href="build_systems.html#build-syste
 </ul>
 </dd>
 <dt><strong>move_to</strong></dt>
-<dd><p class="first">Advances the caret to predefined locations.</p>
+<dd><p class="first">将光标移动到指定位置。</p>
 <ul class="last simple">
-<li><strong>to</strong> [Enum]: Values: <em>bol</em>, <em>eol</em>, <em>bof</em>, <em>eof</em>, <em>brackets</em>.</li>
-<li><strong>extend</strong> [Bool]: Whether to extend the selection. Defaults to <tt class="docutils literal"><span class="pre">false</span></tt>.</li>
+<li><strong>to</strong> [Enum]: 可选值: <em>bol</em>, <em>eol</em>, <em>bof</em>, <em>eof</em>, <em>brackets</em>.</li>
+<li><strong>extend</strong> [Bool]: 是否扩展选择内容。默认值是 <tt class="docutils literal"><span class="pre">false</span></tt> 。</li>
 </ul>
 </dd>
 <dt><strong>new_window</strong></dt>
-<dd>Opens a new window.</dd>
+<dd>打开一个新的窗口。</dd>
 <dt><strong>close_window</strong></dt>
-<dd>Closes the active window.</dd>
+<dd>关闭当前活跃窗口。</dd>
 <dt><strong>switch_file</strong></dt>
-<dd><p class="first">Switches between two files with the same name and different extensions.</p>
+<dd><p class="first">在有相同文件名、不同扩展名的两个文件之间进行切换。</p>
 <ul class="last simple">
-<li><strong>extensions</strong> [[String]]: Extensions (without leading dot) for which switching will be enabled.</li>
+<li><strong>extensions</strong> [[String]]: 切换可以发生的文件扩展名（不包括点号）。</li>
 </ul>
 </dd>
 <dt><strong>close</strong></dt>
-<dd>Closes the active view.</dd>
+<dd>关闭当前视图。</dd>
 <dt><strong>close_file</strong></dt>
-<dd>Closes the active view and, under certain circumsances, the whole application.
+<dd>关闭当前视图，在某些情况下关闭整个应用程序。
 XXX Sounds kinda wrong.</dd>
 <dt><strong>save</strong></dt>
-<dd>Saves the active file.</dd>
+<dd>保存当前激活的文件。</dd>
 <dt><strong>prompt_save_as</strong></dt>
-<dd>Prompts for a new file name and saves the active file.</dd>
+<dd>提示输入新的文件名称并保存。</dd>
 <dt><strong>toggle_sidebar</strong></dt>
-<dd>Shows or hides the sidebar.</dd>
+<dd>开启或关闭侧边栏。</dd>
 <dt><strong>toggle_full_screen</strong></dt>
-<dd>Toggles full screen mode on or off.</dd>
+<dd>开启或退出全屏模式。</dd>
 <dt><strong>toggle_distraction_free</strong></dt>
-<dd>Toggles distraction free mode on or off.</dd>
+<dd>开启或退出免打扰模式。</dd>
 <dt><strong>left_delete</strong></dt>
-<dd>Deletes the character right before the caret.</dd>
+<dd>删除光标前的那个字符</dd>
 <dt><strong>right_delete</strong></dt>
-<dd>Deletes the character right after the caret.</dd>
+<dd>删除光标后的那个字符。</dd>
 <dt><strong>undo</strong></dt>
-<dd>Undoes the latest action.</dd>
+<dd>撤销上次操作。</dd>
 <dt><strong>redo</strong></dt>
-<dd>Reapplies the latest undone action.</dd>
+<dd>重做上次撤销的操作。</dd>
 <dt><strong>redo_or_repeat</strong></dt>
-<dd>Performs the latest action again.</dd>
+<dd>再次执行上次的动作。</dd>
 <dt><strong>soft_undo</strong></dt>
-<dd>Undoes each action stepping through granular edits.</dd>
+<dd>先移动到编辑位置再进行撤销操作。</dd>
 <dt><strong>soft_redo</strong></dt>
-<dd>Redoes each action stepping through granular edits.</dd>
+<dd>先移动到编辑位置再进行重做操作。</dd>
 <dt><strong>cut</strong></dt>
-<dd>Removes the selected text and sends it to the system clipboard. Put
-differently, it cuts.</dd>
+<dd>把当前选中的文字从缓冲区中移除，并送到系统剪贴板中。换句话说，执行剪切操作。</dd>
 <dt><strong>copy</strong></dt>
-<dd>Sends the selected text to to the system clipboard.</dd>
+<dd>把当前选中的文字送到系统剪贴板中。</dd>
 <dt><strong>paste</strong></dt>
-<dd>Inserts the clipboard contents after the caret.</dd>
+<dd>把剪贴板中的内容插入到光标后。</dd>
 <dt><strong>paste_and_indent</strong></dt>
-<dd>Inserts the clipboard contents after the caret and indents contextually.</dd>
+<dd>把剪贴板中的内容插入到光标后同时根据上下文进行缩进。</dd>
 <dt><strong>select_lines</strong></dt>
-<dd><p class="first">Adds a line to the current selection.</p>
+<dd><p class="first">在当前选择的内容中添加一行。</p>
 <ul class="last simple">
-<li><strong>forward</strong> [Bool]: Whether to add the next or previous line. Defaults to
-<tt class="docutils literal"><span class="pre">true</span></tt>.</li>
+<li><strong>forward</strong> [Bool]: 添加下一行还是上一行。默认值是 <tt class="docutils literal"><span class="pre">true</span></tt> 。</li>
 </ul>
 </dd>
 <dt><strong>scroll_lines</strong></dt>
-<dd><p class="first">Scrolls lines in the view.</p>
+<dd><p class="first">在视图中滚动行。</p>
 <ul class="last simple">
-<li><strong>amount</strong> [Float]: Positive values scroll lines down and negative values scroll lines up.</li>
+<li><strong>amount</strong> [Float]: 正值向下滚动，负值向上滚动。</li>
 </ul>
 </dd>
 <dt><strong>prev_view</strong></dt>
-<dd>Switches to the previous view.</dd>
+<dd>切换到上一个视图。</dd>
 <dt><strong>next_view</strong></dt>
-<dd>Switches to the next view.</dd>
+<dd>切换到下一个视图。</dd>
 <dt><strong>next_view_in_stack</strong></dt>
-<dd>Switches to the most recently active view.</dd>
+<dd>切换到最近的活跃视图。</dd>
 <dt><strong>previous_view_in_stack</strong></dt>
-<dd>Switches to the view that was active before the most recently active view.
-I don&#8217;t think this is very clear or even true.</dd>
+<dd>切换到最近活跃视图的前一个活跃视图。我不认为这种说法非常确切，这么说甚至是不正确的。</dd>
 <dt><strong>select_all</strong></dt>
-<dd>Select the view&#8217;s content.</dd>
+<dd>选择视图的全部内容。</dd>
 <dt><strong>split_selection_into_lines</strong></dt>
-<dd>Unsurprisingly, it splits the selection into lines.</dd>
+<dd>不出所料的，把当前的选择切散成不同行。</dd>
 <dt><strong>single_selection</strong></dt>
-<dd>Collapses multiple selections into a single selection.</dd>
+<dd>把多重选择整合成单一选择。</dd>
 <dt><strong>clear_fields</strong></dt>
-<dd>Breaks out of the active snippet field cycle.</dd>
+<dd>跳出活跃代码片段域的选择。</dd>
 <dt><strong>hide_panel</strong></dt>
-<dd><p class="first">Hides the active panel.</p>
-<ul class="simple">
-<li><strong>cancel</strong> [Bool]: Notifies the panel to restore the selection to what it</li>
+<dd><p class="first">隐藏当前活跃面板。</p>
+<ul class="last simple">
+<li><strong>cancel</strong> [Bool]: 当面板打开的时候恢复它之前选择的内容。（仅对增量搜索面板有效。）</li>
 </ul>
-<p class="last">was when the panel was opened. (Only incremental find panel.)</p>
 </dd>
 <dt><strong>hide_overlay</strong></dt>
-<dd>Hides the active overlay.  Show the overlay using the show_overlay command.</dd>
+<dd>隐藏覆盖控件。使用 show_overlay 命令打开覆盖控件。</dd>
 <dt><strong>hide_auto_complete</strong></dt>
-<dd>Hides the auto complete list.</dd>
+<dd>隐藏自动补全列表。</dd>
 <dt><strong>insert_best_completion</strong></dt>
-<dd><p class="first">Inserts the best completion that can be inferred from the current context.
-XXX Probably useless. XXX</p>
+<dd><p class="first">插入根据当前上下文能推断出的最佳补全内容。 XXX 可能没什么用</p>
 <ul class="last simple">
-<li><strong>default</strong> [String]: String to insert failing a best completion.</li>
+<li><strong>default</strong> [String]: 插入根据当前上下文能推断出的最佳补全内容。 XXX 可能没什么用</li>
 </ul>
 </dd>
 <dt><strong>replace_completion_with_next_completion</strong></dt>
-<dd>XXX Useless for users. XXX</dd>
+<dd>XXX 对用户来说没什么用。 XXX</dd>
 <dt><strong>reindent</strong></dt>
-<dd>XXX ??? XXX</dd>
+<dd>XXX ??? XXX
+译者注：重新进行缩进操作，常用于整理文件缩进。）</dd>
 <dt><strong>indent</strong></dt>
-<dd>Increments indentation.</dd>
+<dd>增加缩进。</dd>
 <dt><strong>next_field</strong></dt>
-<dd>Advances the caret to the text snippet field in the current snippet field
-cycle.</dd>
+<dd>将光标移动到下一个代码片段中的可修改区域。</dd>
 <dt><strong>prev_field</strong></dt>
-<dd>Moves the caret to the previous snippet field in the current snippet field
-cycle.</dd>
+<dd>将光标移动到上一个代码片段中的可修改区域。</dd>
 <dt><strong>commit_completion</strong></dt>
-<dd>Inserts into the buffer the item that&#8217;s currently selected in the auto
-complete list. XXX Probably not useful for users. XXX</dd>
+<dd>向缓冲区中插入自动补全列表中当前选中项的内容。 XXX 对用户来说没很么用。</dd>
 <dt><strong>unindent</strong></dt>
-<dd>Unindents.</dd>
+<dd>取消缩进。</dd>
 <dt><strong>toggle_overwrite</strong></dt>
-<dd>Toggles overwriting on or off.</dd>
+<dd>开启关闭覆盖插入选项。</dd>
 <dt><strong>expand_selection</strong></dt>
-<dd><p class="first">Extends the selection up to predifined limits.</p>
+<dd><p class="first">将选择内容扩展到预定义的边界。</p>
 <ul class="last simple">
-<li><strong>to</strong> [Enum]: Values: bol, hardbol, eol, hardeol, bof, eof, brackets, line.</li>
+<li><strong>to</strong> [Enum]: 可选值: bol, hardbol, eol, hardeol, bof, eof, brackets, line.</li>
 </ul>
 </dd>
 <dt><strong>find_under_expand</strong></dt>
-<dd>Adds a new selection based on the current selection or expands the
-selection to the current word.</dd>
+<dd>根据当前选中的内容增加一个新的选择或者把选择项扩展到当前单词。</dd>
 <dt><strong>close_tag</strong></dt>
-<dd>Surrounds the current inner text with the appropiate tags.</dd>
+<dd>为当前内部文本添加适当的标签。</dd>
 <dt><strong>toggle_record_macro</strong></dt>
-<dd>Starts or stops the macro recorder.</dd>
+<dd>开始或关闭宏录制器。</dd>
 <dt><strong>run_macro</strong></dt>
-<dd>Runs the macro stored in the macro buffer.</dd>
+<dd>运行宏缓冲区中存储的宏脚本。</dd>
 <dt><strong>show_overlay</strong></dt>
-<dd><p class="first">Shows the requested overlay. Use the <strong>hide_overlay</strong> command to hide it.</p>
+<dd><p class="first">显示请求的覆盖控件。使用 <strong>hide_overlay</strong> 命令来隐藏覆盖控件。</p>
 <ul class="last">
 <li><dl class="first docutils">
 <dt><strong>overlay</strong> [Enum]:</dt>
-<dd><p class="first">The type of overlay to show. Possible values:</p>
+<dd><p class="first">要显示的覆盖控件的类型。可选值：</p>
 <ul class="last simple">
-<li><em>goto</em>: Show the <a class="reference external" href="http://docs.sublimetext.info/en/latest/file_management/file_management.html#goto-anything">Goto Anything</a> overlay.</li>
-<li><em>command_palette</em>: Show the <a class="reference external" href="http://docs.sublimetext.info/en/latest/extensibility/command_palette.html">command palette</a>.</li>
+<li><em>goto</em>: 显示 <a href="#id7"><span class="problematic" id="id8">`Goto Anything（快速跳转 &lt;http://docs.sublimetext.info/en/latest/file_management/file_management.html#goto-anything&gt;``_</span></a> 控件。</li>
+<li><em>command_palette</em>: 显示 <a class="reference external" href="http://docs.sublimetext.info/en/latest/extensibility/command_palette.html">命令面板</a>.</li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><p class="first"><strong>show_files</strong> [Bool]: If using the goto overlay, start by displaying files rather than an empty widget.</p>
+<li><p class="first"><strong>show_files</strong> [Bool]: 如果显示快速跳转面板，开始的时候显示文件列表，而不是显示一个空的控件。</p>
 </li>
-<li><p class="first"><strong>text</strong> [String]: The initial contents to put in the overlay.</p>
+<li><p class="first"><strong>text</strong> [String]: 放到覆盖控件中的初始值。</p>
 </li>
 </ul>
 </dd>
 <dt><strong>show_panel</strong></dt>
-<dd><p class="first">Shows a panel.</p>
+<dd><p class="first">显示面板。</p>
 <ul class="last simple">
-<li><strong>panel</strong> [Enum]: Values: incremental_find, find, replace, find_in_files, console</li>
-<li><strong>reverse</strong> [Bool]: Whether to search backwards in the buffer.</li>
-<li><strong>toggle</strong> [Bool]: Whether to hide the panel if it&#8217;s already visible.</li>
+<li><strong>panel</strong> [Enum]: 可选值: incremental_find, find, replace, find_in_files, console</li>
+<li><strong>reverse</strong> [Bool]: 在缓冲区中是否后向搜索内容。</li>
+<li><strong>toggle</strong> [Bool]: 当面板已经可见时，是否隐藏面板。</li>
 </ul>
 </dd>
 <dt><strong>find_next</strong></dt>
-<dd>Finds the next occurrence of the current search term.</dd>
+<dd>找到当前搜索内容的下一个匹配项。</dd>
 <dt><strong>find_prev</strong></dt>
-<dd>Finds the previous occurrence of the current search term.</dd>
+<dd>找到当前搜索内容的上一个匹配项。</dd>
 <dt><strong>find_under</strong></dt>
-<dd>Finds the next occurrence of the current selection or the current word.</dd>
+<dd>找到与当前选中内容或光标所在位置档次匹配的下一个内容。</dd>
 <dt><strong>find_under_prev</strong></dt>
-<dd>Finds the previous occurrence of the current selection or the current word.</dd>
+<dd>找到与当前选中内容或光标所在位置档次匹配的上一个内容。</dd>
 <dt><strong>find_all_under</strong></dt>
-<dd>Finds all occurrences of the current selection or the current word.</dd>
+<dd>选中与当前选择内容或光标所在位置单词匹配的所有内容。</dd>
 <dt><strong>slurp_find_string</strong></dt>
-<dd>Copies the current selection or word into the &#8220;find&#8221; field of the find
-panel.</dd>
+<dd>复制当前选中内容或当前单词到搜索面板中的 &#8220;find&#8221; 域。</dd>
 <dt><strong>slurp_replace_string</strong></dt>
-<dd>Copies the current selection or word into the &#8220;replace&#8221; field of the find
-and replace panel.</dd>
+<dd>复制当前选中内容或当前单词到搜索域替换面板中的 &#8220;replace&#8221; 域。</dd>
 <dt><strong>next_result</strong></dt>
-<dd>Advance to the next captured result.</dd>
+<dd>移动到下一个搜索到的结果。</dd>
 <dt><strong>prev_result</strong></dt>
-<dd>Move to the previous captured result.</dd>
+<dd>移动到上一个搜索到的结果。</dd>
 <dt><strong>toggle_setting</strong></dt>
-<dd><p class="first">Toggles the value of a boolean setting.</p>
+<dd><p class="first">修改布尔型设置项的值。</p>
 <ul class="last simple">
-<li><strong>setting</strong> [String]: The name of the setting to be toggled.</li>
+<li><strong>setting</strong> [String]: 要修改的设置项的名称。</li>
 </ul>
 </dd>
 <dt><strong>next_misspelling</strong></dt>
-<dd>Advance to the next misspelling</dd>
+<dd>移动到下一个错误拼写的单词的位置。</dd>
 <dt><strong>prev_misspelling</strong></dt>
-<dd>Move to the previous misspelling.</dd>
+<dd>移动到上一个错误拼写的单词的位置。</dd>
 <dt><strong>swap_line_down</strong></dt>
-<dd>Swaps the current line with the line below.</dd>
+<dd>交换当前行与下一行。</dd>
 <dt><strong>swap_line_up</strong></dt>
-<dd>Swaps the current line with the line above.</dd>
+<dd>交换当前行与上一行。</dd>
 <dt><strong>toggle_comment</strong></dt>
-<dd><p class="first">Comments or uncomments the active lines.</p>
+<dd><p class="first">为当前行添加或取消注释。</p>
 <ul class="last simple">
-<li><strong>block</strong> [Bool]: Whether to use a block comment.</li>
+<li><strong>block</strong> [Bool]: 为当前行添加或取消注释。</li>
 </ul>
 </dd>
 <dt><strong>join_lines</strong></dt>
-<dd>Joins the current line with the next one.</dd>
+<dd>把当前行与下一行连接起来。</dd>
 <dt><strong>duplicate_line</strong></dt>
-<dd>Duplicates the current line.</dd>
+<dd>重复当前行内容。</dd>
 <dt><strong>auto_complete</strong></dt>
-<dd>Opens the auto comeplete list.</dd>
+<dd>打开自动补全列表。</dd>
 <dt><strong>replace_completion_with_auto_complete</strong></dt>
-<dd>XXX Useless for users. XXX</dd>
+<dd>XXX 对用户来说没什么用。 XXX</dd>
 <dt><strong>show_scope_name</strong></dt>
-<dd>Shows the name for the caret&#8217;s scope in the status bar.</dd>
+<dd>在状态栏中显示光标所在作用域的名称。</dd>
 <dt><strong>exec</strong></dt>
-<dd><p class="first">Runs an external process asynchronously.</p>
-<p class="last">XXX Document all options.</p>
+<dd><p class="first">异步运行一个外部进程。</p>
+<p class="last">XXX 为所有选项添加文档。</p>
 </dd>
 <dt><strong>transpose</strong></dt>
-<dd>Makes stuff dance.</dd>
+<dd>移动内容。</dd>
 <dt><strong>sort_lines</strong></dt>
-<dd><p class="first">Sorts lines.</p>
+<dd><p class="first">对行进行排序。</p>
 <ul class="last simple">
-<li><strong>case_sensitive</strong> [Bool]: Whether the sort should be case sensitive.</li>
+<li><strong>case_sensitive</strong> [Bool]: 对行进行排序。</li>
 </ul>
 </dd>
 <dt><strong>set_layout</strong></dt>
@@ -346,30 +333,29 @@ and replace panel.</dd>
 <dt><strong>select_by_index</strong></dt>
 <dd>XXX</dd>
 <dt><strong>next_bookmark</strong></dt>
-<dd>Select the next bookmarked region.</dd>
+<dd>选择下一个被标记的区域。</dd>
 <dt><strong>prev_bookmark</strong></dt>
-<dd>Select the previous bookmarked region.</dd>
+<dd>选择上一个被书签标记的区域。</dd>
 <dt><strong>toggle_bookmark</strong></dt>
-<dd>Sets or unsets a bookmark for the active region(s). (Bookmarks can be
-accessed via the regions API using <tt class="docutils literal"><span class="pre">&quot;bookmarks&quot;</span></tt> as the key.)</dd>
+<dd>对活跃区域设置书签或取消书签。（在区域API中使用 <tt class="docutils literal"><span class="pre">&quot;bookmarks&quot;</span></tt> 作为键可以访问书签内容。）</dd>
 <dt><strong>clear_bookmarks</strong></dt>
-<dd>Removes all bookmarks.</dd>
+<dd>清楚所有书签。</dd>
 <dt><strong>select_all_bookmarks</strong></dt>
-<dd>Selects all bookmarked regions.</dd>
+<dd>选择所有被书签标记过的区域。</dd>
 <dt><strong>wrap_lines</strong></dt>
-<dd><p class="first">Wraps lines. By default, it wraps lines at the first ruler&#8217;s column.</p>
+<dd><p class="first">环绕行。默认情况下，在第一个标尺所在的列进行环绕。</p>
 <ul class="last simple">
-<li><strong>width</strong> [Int]: Specifies the column at which lines should be wrapped.</li>
+<li><strong>width</strong> [Int]: 设置环绕开始的列坐标。</li>
 </ul>
 </dd>
 <dt><strong>upper_case</strong></dt>
-<dd>Makes the selection upper case.</dd>
+<dd>把选择的内容改成大写。</dd>
 <dt><strong>lower_case</strong></dt>
-<dd>Makes the selection lower case.</dd>
+<dd>把选择的内容改成小写。</dd>
 <dt><strong>title_case</strong></dt>
-<dd>Capitalizes the selection&#8217;s first character and turns the rest into lower case.</dd>
+<dd>把选择区的首字母大写，其它的字母都小写。</dd>
 <dt><strong>swap_case</strong></dt>
-<dd>Swaps the case of each character in the selection.</dd>
+<dd>转换选择区的每个字母的大小写。(就是大写变小写，小写变大写)</dd>
 <dt><strong>set_mark</strong></dt>
 <dd>XXX</dd>
 <dt><strong>select_to_mark</strong></dt>
@@ -383,9 +369,9 @@ accessed via the regions API using <tt class="docutils literal"><span class="pre
 <dt><strong>show_at_center</strong></dt>
 <dd>XXX</dd>
 <dt><strong>increase_font_size</strong></dt>
-<dd>Increases the font size.</dd>
+<dd>放大字体。</dd>
 <dt><strong>decrease_font_size</strong></dt>
-<dd>Decreases the font size.</dd>
+<dd>缩小字体。</dd>
 <dt><strong>fold</strong></dt>
 <dd>XXX</dd>
 <dt><strong>unfold</strong></dt>
@@ -393,7 +379,7 @@ accessed via the regions API using <tt class="docutils literal"><span class="pre
 <dt><strong>fold_by_level</strong></dt>
 <dd>XXX</dd>
 <dt><strong>context_menu</strong></dt>
-<dd>Shows the context menu.</dd>
+<dd>显示上下文菜单。</dd>
 </dl>
 </div>
 </div>
@@ -406,13 +392,13 @@ accessed via the regions API using <tt class="docutils literal"><span class="pre
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Commands</a><ul>
-<li><a class="reference internal" href="#overview">Overview</a></li>
-<li><a class="reference internal" href="#about-paths-in-command-arguments">About Paths in Command Arguments</a><ul>
-<li><a class="reference internal" href="#variables-in-paths-as-arguments">Variables in Paths as Arguments</a></li>
+<li><a class="reference internal" href="#">命令</a><ul>
+<li><a class="reference internal" href="#id2">概述</a></li>
+<li><a class="reference internal" href="#id3">关于命令参数中的路径</a><ul>
+<li><a class="reference internal" href="#id4">参数中路径包含的变量</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id1">Commands</a></li>
+<li><a class="reference internal" href="#id5">命令列表</a></li>
 </ul>
 </li>
 </ul>

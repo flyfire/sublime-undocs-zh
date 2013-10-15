@@ -13,8 +13,8 @@ the general index.
     syntaxdefs
     build_systems
     key_bindings
-    Settings <settings>
-    Command Palette <command_palette>
+    配置 <settings>
+    命令面板 <command_palette>
     completions
     plugins
     api

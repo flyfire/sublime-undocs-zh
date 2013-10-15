@@ -1,7 +1,8 @@
-Command Line Usage
+命令行用法
 ==================
 
-.. seealso::
+.. 请参考::
 
-   `OS X Command Line <http://www.sublimetext.com/docs/2/osx_command_line.html>`_
-      Official Sublime Text Documentation
+   Sublime Text的官方文档 `OS X Command Line <http://feliving.github.io/Sublime-Text-3-Documentation/osx_command_line.html>`_
+
+

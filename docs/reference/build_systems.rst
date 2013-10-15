@@ -1,39 +1,27 @@
-Build Systems
+构建系统
 =============
 
-Build systems let you run your files through external programs without leaving
-Sublime Text, and see the output they generate.
+构建系统可以让你通过外部程序来运行文件并且在Sublime Text中看到输出结果。
 
-Build systems consist of two---or optionally three---parts:
+构建系统包括两个必要部分和第三个可选部分：
 
-* Configuration data in JSON format (the *.sublime-build* file contents)
-* A Sublime Text command driving the build process
-* An optional, external executable file (script or binary file)
+* JSON格式的配置数据(*.sublime-build*文件)
+* 一个Sublime Text命令来驱动构建过程
+* 可选，外部可执行文件(脚本，二进制文件)
 
-Essentially, *.sublime-build* files are configuration data for an external
-program, as well as for a Sublime Text command (just mentioned). In them, you
-specify the switches, options and environment information you want forwarded.
+从本质上讲，*.sublime-build*文件即是外部程序的配置数据也是前面提到的Sublime Text命令的配置。在其中，需要指定开关，选项，和要传入的环境配置信息。
 
-The Sublime Text command then receives the data stored in the *.sublime-build*
-file. At this point, it can do whatever it needs to do, to *build* the files. By
-default, build systems will use the ``exec`` command implemented by
-*Packages/Default/exec.py*. As explained below, you can override this
-command.
+然后Sublime Text命令从*.sublime-build*文件读取数据。此时，就可以做任何需要*构建*文件的事情了。默认情况下，构建系统会使用``exec``命令，由*Packages/Default/exec.py*中实现。 下面会提到，你可以重写此命令。
 
-Finally, the external program may be a shell script you've created to process
-your files, or a well-known utility like ``make`` or ``tidy``. Usually, these
-executable files will receive paths to files or directories, along with
-switches and options to run with.
+最后，外部程序可能是一个你写好的处理文件的shell脚本，或者一些著名的工具，比如``make``或者``tidy``。 通常，这些可执行文件都要接受文件或者目录路径， 开关和选项一起运行。
 
-Note that build systems can but don't need to call external programs; a valid
-build system could be implemented entirely in Python in a Sublime Text
-command.
+需要注意的是除非其它原因构建系统不需要调用外部程序；你完全可以通过Sublime Text command来实现一个构建系统。
 
 
-File Format
+文件格式
 ***********
 
-*.build-system* files use JSON. Here's an example:
+*.build-system* JSON文件。下面是一个简单的示例：
 
 .. sourcecode:: python
 
@@ -44,92 +32,70 @@ File Format
     }
 
 
-Options
+选项(Options)
 *******
 
 ``cmd``
-    Array containing the command to run and its desired arguments. If you don't
-    specify an absolute path, the external program will be searched in your
-    :const:`PATH`, one of your system's environmental variables.
+    包含需要运行的命令和其参数的数组。如果不指定绝对路径，外部程序会从`PATH`环境变量中搜索。
 
-    On Windows, GUIs are supressed.
+    Windows下GUI会被抑制。
 
 ``file_regex``
-    Optional. Regular expression (Perl-style) to capture error output of
-    ``cmd``. See the next section for details.
+    可选。获取``cmd``错误输出的正则表达式(Perl风格)。参看下一部分。
 
 ``line_regex``
-    Optional. If ``file_regex`` doesn't match on the current line, but
+    可选。If ``file_regex`` doesn't match on the current line, but
     ``line_regex`` exists, and it does match on the current line, then
     walk backwards through the buffer until a line matching ``file regex`` is
     found, and use these two matches to determine the file and line to go to.
 
 ``selector``
-    Optional. Used when **Tools | Build System | Automatic** is set to ``true``.
-    Sublime Text uses this scope selector to find the appropriate build system
-    for the active view.
+    可选。当**Tools | Build System | Automatic** 设为``true``时使用。
+    Sublime Text在此范围内为当前的view选择合适的构建系统。
 
 ``working_dir``
-    Optional. Directory to change the current directory to before running ``cmd``.
-    The original current directory is restored afterwards.
+    可选。 运行``cmd``前需要切换的当前目录。之后会恢复到原来目录。
 
 ``encoding``
-    Optional. Output encoding of ``cmd``. Must be a valid Python encoding.
-    Defaults to ``UTF-8``.
+    可选。``cmd``输出的编码。必须是有效的python编码字符。
+    默认``UTF-8``。
 
 ``target``
-    Optional. Sublime Text command to run. Defaults to ``exec`` (*Packages/Default/exec.py*).
-    This command receives the configuration data specified in the *.build-system* file.
+    可选。 需要运行的Sublime Text命令。默认是``exec`` (*Packages/Default/exec.py*)。
+    这个命令接受*.build-system*文件的配置数据。
 
-    Used to override the default build system command. Note that if you choose
-    to override the default command for build systems, you can add arbitrary
-    variables in the *.sublime-build* file.
+    如果需要覆盖默认的命令来构建，需要在*.sublime-build*文件中指定你特有的变量。
 
 ``env``
-    Optional. Dictionary of environment variables to be merged with the current
-    process' before passing them to ``cmd``.
+    可选。 执行``cmd``需要合并进来的环境变量。
 
-    Use this element, for example, to add or modify environment variables
-    without modifying your system's settings.
+    可以使用它在不修改系统设置的情况下来添加或者修改环境变量。
 
 ``shell``
-    Optional. If ``true``, ``cmd`` will be run through the shell (``cmd.exe``, ``bash``\ ...).
+    可选。如果是``true``, ``cmd``会通过shell来运行(``cmd.exe``, ``bash``\ …)。
 
 ``path``
-    Optional. This string will replace the current process' :const:`PATH` before
-    calling ``cmd``. The old :const:`PATH` value will be restored after that.
+    可选。这个字符串在运行``cmd``前会替换系统变量：`PATH`。之后会把`PATH`恢复原值。
 
-    Use this option to add directories to :const:`PATH` without having to modify
-    your system's settings.
+    可以使用这个选项在不修改系统设置的情况下，添加目录到`PATH`变量中。
 
 ``variants``
-    Optional. A list of dictionaries of options to override the main build
-    system's options. Variant ``name``s will appear in the Command Palette for
-    easy access if the build system's selector matches for the active file.
+    可选。 字典列表，用于覆盖主构件系统的选项。Variant的``name`会显示在构建系统选择时命令面板上。
 
 ``name``
-    **Only valid inside a variant** (see ``variants``). Identifies variant
-    build systems. If ``name`` is *Run*, the variant will show up under the
-    **Tools | Build System** menu and be bound to *Ctrl + Shift + B*.
+    **只在variant内有效** (参看``variants``)。标识variant构建系统。如果``name``是*Run*，这个variant将显示在**Tools | Build System**菜单下，并且绑定到*Ctrl + Shift + B*上。
 
-Capturing Error Output with ``file_regex``
+使用``file_regex``获取错误输出
 ------------------------------------------
 
-The ``file_regex`` option uses a Perl-style regular expression to capture up
-to four fields of error information from the build program's output, namely:
-*filename*, *line number*, *column number* and *error message*. Use
-groups in the pattern to capture this information. The *filename* field and
-the *line number* field are required.
+``file_regex``选项使用正则表达式来获取构建程序输出的错误信息的4个域，分别为：*file name*, *line number*, *column number* 和 *error message*。 可以通过匹配分组来获取这些信息。*file name*和*line number*是必须的。
 
-When error information is captured, you can navigate to error instances in
-your project's files with ``F4`` and ``Shift+F4``. If available, the captured
-*error message* will be displayed in the status bar.
+当捕获到错误信息时，可通过``F4``和``Shift+F4``导航到项目文件的错误实例位置。如果有的话，*error message* 会显示在状态栏。
 
-Platform-specific Options
+特定平台选项
 -------------------------
 
-The ``windows``, ``osx`` and ``linux`` elements let you provide
-platform-specific data in the build system. Here's an example::
+可以使用``windows``, ``osx``和 ``linux``来指定特定平台的配置数据。下面是示例::
 
 
     {
@@ -144,13 +110,12 @@ platform-specific data in the build system. Here's an example::
         }
     }
 
-In this case, ``ant`` will be executed for every platform except Windows,
-where ``ant.bat`` will be used instead.
+示例中，``ant``会在所有除了Windows之外的所有平台下执行，windows下则会执行``ant.bat``。
 
 Variants
 --------
 
-Here's a contrived example of a build system with variants::
+下面是variants的示例::
 
     {
         "selector": "source.python",
@@ -174,77 +139,64 @@ Here's a contrived example of a build system with variants::
     }
 
 
-Given these settings, *Ctrl + B* would run the *date* command, *Crtl + Shift +
-B* would run the Python interpreter and the remaining variants would appear
-in the Command Palette whenever the build system was active.
+上面这些配置，*Ctrl + B* 将运行*date*命令，*Crtl + Shift + B*将运行Python解析器并且其它的variants将在激活构建系统时出现在命令面板上。
 
 .. _build-system-variables:
 
-Build System Variables
+构建系统变量
 **********************
 
-Build systems expand the following variables in *.sublime-build* files:
+构建系统会在*.sublime-build*文件中扩展下面这些变量：
 
 ====================== =====================================================================================
-``$file_path``         The directory of the current file, e.g., *C:\\Files*.
-``$file``              The full path to the current file, e.g., *C:\\Files\\Chapter1.txt*.
-``$file_name``         The name portion of the current file, e.g., *Chapter1.txt*.
-``$file_extension``    The extension portion of the current file, e.g., *txt*.
-``$file_base_name``    The name-only portion of the current file, e.g., *Document*.
-``$packages``          The full path to the *Packages* folder.
-``$project``           The full path to the current project file.
-``$project_path``      The directory of the current project file.
-``$project_name``      The name portion of the current project file.
-``$project_extension`` The extension portion of the current project file.
-``$project_base_name`` The name-only portion of the current project file.
+``$file_path``         当前文件目录，比如，*C:\Files*.
+``$file``              当前文件完整路径，比如，*C:\Files\Chapter1.txt*.
+``$file_name``         当前文件的完整文件名，比如，*Chapter1.txt*.
+``$file_extension``    当前文件的扩展名，比如，*txt*.
+``$file_base_name``    当前文件的名称，比如，*Document*.
+``$packages``          *Packages*目录的完整路径。
+``$project``           当前project文件完整路径.
+``$project_path``      当前porject文件所在的完整目录。
+``$project_name``      project文件的完整文件名。
+``$project_extension`` 当前project文件的扩展名。
+``$project_base_name`` 当前project文件的基本文件名。
 ====================== =====================================================================================
 
-Placeholders for Variables
+变量占位符
 ---------------------------
 
-Features found in snippets can be used with these variables. For example::
+可以像下面这样使用这些变量::
 
     ${project_name:Default}
 
-This will emit the name of the current project if there is one, otherwise ``Default``.
+如果有的话将使用当前项目文件名，如果没有则使用``默认``。
 
 ::
 
     ${file/\.php/\.txt/}
 
-This will emit the full path of the current file, replacing *.php* with *.txt*.
+把当前文正文件路径中*.php*替换成*.txt*。
 
-Running Build Systems
+运行构建系统
 *********************
 
-Select the desired build system from **Tools | Build System**, and then select
-**Tools | Build** or press ``F7``.
+从**Tools | Build System**选择期望的构建系统，然后选择**Tools | Build**或者``F7``。
 
 
 .. _troubleshooting-build-systems:
 
-Troubleshooting Build Systems
+构建系统故障排除
 *****************************
 
-Build systems will look for executables in your :const:`PATH`, unless you specify
-an absolute path to the executable. Therefore, your :const:`PATH` variable must
-be set correctly.
+构建系统会在系统变量`PATH`路径下搜寻可执行文件，除非你指定了特定的可执行目录。所以，`PATH`系统变量要配置正确。
 
-On some operating systems, the value of :const:`PATH` may vary between terminal
-windows and graphical applications. Thus, in your build system, even if the
-command you are using works in the command line, it may not work from Sublime Text.
-This is due to user profiles in shells.
+有些系统中，`PATH`变量的值在终端中与图形应用中会有不同。所有，尽管你在命令行中使用的构建命令运行正常，但也有可能在Sublime Text运行不正常。这跟用户的shell配置有关。
 
-To solve this issue, make sure you set the desired :const:`PATH` so that graphical
-applications such as Sublime Text can find it. See the links below for more
-information.
+要解决这个问题，所有要确保你设定的`PATH`是期望的，让Sublime Text这种图形界面程序可以找到。参考下面的连接获取更多信息。
 
-Alternatively, you can use the ``path`` element in *.sublime-build* files
-to override the :const:`PATH` used to locate the executable specified in ``cmd``.
-This new value for :const:`PATH` will be in effect only as long as your
-build system is running. After that, the old :const:`PATH` will be restored.
+另外，也可以使用*.sublime-build*文件中的``path``配置项来指定`PATH`，不过这只在构建系统运行期间有效，运行完之后会恢复系统原来的值。
 
-.. seealso::
+.. 参考::
 
     `Managing Environment Variables in Windows <http://goo.gl/F77EM>`_
         Search Microsoft knowledge base for this topic.

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Command Palette &mdash; Sublime Text Unofficial Documentation  documentation</title>
+    <title>命令面板 &mdash; Sublime Text Unofficial Documentation  documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -51,12 +51,12 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="command-palette">
-<h1>Command Palette<a class="headerlink" href="#command-palette" title="Permalink to this headline">¶</a></h1>
-<p>The command palette is fed entries with <tt class="docutils literal"><span class="pre">.sublime-commands</span></tt> files.</p>
-<div class="section" id="file-format-sublime-commands-files">
-<h2>File Format (<tt class="docutils literal"><span class="pre">.sublime-commands</span></tt> Files)<a class="headerlink" href="#file-format-sublime-commands-files" title="Permalink to this headline">¶</a></h2>
-<p>Here&#8217;s an excerpt from <tt class="docutils literal"><span class="pre">Packages/Default/Default.sublime-commands</span></tt>:</p>
+  <div class="section" id="id1">
+<h1>命令面板<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>命令面板由 <tt class="docutils literal"><span class="pre">.sublime-commands</span></tt> 文件中的各项组成.</p>
+<div class="section" id="sublime-commands">
+<h2>文件格式 (<tt class="docutils literal"><span class="pre">.sublime-commands</span></tt> 文件)<a class="headerlink" href="#sublime-commands" title="Permalink to this headline">¶</a></h2>
+<p>如下是来自 <tt class="docutils literal"><span class="pre">Packages/Default/Default.sublime-commands</span></tt> 的实例:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">[</span>
     <span class="p">{</span> <span class="s">&quot;caption&quot;</span><span class="p">:</span> <span class="s">&quot;Project: Save As&quot;</span><span class="p">,</span> <span class="s">&quot;command&quot;</span><span class="p">:</span> <span class="s">&quot;save_project_as&quot;</span> <span class="p">},</span>
     <span class="p">{</span> <span class="s">&quot;caption&quot;</span><span class="p">:</span> <span class="s">&quot;Project: Close&quot;</span><span class="p">,</span> <span class="s">&quot;command&quot;</span><span class="p">:</span> <span class="s">&quot;close_project&quot;</span> <span class="p">},</span>
@@ -72,24 +72,20 @@
 </div>
 <dl class="docutils">
 <dt><tt class="docutils literal"><span class="pre">caption</span></tt></dt>
-<dd>Text for display in the command palette.</dd>
+<dd>显示在命令面板中的标题.</dd>
 <dt><tt class="docutils literal"><span class="pre">command</span></tt></dt>
-<dd>Command to be executed.</dd>
+<dd>执行的命令.</dd>
 <dt><tt class="docutils literal"><span class="pre">args</span></tt></dt>
-<dd>Arguments to pass to <tt class="docutils literal"><span class="pre">command</span></tt>. Note that to locate the packages folder
-you need to use a snippet-like variable: <tt class="docutils literal"><span class="pre">${packages}</span></tt> or $packages. This
-differs from other areas of the editor due to different implementations in
-the lower layers.</dd>
+<dd>传给 <tt class="docutils literal"><span class="pre">command</span></tt> 的参数。 需要注意的是，要定位包所在目录，需要使用 <tt class="docutils literal"><span class="pre">${packages}</span></tt> 或 $packages。由于底层的实现不同，这与在编辑器的其他区域的用法略有不同。</dd>
 </dl>
 </div>
-<div class="section" id="how-to-use-the-command-palette">
-<h2>How to Use the Command Palette<a class="headerlink" href="#how-to-use-the-command-palette" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h2>如何使用命令面板<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>Press <tt class="kbd docutils literal"><span class="pre">Ctrl+Shift+P</span></tt></li>
-<li>Select command</li>
+<li>选择命令</li>
 </ol>
-<p>Entries are filtered by current context. Not all entries will be visible at all
-times.</p>
+<p>显示的选项会根据上下文不同有所区别，并不是在任何时候都会显示所有选项。</p>
 </div>
 </div>
 
@@ -101,9 +97,9 @@ times.</p>
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Command Palette</a><ul>
-<li><a class="reference internal" href="#file-format-sublime-commands-files">File Format (<tt class="docutils literal"><span class="pre">.sublime-commands</span></tt> Files)</a></li>
-<li><a class="reference internal" href="#how-to-use-the-command-palette">How to Use the Command Palette</a></li>
+<li><a class="reference internal" href="#">命令面板</a><ul>
+<li><a class="reference internal" href="#sublime-commands">文件格式 (<tt class="docutils literal"><span class="pre">.sublime-commands</span></tt> 文件)</a></li>
+<li><a class="reference internal" href="#id2">如何使用命令面板</a></li>
 </ul>
 </li>
 </ul>
