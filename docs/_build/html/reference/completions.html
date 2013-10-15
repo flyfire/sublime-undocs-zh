@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Completions &mdash; Sublime Text Unofficial Documentation  documentation</title>
+    <title>自动完成 &mdash; Sublime Text Unofficial Documentation  documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -26,7 +26,7 @@
     <link rel="top" title="Sublime Text Unofficial Documentation  documentation" href="../index.html" />
     <link rel="up" title="Reference" href="reference.html" />
     <link rel="next" title="Plugins" href="plugins.html" />
-    <link rel="prev" title="Command Palette" href="command_palette.html" /> 
+    <link rel="prev" title="命令面板" href="command_palette.html" /> 
   </head>
   <body>
     <div class="related">
@@ -39,7 +39,7 @@
           <a href="plugins.html" title="Plugins"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="command_palette.html" title="Command Palette"
+          <a href="command_palette.html" title="命令面板"
              accesskey="P">previous</a> |</li>
         <li><a href="../index.html">Sublime Text Unofficial Documentation  documentation</a> &raquo;</li>
           <li><a href="reference.html" accesskey="U">Reference</a> &raquo;</li> 
@@ -51,24 +51,22 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="completions">
-<h1>Completions<a class="headerlink" href="#completions" title="Permalink to this headline">¶</a></h1>
-<p>Completions provide an IDE-like functionality to insert dynamic content through
-the completions list or by pressing <tt class="kbd docutils literal"><span class="pre">Tab</span></tt>.</p>
-<div class="section" id="file-format">
-<h2>File Format<a class="headerlink" href="#file-format" title="Permalink to this headline">¶</a></h2>
-<p>Completions are JSON files with the <tt class="docutils literal"><span class="pre">.sublime-completions</span></tt> extension.</p>
+  <div class="section" id="id1">
+<h1>自动完成<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>自动完成提供了像IDE那样的使用补全列表或者 <tt class="kbd docutils literal"><span class="pre">Tab</span></tt> 键插入动态内容的功能。</p>
+<div class="section" id="id2">
+<h2>文件格式<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>补全信息是以 <tt class="docutils literal"><span class="pre">.sublime-completions</span></tt> 作为扩展名的JSON文件。</p>
 </div>
-<div class="section" id="structure-of-a-completions-list">
-<h2>Structure of a Completions List<a class="headerlink" href="#structure-of-a-completions-list" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h2>补全列表的结构<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
 <dt><tt class="docutils literal"><span class="pre">scope</span></tt></dt>
-<dd>Determines whether the completions are to be sourced from this file. See
-<a class="reference internal" href="../extensibility/syntaxdefs.html#scopes-and-scope-selectors"><em>Scopes</em></a> for more information.</dd>
+<dd>控制补全是否应该在这个文件中发挥作用。参考 <em class="xref std std-ref">作用域与作用域选择子</em> 来了解更多信息。</dd>
 <dt><tt class="docutils literal"><span class="pre">completions</span></tt></dt>
-<dd>Array of completions.</dd>
+<dd>补全的数组。</dd>
 </dl>
-<p>Here&#8217;s an excerpt from the html completions:</p>
+<p>下面是从html补全列表中截取出来的一部分:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
         <span class="s">&quot;scope&quot;</span><span class="p">:</span> <span class="s">&quot;text.html - source - meta.tag, punctuation.definition.tag.begin&quot;</span><span class="p">,</span>
 
@@ -83,97 +81,86 @@ the completions list or by pressing <tt class="kbd docutils literal"><span class
 </pre></div>
 </div>
 </div>
-<div class="section" id="types-of-completions">
-<h2>Types of Completions<a class="headerlink" href="#types-of-completions" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="plain-strings">
-<h3>Plain Strings<a class="headerlink" href="#plain-strings" title="Permalink to this headline">¶</a></h3>
-<p>Plain strings are equivalent to an entry where the <tt class="docutils literal"><span class="pre">trigger</span></tt> is identical to
-the <tt class="docutils literal"><span class="pre">contents</span></tt>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="s">&quot;foo&quot;</span>
-
-<span class="c"># is equivalent to:</span>
-
-<span class="p">{</span> <span class="s">&quot;trigger&quot;</span><span class="p">:</span> <span class="s">&quot;foo&quot;</span><span class="p">,</span> <span class="s">&quot;contents&quot;</span><span class="p">:</span> <span class="s">&quot;foo&quot;</span> <span class="p">}</span>
-</pre></div>
+<div class="section" id="id4">
+<h2>补全的类型<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3>纯文本字符串<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>当某个补全项 <tt class="docutils literal"><span class="pre">trigger</span></tt> 的内容与 <tt class="docutils literal"><span class="pre">contents</span></tt> 的内容完全一样的时候，纯文本字符串与这个补全项
+是等价的</p>
+<blockquote>
+<div><p>&#8220;foo&#8221;</p>
+<p># 等价于：:</p>
+<p>{ &#8220;trigger&#8221;: &#8220;foo&#8221;, &#8220;contents&#8221;: &#8220;foo&#8221; }</p>
+</div></blockquote>
 </div>
-</div>
-<div class="section" id="trigger-based-completions">
-<h3>Trigger-based Completions<a class="headerlink" href="#trigger-based-completions" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h3>基于触发内容的补全<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <dl class="docutils">
 <dt><tt class="docutils literal"><span class="pre">trigger</span></tt></dt>
-<dd>Text that will be displayed in the completions list and will cause the
-<tt class="docutils literal"><span class="pre">contents</span></tt> to be inserted when validated.</dd>
+<dd>在补全列表中显示的文本，在被确认后，对应的 <tt class="docutils literal"><span class="pre">contents</span></tt> 内容被插入到缓冲区中。</dd>
 <dt><tt class="docutils literal"><span class="pre">contents</span></tt></dt>
-<dd>Text to be inserted in the buffer. Can use snippet features.</dd>
+<dd>要插入到缓冲区中的文本。可以使用代码片段的特性。</dd>
 </dl>
 </div>
 </div>
-<div class="section" id="sources-for-completions">
-<h2>Sources for Completions<a class="headerlink" href="#sources-for-completions" title="Permalink to this headline">¶</a></h2>
-<p>These are the sources for completions the user can control:</p>
+<div class="section" id="id7">
+<h2>补全的来源<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>用户可以控制的补全来源包括:</p>
 <blockquote>
 <div><ul class="simple">
 <li><tt class="docutils literal"><span class="pre">.sublime-completions</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">EventListener.on_query_completions()</span></tt></li>
 </ul>
 </div></blockquote>
-<p>Additionally, other completions are folded into the final list:</p>
+<p>除此之外，其他在最终补全列表中可以显示的内容包括：</p>
 <blockquote>
 <div><ul class="simple">
 <li>Snippets</li>
 <li>Words in the buffer</li>
 </ul>
 </div></blockquote>
-<div class="section" id="priority-of-sources-for-completions">
-<h3>Priority of Sources for Completions<a class="headerlink" href="#priority-of-sources-for-completions" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h3>补全来源的优先级<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
-<li>Snippets</li>
-<li>API-injected completions</li>
-<li><tt class="docutils literal"><span class="pre">.sublime-completions</span></tt> files</li>
-<li>Words in buffer</li>
+<li>代码片段</li>
+<li>使用API插入的补全内容</li>
+<li><tt class="docutils literal"><span class="pre">.sublime-completions</span></tt> 文件</li>
+<li>缓冲区中的单词</li>
 </ul>
 </div></blockquote>
-<p>Snippets will only be automatically completed against an exact match of their
-tab trigger. Other sources for completions are filtered with a case insensitve
-fuzzy search instead.</p>
+<p>代码片段只有在与设置的tab触发器精确匹配时才会被插入。其他类型的补全则是使用大小写不敏感的模糊
+搜索进行匹配。</p>
 </div>
 </div>
-<div class="section" id="the-completions-list">
-<h2>The Completions List<a class="headerlink" href="#the-completions-list" title="Permalink to this headline">¶</a></h2>
-<p>To use the completions list:</p>
+<div class="section" id="id9">
+<h2>补全列表<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<p>要使用补全列表需要:</p>
 <blockquote>
 <div><ul class="simple">
-<li>Press <tt class="kbd docutils literal"><span class="pre">Ctrl+spacebar</span></tt> to open</li>
-<li>Optionally, press <tt class="kbd docutils literal"><span class="pre">Ctrl+spacebar</span></tt> again to select next entry</li>
-<li>Press <tt class="kbd docutils literal"><span class="pre">Enter</span></tt> or <tt class="kbd docutils literal"><span class="pre">Tab</span></tt> to validate selection</li>
+<li>Press <tt class="kbd docutils literal"><span class="pre">Ctrl+spacebar</span></tt> 来打开补全列表</li>
+<li>Optionally, 再次 press <tt class="kbd docutils literal"><span class="pre">Ctrl+spacebar</span></tt> 来选择下一个候选项</li>
+<li>Press <tt class="kbd docutils literal"><span class="pre">Enter</span></tt> or <tt class="kbd docutils literal"><span class="pre">Tab</span></tt> 来确认选择</li>
 </ul>
 </div></blockquote>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">The current selection in the completions list can in fact be validated with
-any punctuation sign that isn&#8217;t itself bound to a snippet.</p>
+<p class="last">补全列表中被选中的当前项可以用任何没有被绑定到代码片段触发器中的标点符号来确认插入。</p>
 </div>
-<p>Snippets show up in the completions list following the pattern:
-<tt class="docutils literal"><span class="pre">&lt;tab_trigger&gt;</span> <span class="pre">:</span> <span class="pre">&lt;name&gt;</span></tt>. For the other completions, you will see just the
-text to be inserted.</p>
-<p>If the list of completions can be narrowed down to one choice, the autocomplete
-dialog will be bypassed and the corresponding content will be inserted right
-away according to the priority rules stated above.</p>
+<p>代码片段以如下形式出现在补全列表中：<tt class="docutils literal"><span class="pre">&lt;tab_trigger&gt;</span> <span class="pre">:</span> <span class="pre">&lt;name&gt;</span></tt> 。对于其他补全项，你只能看到要被
+插入的文本。</p>
+<p>当补全列表被缩减到只有一个候选项时，系统就会绕开自动补全对话框，根据之前介绍的优先级，对应内容
+会被直接插入。</p>
 </div>
-<div class="section" id="enabling-and-disabling-tab-completion-for-completions">
-<h2>Enabling and Disabling Tab Completion for Completions<a class="headerlink" href="#enabling-and-disabling-tab-completion-for-completions" title="Permalink to this headline">¶</a></h2>
-<p>The <tt class="docutils literal"><span class="pre">tab_completion</span></tt> setting is <tt class="docutils literal"><span class="pre">true</span></tt> by default. Set it to <tt class="docutils literal"><span class="pre">false</span></tt> if
-you want <tt class="kbd docutils literal"><span class="pre">Tab</span></tt> to stop sourcing the most likely completion. This setting
-has no effect on triggers defined in <tt class="docutils literal"><span class="pre">.sublime-snippet</span></tt> files, so snippets
-will always be inserted after a <tt class="kbd docutils literal"><span class="pre">Tab</span></tt>.</p>
-<p>With <tt class="docutils literal"><span class="pre">tab_completion</span></tt> on, the same order of priority stated above applies,
-but, unlike the case of the completions list, Sublime Text always will
-insert a completion, even if faced with an ambiguous choice.</p>
-<div class="section" id="inserting-a-literal-tab">
-<h3>Inserting a Literal Tab<a class="headerlink" href="#inserting-a-literal-tab" title="Permalink to this headline">¶</a></h3>
-<p>If <tt class="docutils literal"><span class="pre">tab_completion</span></tt> is <tt class="docutils literal"><span class="pre">true</span></tt>, you can press <tt class="docutils literal"><span class="pre">Shift+Tab</span></tt> after a prefix
-to insert a literal tab character.</p>
+<div class="section" id="tab">
+<h2>为补全列表启用或禁用Tab补全<a class="headerlink" href="#tab" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">tab_completion</span></tt> 选项默认是 <tt class="docutils literal"><span class="pre">true</span></tt> 。如果你想停止 <tt class="kbd docutils literal"><span class="pre">Tab</span></tt> 键对最可能选项的索引功能，
+就把这个值设置为 <tt class="docutils literal"><span class="pre">false</span></tt> 。这个设置项对定义在 <tt class="docutils literal"><span class="pre">.sublime-snippet</span></tt> 文件中的触发器没有效果，
+因此按下 <tt class="kbd docutils literal"><span class="pre">Tab</span></tt> 时，代码片段一定会被插入。</p>
+<p>当 <tt class="docutils literal"><span class="pre">tab_completion</span></tt> 选项开启的时候，上面介绍的优先级顺序仍然有效，但是，与补全列表不同的是，</p>
+<div class="section" id="id10">
+<h3>插入一个Tab（缩进）字符<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>如果 <tt class="docutils literal"><span class="pre">tab_completion</span></tt> 值为 <tt class="docutils literal"><span class="pre">true</span></tt> ，你可以使用 <tt class="docutils literal"><span class="pre">Shift+Tab</span></tt> 来插入一个缩进字符</p>
 </div>
 </div>
 </div>
@@ -186,21 +173,21 @@ to insert a literal tab character.</p>
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Completions</a><ul>
-<li><a class="reference internal" href="#file-format">File Format</a></li>
-<li><a class="reference internal" href="#structure-of-a-completions-list">Structure of a Completions List</a></li>
-<li><a class="reference internal" href="#types-of-completions">Types of Completions</a><ul>
-<li><a class="reference internal" href="#plain-strings">Plain Strings</a></li>
-<li><a class="reference internal" href="#trigger-based-completions">Trigger-based Completions</a></li>
+<li><a class="reference internal" href="#">自动完成</a><ul>
+<li><a class="reference internal" href="#id2">文件格式</a></li>
+<li><a class="reference internal" href="#id3">补全列表的结构</a></li>
+<li><a class="reference internal" href="#id4">补全的类型</a><ul>
+<li><a class="reference internal" href="#id5">纯文本字符串</a></li>
+<li><a class="reference internal" href="#id6">基于触发内容的补全</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#sources-for-completions">Sources for Completions</a><ul>
-<li><a class="reference internal" href="#priority-of-sources-for-completions">Priority of Sources for Completions</a></li>
+<li><a class="reference internal" href="#id7">补全的来源</a><ul>
+<li><a class="reference internal" href="#id8">补全来源的优先级</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#the-completions-list">The Completions List</a></li>
-<li><a class="reference internal" href="#enabling-and-disabling-tab-completion-for-completions">Enabling and Disabling Tab Completion for Completions</a><ul>
-<li><a class="reference internal" href="#inserting-a-literal-tab">Inserting a Literal Tab</a></li>
+<li><a class="reference internal" href="#id9">补全列表</a></li>
+<li><a class="reference internal" href="#tab">为补全列表启用或禁用Tab补全</a><ul>
+<li><a class="reference internal" href="#id10">插入一个Tab（缩进）字符</a></li>
 </ul>
 </li>
 </ul>
@@ -209,7 +196,7 @@ to insert a literal tab character.</p>
 
   <h4>Previous topic</h4>
   <p class="topless"><a href="command_palette.html"
-                        title="previous chapter">Command Palette</a></p>
+                        title="previous chapter">命令面板</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="plugins.html"
                         title="next chapter">Plugins</a></p>
@@ -245,7 +232,7 @@ to insert a literal tab character.</p>
           <a href="plugins.html" title="Plugins"
              >next</a> |</li>
         <li class="right" >
-          <a href="command_palette.html" title="Command Palette"
+          <a href="command_palette.html" title="命令面板"
              >previous</a> |</li>
         <li><a href="../index.html">Sublime Text Unofficial Documentation  documentation</a> &raquo;</li>
           <li><a href="reference.html" >Reference</a> &raquo;</li> 

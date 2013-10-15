@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Key Bindings &mdash; Sublime Text Unofficial Documentation  documentation</title>
+    <title>按键绑定 &mdash; Sublime Text Unofficial Documentation  documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -26,7 +26,7 @@
     <link rel="top" title="Sublime Text Unofficial Documentation  documentation" href="../index.html" />
     <link rel="up" title="Reference" href="reference.html" />
     <link rel="next" title="Settings (Reference)" href="settings.html" />
-    <link rel="prev" title="Build Systems" href="build_systems.html" /> 
+    <link rel="prev" title="构建系统" href="build_systems.html" /> 
   </head>
   <body>
     <div class="related">
@@ -39,7 +39,7 @@
           <a href="settings.html" title="Settings (Reference)"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="build_systems.html" title="Build Systems"
+          <a href="build_systems.html" title="构建系统"
              accesskey="P">previous</a> |</li>
         <li><a href="../index.html">Sublime Text Unofficial Documentation  documentation</a> &raquo;</li>
           <li><a href="reference.html" accesskey="U">Reference</a> &raquo;</li> 
@@ -51,42 +51,40 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="key-bindings">
-<h1>Key Bindings<a class="headerlink" href="#key-bindings" title="Permalink to this headline">¶</a></h1>
-<p>Key bindings map key presses to commands.</p>
-<div class="section" id="file-format">
-<h2>File Format<a class="headerlink" href="#file-format" title="Permalink to this headline">¶</a></h2>
-<p>Key bindings are stored in <tt class="docutils literal"><span class="pre">.sublime-keymap</span></tt> files and defined in JSON. All
-key map filenames need to follow this pattern: <tt class="docutils literal"><span class="pre">Default</span> <span class="pre">(&lt;platform&gt;).sublime-keymap</span></tt>.
-Otherwise, Sublime Text will ignore them.</p>
-<div class="section" id="platform-specific-key-maps">
-<h3>Platform-Specific Key Maps<a class="headerlink" href="#platform-specific-key-maps" title="Permalink to this headline">¶</a></h3>
-<p>Each platform gets its own key map:</p>
+  <div class="section" id="id1">
+<h1>按键绑定<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>按键绑定为按键与动作建立了映射关系。</p>
+<div class="section" id="id2">
+<h2>文件格式<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>对于按键绑定的配置存储于后缀为 <tt class="docutils literal"><span class="pre">.sublime-keymap</span></tt> 的文件中，文件中记录的是JSON内容。所有按键绑定
+配置文件都需要按照如下模式命名： <tt class="docutils literal"><span class="pre">Default</span> <span class="pre">(&lt;platform&gt;).sublime-keymap</span></tt> 。否则，Sublime Text
+将忽略这些文件。</p>
+<div class="section" id="id3">
+<h3>平台相关的键位设置<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>每一个平台都有它自己的按键配置文件：</p>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">Default</span> <span class="pre">(Windows).sublime-keymap</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">Default</span> <span class="pre">(OSX).sublime-keymap</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">Default</span> <span class="pre">(Linux).sublime-keymap</span></tt></li>
 </ul>
-<p>Separate key maps exist to abide by different vendor-specific <a class="reference external" href="http://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction">HCI</a> guidelines.</p>
+<p>也有针对不同的硬件提供商指定的按键配置文件 <a class="reference external" href="http://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction">HCI</a> guidelines.</p>
 </div>
-<div class="section" id="structure-of-a-key-binding">
-<h3>Structure of a Key Binding<a class="headerlink" href="#structure-of-a-key-binding" title="Permalink to this headline">¶</a></h3>
-<p>Key maps are arrays of key bindings. Below you&#8217;ll find valid elements in key bindings.</p>
+<div class="section" id="id4">
+<h3>一个按键绑定项的结构<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>键位表是一个按键绑定项的数组。接下来将要解释的是按键绑定中的有效构成元素：</p>
 <dl class="docutils">
 <dt><tt class="docutils literal"><span class="pre">keys</span></tt></dt>
-<dd>An array of case-sensitive keys to be pressed. Modifiers can be specified
-with the <tt class="docutils literal"><span class="pre">+</span></tt> sign. Chords are built by adding elements to the array,
-e.g. <tt class="docutils literal"><span class="pre">[&quot;ctrl+k&quot;,&quot;ctrl+j&quot;]</span></tt>. Ambiguous chords are resolved with a timeout.</dd>
+<dd>一组大小写敏感的按键组合。可以用 <tt class="docutils literal"><span class="pre">+</span></tt> 指定修饰符。向数组中添加元素可以设置组合键，例如：
+<tt class="docutils literal"><span class="pre">[&quot;ctrl+k&quot;,&quot;ctrl+j&quot;]</span></tt>。</dd>
 <dt><tt class="docutils literal"><span class="pre">command</span></tt></dt>
-<dd>Name of the command to be executed.</dd>
+<dd>要执行的命令的名称。</dd>
 <dt><tt class="docutils literal"><span class="pre">args</span></tt></dt>
-<dd>Dictionary of arguments to be passed to <tt class="docutils literal"><span class="pre">command</span></tt>. Keys must be the names
-of parameters to <tt class="docutils literal"><span class="pre">command</span></tt>.</dd>
+<dd>传递给 <tt class="docutils literal"><span class="pre">command</span></tt> 命令的参数字典。字典中键的名称是 <tt class="docutils literal"><span class="pre">command</span></tt> 命令的参数名称。</dd>
 <dt><tt class="docutils literal"><span class="pre">context</span></tt></dt>
-<dd>Array of contexts to selectively enable the key binding. All contexts must
-be true for the key binding to trigger. See <a class="reference internal" href="#context-reference"><em>Structure of a Context</em></a> below.</dd>
+<dd>选择性控制按键绑定是否起效的上下文内容数组。只有当所有上下文都为真时，按键绑定才能被触发。
+请参考下面的 <a class="reference internal" href="#id5"><em>上下文的结构</em></a> 内容来了解更多内容。</dd>
 </dl>
-<p>Here&#8217;s an example illustrating most of the features outlined above:</p>
+<p>下面是一个说明上面提到的大部分特性的例子:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">{</span> <span class="s">&quot;keys&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s">&quot;shift+enter&quot;</span><span class="p">],</span> <span class="s">&quot;command&quot;</span><span class="p">:</span> <span class="s">&quot;insert_snippet&quot;</span><span class="p">,</span> <span class="s">&quot;args&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s">&quot;contents&quot;</span><span class="p">:</span> <span class="s">&quot;</span><span class="se">\n\t</span><span class="s">$0</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">},</span> <span class="s">&quot;context&quot;</span><span class="p">:</span>
         <span class="p">[</span>
                 <span class="p">{</span> <span class="s">&quot;key&quot;</span><span class="p">:</span> <span class="s">&quot;setting.auto_indent&quot;</span><span class="p">,</span> <span class="s">&quot;operator&quot;</span><span class="p">:</span> <span class="s">&quot;equal&quot;</span><span class="p">,</span> <span class="s">&quot;operand&quot;</span><span class="p">:</span> <span class="n">true</span> <span class="p">},</span>
@@ -98,72 +96,72 @@ be true for the key binding to trigger. See <a class="reference internal" href="
 </pre></div>
 </div>
 </div>
-<div class="section" id="structure-of-a-context">
-<span id="context-reference"></span><h3>Structure of a Context<a class="headerlink" href="#structure-of-a-context" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<span id="id6"></span><h3>上下文的结构<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <dl class="docutils">
 <dt><tt class="docutils literal"><span class="pre">key</span></tt></dt>
-<dd>Name of a context operand to query.</dd>
+<dd>要请求的上下文操作符的名称.</dd>
 <dt><tt class="docutils literal"><span class="pre">operator</span></tt></dt>
-<dd>Type of test to perform against <tt class="docutils literal"><span class="pre">key</span></tt>.</dd>
+<dd>对 <tt class="docutils literal"><span class="pre">key</span></tt> 进行测试的类型。</dd>
 <dt><tt class="docutils literal"><span class="pre">operand</span></tt></dt>
-<dd>Value against which the result of <tt class="docutils literal"><span class="pre">key</span></tt> is tested.</dd>
+<dd>与 <tt class="docutils literal"><span class="pre">key</span></tt> 的结果进行测试的值。</dd>
 <dt><tt class="docutils literal"><span class="pre">match_all</span></tt></dt>
-<dd>Requires the test to succeed for all selections. Defaults to <tt class="docutils literal"><span class="pre">false</span></tt>.</dd>
+<dd>需要多所有选择都进行测试。默认值为 <tt class="docutils literal"><span class="pre">false</span></tt> 。</dd>
 </dl>
-<div class="section" id="context-operands">
-<h4>Context Operands<a class="headerlink" href="#context-operands" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id7">
+<h4>上下文操作数<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
 <dl class="docutils">
 <dt><tt class="docutils literal"><span class="pre">auto_complete_visible</span></tt></dt>
-<dd>Returns <tt class="docutils literal"><span class="pre">true</span></tt> if the autocomplete list is visible.</dd>
+<dd>如果自动不全列表可见就返回 <tt class="docutils literal"><span class="pre">true</span></tt> 。</dd>
 <dt><tt class="docutils literal"><span class="pre">has_next_field</span></tt></dt>
-<dd>Returns <tt class="docutils literal"><span class="pre">true</span></tt> if a next snippet field is available.</dd>
+<dd>当下一个代码片段域可用时返回 <tt class="docutils literal"><span class="pre">true</span></tt> 。</dd>
 <dt><tt class="docutils literal"><span class="pre">has_prev_field</span></tt></dt>
-<dd>Returns <tt class="docutils literal"><span class="pre">true</span></tt> if a previous snippet field is available.</dd>
+<dd>当上一个代码片段域可用时返回 <tt class="docutils literal"><span class="pre">true</span></tt> 。</dd>
 <dt><tt class="docutils literal"><span class="pre">num_selections</span></tt></dt>
-<dd>Returns the number of selections.</dd>
+<dd>返回当前选中的数目。</dd>
 <dt><tt class="docutils literal"><span class="pre">overlay_visible</span></tt></dt>
-<dd>Returns <tt class="docutils literal"><span class="pre">true</span></tt> if any overlay is visible.</dd>
+<dd>当覆盖控件可见时返回 <tt class="docutils literal"><span class="pre">true</span></tt> 。</dd>
 <dt><tt class="docutils literal"><span class="pre">panel_visible</span></tt></dt>
-<dd>Returns <tt class="docutils literal"><span class="pre">true</span></tt> if any panel is visible.</dd>
+<dd>当有面板可见时返回 <tt class="docutils literal"><span class="pre">true</span></tt> 。</dd>
 <dt><tt class="docutils literal"><span class="pre">following_text</span></tt></dt>
-<dd>Restricts the test just to the text following the caret.</dd>
+<dd>限制测试只对脱字号后的文本进行。</dd>
 <dt><tt class="docutils literal"><span class="pre">preceding_text</span></tt></dt>
-<dd>Restricts the test just to the text preceding the caret.</dd>
+<dd>限制测试只对脱字号前的文本进行。</dd>
 <dt><tt class="docutils literal"><span class="pre">selection_empty</span></tt></dt>
-<dd>Returns <tt class="docutils literal"><span class="pre">true</span></tt> if the selection is an empty region.</dd>
+<dd>当没有选中内容的时候返回 <tt class="docutils literal"><span class="pre">true</span></tt> 。</dd>
 <dt><tt class="docutils literal"><span class="pre">setting.x</span></tt></dt>
-<dd>Returns the value of the <tt class="docutils literal"><span class="pre">x</span></tt> setting. <tt class="docutils literal"><span class="pre">x</span></tt> can be any string.</dd>
+<dd>返回 <tt class="docutils literal"><span class="pre">x</span></tt> 设置项的值。 <tt class="docutils literal"><span class="pre">x</span></tt> 可以为任意字符串。</dd>
 <dt><tt class="docutils literal"><span class="pre">text</span></tt></dt>
-<dd>Restricts the test just to the selected text.</dd>
+<dd>限制测试只对选中的文本有效。</dd>
 <dt><tt class="docutils literal"><span class="pre">selector</span></tt></dt>
-<dd>Returns the current scope.</dd>
+<dd>返回当前作用域。</dd>
 <dt><tt class="docutils literal"><span class="pre">panel_has_focus</span></tt></dt>
-<dd>Returns <tt class="docutils literal"><span class="pre">true</span></tt> if the current focus is on a panel.</dd>
+<dd>如果当前焦点是在一个面板的话返回``true``</dd>
 <dt><tt class="docutils literal"><span class="pre">panel</span></tt></dt>
-<dd>Returns <tt class="docutils literal"><span class="pre">true</span></tt> if the panel given as operand is visible.</dd>
+<dd>如果指定的面板可用于作为操作数的话返回``true``</dd>
 </dl>
 </div>
-<div class="section" id="context-operators">
-<h4>Context Operators<a class="headerlink" href="#context-operators" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id8">
+<h4>上下文操作符<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
 <dl class="docutils">
 <dt><tt class="docutils literal"><span class="pre">equal</span></tt>, <tt class="docutils literal"><span class="pre">not_equal</span></tt></dt>
-<dd>Test for equality.</dd>
+<dd>测试是否相等。</dd>
 <dt><tt class="docutils literal"><span class="pre">regex_match</span></tt>, <tt class="docutils literal"><span class="pre">not_regex_match</span></tt></dt>
-<dd>Match against a regular expression.</dd>
+<dd>与一个正则表达式进行匹配。</dd>
 <dt><tt class="docutils literal"><span class="pre">regex_contains</span></tt>, <tt class="docutils literal"><span class="pre">not_regex_contains</span></tt></dt>
-<dd>Match against a regular expression (containment).</dd>
+<dd>与一个正则表达式进行匹配（检测是否包含）。</dd>
 </dl>
 </div>
 </div>
 </div>
-<div class="section" id="command-mode">
-<h2>Command Mode<a class="headerlink" href="#command-mode" title="Permalink to this headline">¶</a></h2>
-<p>Sublime Text provides a <tt class="docutils literal"><span class="pre">command_mode</span></tt> setting to prevent key presses from
-being sent to the buffer. This is useful when emulating Vim&#8217;s modal behavior.</p>
+<div class="section" id="id9">
+<h2>命令模式<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<p>Sublime Text提供一个称为 <tt class="docutils literal"><span class="pre">command_mode</span></tt> （命令模式）的设置项，启用这个设置可以阻止按键内容
+被送往缓冲区。这个设置项在模拟Vim的模式功能的时候很有用处。</p>
 </div>
-<div class="section" id="bindable-keys">
-<h2>Bindable Keys<a class="headerlink" href="#bindable-keys" title="Permalink to this headline">¶</a></h2>
-<p>Keys may be specified literally or by name. Here&#8217;s the list of valid names:</p>
+<div class="section" id="id10">
+<h2>可绑定的按键<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<p>按键可以通过字面值或者名字来指定。你可以在下面找到一个有效名称的列表:</p>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">up</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">down</span></tt></li>
@@ -229,8 +227,8 @@ being sent to the buffer. This is useful when emulating Vim&#8217;s modal behavi
 <li><tt class="docutils literal"><span class="pre">browser_favorites</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">browser_home</span></tt></li>
 </ul>
-<div class="section" id="modifiers">
-<h3>Modifiers<a class="headerlink" href="#modifiers" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id11">
+<h3>修饰符<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">shift</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">ctrl</span></tt></li>
@@ -238,35 +236,30 @@ being sent to the buffer. This is useful when emulating Vim&#8217;s modal behavi
 <li><tt class="docutils literal"><span class="pre">super</span></tt> (Windows key, Command key...)</li>
 </ul>
 </div>
-<div class="section" id="warning-about-bindable-keys">
-<h3>Warning about Bindable Keys<a class="headerlink" href="#warning-about-bindable-keys" title="Permalink to this headline">¶</a></h3>
-<p>If you&#8217;re developing a package, keep this in mind:</p>
+<div class="section" id="id12">
+<h3>关于可绑定按键的警告<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>如果你正在开发一个包，请谨记下面几点:</p>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">Ctrl+Alt+&lt;alphanum&gt;</span></tt> should not be used for any Windows key bindings.</li>
-<li><tt class="docutils literal"><span class="pre">Option+&lt;alphanum&gt;</span></tt> should not be used for any OS X key bindings.</li>
+<li><tt class="docutils literal"><span class="pre">Ctrl+Alt+&lt;alphanum&gt;</span></tt> 在Windows平台上，不要使用 <tt class="docutils literal"><span class="pre">Ctrl+Alt+&lt;alphanum&gt;</span></tt> 进行任何键位绑定。</li>
+<li><tt class="docutils literal"><span class="pre">Option+&lt;alphanum&gt;</span></tt> 在OS X平台上，不要使用 <tt class="docutils literal"><span class="pre">Option+&lt;alphanum&gt;</span></tt> 进行任何键位绑定</li>
 </ul>
-<p>In both cases, the user&#8217;s ability to insert non-ASCII characters would be
-compromised.</p>
-<p>If you are the end-user, you are free to remap those key combinations.</p>
+<p>在以上两种情况下，用户都将在插入非ascii字符时遇到问题。</p>
+<p>如果你是终端用户，你可以随意重新映射这些按键组合。</p>
 </div>
 </div>
-<div class="section" id="keeping-key-maps-organized">
-<h2>Keeping Key Maps Organized<a class="headerlink" href="#keeping-key-maps-organized" title="Permalink to this headline">¶</a></h2>
-<p>Sublime Text ships with default key maps under <tt class="docutils literal"><span class="pre">Packages/Default</span></tt>. Other
-packages may include their own key map files. The recommended storage location
-for your personal key map is <tt class="docutils literal"><span class="pre">Packages/User</span></tt>.</p>
-<p>See <a class="reference internal" href="../extensibility/packages.html#merging-and-order-of-precedence"><em>Merging and Order of Precedence</em></a> for information about how Sublime
-Text sorts files for merging.</p>
+<div class="section" id="id13">
+<h2>让按键映射井井有条<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<p>Sublime Text自带的按键组合存放在 <tt class="docutils literal"><span class="pre">Packages/Default</span></tt> 目录下。其他包组可以包含它们特有的按键
+映射文件。对于你自己的键位映射设置而言，推荐的文件存放地址是 <tt class="docutils literal"><span class="pre">Packages/User</span></tt> 目录。</p>
+<p>请参考 <em class="xref std std-ref">排序与优先级顺序</em> 以了解关于Sublime Text排序文件并进行合并的更多信息</p>
 </div>
-<div class="section" id="international-keyboards">
-<h2>International Keyboards<a class="headerlink" href="#international-keyboards" title="Permalink to this headline">¶</a></h2>
-<p>Due to the way Sublime Text maps key names to physical keys, there might be a
-mismatch between the two.</p>
+<div class="section" id="id14">
+<h2>国际化键盘<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<p>根据Sublime Text将按键名称与物理按键进行映射的方式，此二者在不同平台上可能有不同的配对。</p>
 </div>
-<div class="section" id="troubleshooting">
-<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
-<p>To enable command logging, see <a class="reference external" href="http://www.sublimetext.com/docs/2/api_reference.html">sublime.log_commands(flag)</a>. This may help in
-debugging key maps.</p>
+<div class="section" id="id15">
+<h2>常见问题解答<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<p>使用 <a class="reference external" href="http://feliving.github.io/Sublime-Text-3-Documentation/api_reference.html">sublime.log_commands(flag)</a> 开启命令日志。这对于调试按键映射有所帮助。</p>
 </div>
 </div>
 
@@ -278,33 +271,33 @@ debugging key maps.</p>
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Key Bindings</a><ul>
-<li><a class="reference internal" href="#file-format">File Format</a><ul>
-<li><a class="reference internal" href="#platform-specific-key-maps">Platform-Specific Key Maps</a></li>
-<li><a class="reference internal" href="#structure-of-a-key-binding">Structure of a Key Binding</a></li>
-<li><a class="reference internal" href="#structure-of-a-context">Structure of a Context</a><ul>
-<li><a class="reference internal" href="#context-operands">Context Operands</a></li>
-<li><a class="reference internal" href="#context-operators">Context Operators</a></li>
+<li><a class="reference internal" href="#">按键绑定</a><ul>
+<li><a class="reference internal" href="#id2">文件格式</a><ul>
+<li><a class="reference internal" href="#id3">平台相关的键位设置</a></li>
+<li><a class="reference internal" href="#id4">一个按键绑定项的结构</a></li>
+<li><a class="reference internal" href="#id5">上下文的结构</a><ul>
+<li><a class="reference internal" href="#id7">上下文操作数</a></li>
+<li><a class="reference internal" href="#id8">上下文操作符</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#command-mode">Command Mode</a></li>
-<li><a class="reference internal" href="#bindable-keys">Bindable Keys</a><ul>
-<li><a class="reference internal" href="#modifiers">Modifiers</a></li>
-<li><a class="reference internal" href="#warning-about-bindable-keys">Warning about Bindable Keys</a></li>
+<li><a class="reference internal" href="#id9">命令模式</a></li>
+<li><a class="reference internal" href="#id10">可绑定的按键</a><ul>
+<li><a class="reference internal" href="#id11">修饰符</a></li>
+<li><a class="reference internal" href="#id12">关于可绑定按键的警告</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#keeping-key-maps-organized">Keeping Key Maps Organized</a></li>
-<li><a class="reference internal" href="#international-keyboards">International Keyboards</a></li>
-<li><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+<li><a class="reference internal" href="#id13">让按键映射井井有条</a></li>
+<li><a class="reference internal" href="#id14">国际化键盘</a></li>
+<li><a class="reference internal" href="#id15">常见问题解答</a></li>
 </ul>
 </li>
 </ul>
 
   <h4>Previous topic</h4>
   <p class="topless"><a href="build_systems.html"
-                        title="previous chapter">Build Systems</a></p>
+                        title="previous chapter">构建系统</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="settings.html"
                         title="next chapter">Settings (Reference)</a></p>
@@ -340,7 +333,7 @@ debugging key maps.</p>
           <a href="settings.html" title="Settings (Reference)"
              >next</a> |</li>
         <li class="right" >
-          <a href="build_systems.html" title="Build Systems"
+          <a href="build_systems.html" title="构建系统"
              >previous</a> |</li>
         <li><a href="../index.html">Sublime Text Unofficial Documentation  documentation</a> &raquo;</li>
           <li><a href="reference.html" >Reference</a> &raquo;</li> 
