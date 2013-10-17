@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Plugins &mdash; Sublime Text Unofficial Documentation  documentation</title>
+    <title>插件 &mdash; Sublime Text Unofficial Documentation  documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -26,7 +26,7 @@
     <link rel="top" title="Sublime Text Unofficial Documentation  documentation" href="../index.html" />
     <link rel="up" title="Reference" href="reference.html" />
     <link rel="next" title="Python API" href="api.html" />
-    <link rel="prev" title="Completions" href="completions.html" /> 
+    <link rel="prev" title="自动完成" href="completions.html" /> 
   </head>
   <body>
     <div class="related">
@@ -39,7 +39,7 @@
           <a href="api.html" title="Python API"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="completions.html" title="Completions"
+          <a href="completions.html" title="自动完成"
              accesskey="P">previous</a> |</li>
         <li><a href="../index.html">Sublime Text Unofficial Documentation  documentation</a> &raquo;</li>
           <li><a href="reference.html" accesskey="U">Reference</a> &raquo;</li> 
@@ -51,126 +51,105 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="plugins">
-<h1>Plugins<a class="headerlink" href="#plugins" title="Permalink to this headline">¶</a></h1>
-<div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<dl class="last docutils">
-<dt><a class="reference internal" href="api.html"><em>API Reference</em></a></dt>
-<dd>More information on the Python API.</dd>
+  <div class="section" id="id1">
+<h1>插件<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>更多信息请参考：</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><a class="reference internal" href="api.html"><em>API参考文档</em></a></dt>
+<dd>有关Python API的更详细的信息。</dd>
 </dl>
-</div>
-<p>Plugins are Python scripts implementing <tt class="docutils literal"><span class="pre">*Command</span></tt> classes from
-<tt class="docutils literal"><span class="pre">sublime_plugin</span></tt>.</p>
-<div class="section" id="where-to-store-plugins">
-<h2>Where to Store Plugins<a class="headerlink" href="#where-to-store-plugins" title="Permalink to this headline">¶</a></h2>
-<p>Sublime Text will look for plugins in these places:</p>
+</div></blockquote>
+<p>插件是实现了 <tt class="docutils literal"><span class="pre">sublime_plugin</span></tt> 模块中 <tt class="docutils literal"><span class="pre">*Command</span></tt> 类的Python脚本。</p>
+<div class="section" id="id2">
+<h2>插件放到哪里<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Sublime Text 2在以下这些目录中寻找可用插件：</p>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">Packages</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">Packages/&lt;pkg_name&gt;</span></tt></li>
 </ul>
-<p>Any plugin nested deeper in <tt class="docutils literal"><span class="pre">Packages</span></tt> won&#8217;t be loaded.</p>
-<p>All plugins should live inside a folder of their own and not directly
-under <tt class="docutils literal"><span class="pre">Packages</span></tt>.</p>
+<p>存放在 <tt class="docutils literal"><span class="pre">Packages</span></tt> 更深层次的目录结构中的插件不会被加载。</p>
+<p>任何插件都应该又自己单独的目录，而不应该直接放在 <tt class="docutils literal"><span class="pre">Packages</span></tt> 目录下。</p>
 </div>
-<div class="section" id="conventions-for-command-names">
-<h2>Conventions for Command Names<a class="headerlink" href="#conventions-for-command-names" title="Permalink to this headline">¶</a></h2>
-<p>By convention, Sublime Text command class names are suffixed with <tt class="docutils literal"><span class="pre">Command</span></tt>
-and written as <tt class="docutils literal"><span class="pre">CamelCasedPhrases</span></tt>.</p>
-<p>However, Sublime Text transforms the class names from <tt class="docutils literal"><span class="pre">CamelCasedPhrases</span></tt>
-to <tt class="docutils literal"><span class="pre">snake_cased_phrases</span></tt>. So, <tt class="docutils literal"><span class="pre">ExampleCommand</span></tt> would turn into <tt class="docutils literal"><span class="pre">example</span></tt>
-and <tt class="docutils literal"><span class="pre">AnotherExampleCommand</span></tt> would turn into <tt class="docutils literal"><span class="pre">another_example</span></tt>.</p>
-<p>For class definition names, use <tt class="docutils literal"><span class="pre">CamelCasedPhrasesCommand</span></tt>. To call a
-command from the API, use the normalized name (<tt class="docutils literal"><span class="pre">snake_cased_phrases</span></tt>).</p>
+<div class="section" id="id3">
+<h2>命令名称的命名规则<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Sublime Text 遵循 <tt class="docutils literal"><span class="pre">CamelCasedPhrases</span></tt> 命名规则来定义命令类，同时用 <tt class="docutils literal"><span class="pre">Command</span></tt> 作为后缀。</p>
+<p>然而，Sublime Text将类名从 <tt class="docutils literal"><span class="pre">CamelCasedPhrases</span></tt> 形式自动转换成 <tt class="docutils literal"><span class="pre">camel_cased_phrases</span></tt> 。
+举例来说， <tt class="docutils literal"><span class="pre">ExampleCommand</span></tt> 将被转换为 <tt class="docutils literal"><span class="pre">example</span></tt> ，而 <tt class="docutils literal"><span class="pre">AnotherExampleCommand</span></tt> 将
+转换为 <tt class="docutils literal"><span class="pre">another_example</span></tt></p>
+<p>对于类定义名称，可以使用 <tt class="docutils literal"><span class="pre">CamelCasedPhrasesCommand</span></tt> 命名方式；要从API中调用一个命令，请使用
+标准化后的名称（ <tt class="docutils literal"><span class="pre">snake_cased_phrases</span></tt> ）。</p>
 </div>
-<div class="section" id="types-of-commands">
-<h2>Types of Commands<a class="headerlink" href="#types-of-commands" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h2>命令类型<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">sublime_plugin.ApplicationCommand</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">sublime_plugin.WindowCommand</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">sublime_plugin.TextCommand</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">sublime_plugin.EventListener</span></tt></li>
 </ul>
-<p>Instances of <tt class="docutils literal"><span class="pre">WindowCommand</span></tt> have a <tt class="docutils literal"><span class="pre">.window</span></tt> attribute pointing to the
-window instance that created them. Similarly, instances of <tt class="docutils literal"><span class="pre">TextCommand</span></tt>
-have a <tt class="docutils literal"><span class="pre">.view</span></tt> attribute.</p>
-<div class="section" id="shared-traits-for-commands">
-<h3>Shared Traits for Commands<a class="headerlink" href="#shared-traits-for-commands" title="Permalink to this headline">¶</a></h3>
-<p>All commands must implement a <tt class="docutils literal"><span class="pre">.run()</span></tt> method.
-All commands can receive an arbitrarily long number of keyword arguments,
-but they all must be valid JSON types.</p>
+<p><tt class="docutils literal"><span class="pre">WindowCommand</span></tt> 类的实例都有一个 <tt class="docutils literal"><span class="pre">.window</span></tt> 属性，指向创建他们的那个窗口实例。于此类似，
+<tt class="docutils literal"><span class="pre">TextCommand</span></tt> 类的实例拥有 <tt class="docutils literal"><span class="pre">.view</span></tt> 属性。</p>
+<div class="section" id="id5">
+<h3>命令之间的共享特性<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>所有命令都必须实现一个 <tt class="docutils literal"><span class="pre">.run()</span></tt> 方法。
+所有命令都可以接受任意长度的关键字参数，但是这些参数一定要是有效的JSON类型。</p>
 </div>
 </div>
-<div class="section" id="how-to-call-commands-from-the-api">
-<h2>How to Call Commands from the API<a class="headerlink" href="#how-to-call-commands-from-the-api" title="Permalink to this headline">¶</a></h2>
-<p>Use a reference to a <tt class="docutils literal"><span class="pre">View</span></tt> or a <tt class="docutils literal"><span class="pre">Window</span></tt>, or <tt class="docutils literal"><span class="pre">sublime</span></tt> depending on the
-type of command, and call <tt class="docutils literal"><span class="pre">object.run_command('command_name')</span></tt>. In addition,
-commands accept a dictionary whose keys are the names of valid parameters for
-them:</p>
+<div class="section" id="api">
+<h2>如何利用API调用命令<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
+<p>根据命令的类型来选择对 <tt class="docutils literal"><span class="pre">View</span></tt> 、 <tt class="docutils literal"><span class="pre">Window</span></tt> 或者 <tt class="docutils literal"><span class="pre">sublime</span></tt> 的引用，然后通过
+<tt class="docutils literal"><span class="pre">object.run_command('command_name')</span></tt> 来调用。
+除此之外, 你可以用字典作为参数，字典中的键就是要传给 <tt class="docutils literal"><span class="pre">command_name</span></tt> 的参数名称:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">window</span><span class="o">.</span><span class="n">run_command</span><span class="p">(</span><span class="s">&quot;echo&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s">&quot;Tempus&quot;</span><span class="p">:</span> <span class="s">&quot;Irreparabile&quot;</span><span class="p">,</span> <span class="s">&quot;Fugit&quot;</span><span class="p">:</span> <span class="s">&quot;.&quot;</span><span class="p">})</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="command-arguments">
-<h2>Command Arguments<a class="headerlink" href="#command-arguments" title="Permalink to this headline">¶</a></h2>
-<p>All user-provided arguments to commands must be valid JSON types. Only
-Sublime Text itself can pass other types of arguments to commands (such as edit
-objects, view instances, etc.).</p>
+<div class="section" id="id6">
+<h2>命令的参数<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>用户提供给命令的所有参数都必须是有效的JSON类型。只有Sublime Text可以给命令传递其他类型的参数</dt>
+<dd>（例如修改对象，视图实例等等）。</dd>
+</dl>
 </div>
-<div class="section" id="text-commands-and-the-edit-object">
-<h2>Text Commands and the <tt class="docutils literal"><span class="pre">edit</span></tt> Object<a class="headerlink" href="#text-commands-and-the-edit-object" title="Permalink to this headline">¶</a></h2>
-<p>The two API functions of interest are <tt class="docutils literal"><span class="pre">view.begin_edit()</span></tt>, which takes an
-optional command name and an optional dictionary of arguments, and
-<tt class="docutils literal"><span class="pre">view.end_edit()</span></tt>, which finishes the edit.</p>
-<p>All actions done within an edit are grouped as a single undo action. Callbacks
-such as <tt class="docutils literal"><span class="pre">on_modified()</span></tt> and <tt class="docutils literal"><span class="pre">on_selection_modified()</span></tt> are called when the
-edit is finished.</p>
-<p>It&#8217;s important to call <tt class="docutils literal"><span class="pre">view.end_edit()</span></tt> after each <tt class="docutils literal"><span class="pre">view.begin_edit()</span></tt>,
-otherwise the buffer will be left in an inconsistent state. An attempt will be
-made to fix errors when the edit object gets collected, but often that doesn&#8217;t
-happen when you expect, and will result in a warning printed to the console.
-In other words, you should always bracket an edit in a <tt class="docutils literal"><span class="pre">try..finally</span></tt> block.</p>
-<p>The command name passed to <tt class="docutils literal"><span class="pre">begin_edit()</span></tt> is used for repeat, macro
-recording, and for describing the action when undoing/redoing it. If you&#8217;re
-making an edit outside of a <tt class="docutils literal"><span class="pre">TextCommand</span></tt>, you should almost never supply a
-command name.</p>
-<p>If you have created an edit object, and call a function that creates another
-one, that&#8217;s fine: the edit is considered finished only when the outermost call
-to <tt class="docutils literal"><span class="pre">end_edit()</span></tt> runs.</p>
-<p>As well as for grouping modifications, you can use edit objects for grouping
-changes to the selection so that they&#8217;re undone in a single step.</p>
+<div class="section" id="text-commands-edit">
+<h2>Text Commands 和 <tt class="docutils literal"><span class="pre">edit</span></tt> 对象<a class="headerlink" href="#text-commands-edit" title="Permalink to this headline">¶</a></h2>
+<p>文本命令的两个较为重要的API是 <tt class="docutils literal"><span class="pre">view.begin_edit()</span></tt> 和 <tt class="docutils literal"><span class="pre">view.end_edit()</span></tt> 。
+其中 <tt class="docutils literal"><span class="pre">view.begin_edit()</span></tt> 可以接受一个可选的命令名称和可选的参数字典；而 <tt class="docutils literal"><span class="pre">view.end_edit()</span></tt>
+用来结束编辑过程。</p>
+<p>在修改过程中发生的所有动作都被整合成一个单一的撤销动作。当编辑过程结束的时候，类似与
+<tt class="docutils literal"><span class="pre">on_modified</span></tt> 和 <tt class="docutils literal"><span class="pre">on_selection_modified()</span></tt> 的回调函数会被触发。</p>
+<p>有一点非常重要，每次调用 <tt class="docutils literal"><span class="pre">view.begin_edit()</span></tt> 之后必须调用 <tt class="docutils literal"><span class="pre">view.end_edit()</span></tt> 方法，否则
+缓冲将处于一种不一致状态。在不匹配发生时，系统将尝试自动进行修正，但是这种自动修正的发生频率并
+没有你想象的那么多，同时会在控制台输出一条警告信息。换句话说，你应该始终使用 <tt class="docutils literal"><span class="pre">try..finally</span></tt>
+来包裹代码快。</p>
+<p>传递给 <tt class="docutils literal"><span class="pre">begin_edit()</span></tt> 的命令名称用于重复、宏录制以及撤销/重复过程中的动作描述。如果你在
+<tt class="docutils literal"><span class="pre">TextCommand</span></tt> 外面做修改，你就不该指定命令名称。</p>
+<p>你可以在开始的时候创建一个修改对象，然后调用了一个方法又创建了另外的一个修改对象：只有当最外层
+的修改对象执行了 <tt class="docutils literal"><span class="pre">end_edit()</span></tt> 方法之后，系统才认为整个修改都完成了。</p>
+<p>与群组修改类似，你也可以使用修改对象把对选中文本做的修改组合成一个群组，对它们的修改只要一步就
+能撤销。</p>
 </div>
-<div class="section" id="responding-to-events">
-<h2>Responding to Events<a class="headerlink" href="#responding-to-events" title="Permalink to this headline">¶</a></h2>
-<p>Any subclass of <tt class="docutils literal"><span class="pre">EventListener</span></tt> will be able to respond to events. You
-cannot make a class derive both from <tt class="docutils literal"><span class="pre">EventListener</span></tt> and from any other type of
-command.</p>
-<div class="sidebar">
-<p class="first sidebar-title">A Word of Warning about <tt class="docutils literal"><span class="pre">EventListener</span></tt></p>
-<p class="last">Expensive operations in event listeners can cause Sublime Text to become
-unresponsive, especially in events triggered frequently, like
-<tt class="docutils literal"><span class="pre">on_modified</span></tt> and <tt class="docutils literal"><span class="pre">on_selection_modified</span></tt>. Be careful of how much work
-is done in these and don&#8217;t implement events you don&#8217;t need, even if they
-just <tt class="docutils literal"><span class="pre">pass</span></tt>.</p>
+<div class="section" id="id7">
+<h2>对事件的响应<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>任何 <tt class="docutils literal"><span class="pre">EventListener</span></tt> 的子类都能够响应事件。对于任何一个类，不能同时继承 <tt class="docutils literal"><span class="pre">EventListener</span></tt>
+和其他任何的命令类。</p>
 </div>
+<div class="section" id="python">
+<h2>Python和标准库<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
+<p>Sublime Text集成了一个精简版的标准库。被裁剪掉的模块包括 <em>Tkinter</em> ， <em>multiprocessing</em>
+以及 <em>sqlite3</em> 。</p>
 </div>
-<div class="section" id="python-and-the-standard-library">
-<h2>Python and the Standard Library<a class="headerlink" href="#python-and-the-standard-library" title="Permalink to this headline">¶</a></h2>
-<p>Sublime Text ships with a trimmed down standard library. The <em>Tkinter</em>,
-<em>multiprocessing</em> and <em>sqlite3</em> modules are among the missing ones.</p>
+<div class="section" id="id8">
+<h2>自动插件重载<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>当你对插件做修改的时候（比如你正在修改一个 <em>.py</em> 文件），Sublime Text会自动加载包中的顶级
+Python模块。值得注意的是Python的子模块不会被自动重新加载；这一点在插件开发中可能会产生一些挺
+奇葩的问题。一般来说，当你对插件文件做修改之后，最好重启以下Sublime Text，这样能保证你做的修
+改能发挥作用。</p>
 </div>
-<div class="section" id="automatic-plugin-reload">
-<h2>Automatic Plugin Reload<a class="headerlink" href="#automatic-plugin-reload" title="Permalink to this headline">¶</a></h2>
-<p>Sublime Text will reload top-level Python modules from packages as they change
-(perhaps because you are editing a <em>.py</em> file). By contrast, Python
-subpackages won&#8217;t be reloaded automatically, and this can lead to confusion
-while you&#8217;re developing plugins. Generally speaking, it&#8217;s best to restart
-Sublime Text after you&#8217;ve made changes to plugin files, so all changes can
-take effect.</p>
-</div>
-<div class="section" id="multithreading">
-<h2>Multithreading<a class="headerlink" href="#multithreading" title="Permalink to this headline">¶</a></h2>
-<p>Only the <tt class="docutils literal"><span class="pre">.set_timeout()</span></tt> function is safe to call from different threads.</p>
+<div class="section" id="id9">
+<h2>多线程<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<p>只有 <tt class="docutils literal"><span class="pre">.set_timeout()</span></tt> 方法可以安全的从其他线程调用。</p>
 </div>
 </div>
 
@@ -182,27 +161,27 @@ take effect.</p>
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Plugins</a><ul>
-<li><a class="reference internal" href="#where-to-store-plugins">Where to Store Plugins</a></li>
-<li><a class="reference internal" href="#conventions-for-command-names">Conventions for Command Names</a></li>
-<li><a class="reference internal" href="#types-of-commands">Types of Commands</a><ul>
-<li><a class="reference internal" href="#shared-traits-for-commands">Shared Traits for Commands</a></li>
+<li><a class="reference internal" href="#">插件</a><ul>
+<li><a class="reference internal" href="#id2">插件放到哪里</a></li>
+<li><a class="reference internal" href="#id3">命令名称的命名规则</a></li>
+<li><a class="reference internal" href="#id4">命令类型</a><ul>
+<li><a class="reference internal" href="#id5">命令之间的共享特性</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#how-to-call-commands-from-the-api">How to Call Commands from the API</a></li>
-<li><a class="reference internal" href="#command-arguments">Command Arguments</a></li>
-<li><a class="reference internal" href="#text-commands-and-the-edit-object">Text Commands and the <tt class="docutils literal"><span class="pre">edit</span></tt> Object</a></li>
-<li><a class="reference internal" href="#responding-to-events">Responding to Events</a></li>
-<li><a class="reference internal" href="#python-and-the-standard-library">Python and the Standard Library</a></li>
-<li><a class="reference internal" href="#automatic-plugin-reload">Automatic Plugin Reload</a></li>
-<li><a class="reference internal" href="#multithreading">Multithreading</a></li>
+<li><a class="reference internal" href="#api">如何利用API调用命令</a></li>
+<li><a class="reference internal" href="#id6">命令的参数</a></li>
+<li><a class="reference internal" href="#text-commands-edit">Text Commands 和 <tt class="docutils literal"><span class="pre">edit</span></tt> 对象</a></li>
+<li><a class="reference internal" href="#id7">对事件的响应</a></li>
+<li><a class="reference internal" href="#python">Python和标准库</a></li>
+<li><a class="reference internal" href="#id8">自动插件重载</a></li>
+<li><a class="reference internal" href="#id9">多线程</a></li>
 </ul>
 </li>
 </ul>
 
   <h4>Previous topic</h4>
   <p class="topless"><a href="completions.html"
-                        title="previous chapter">Completions</a></p>
+                        title="previous chapter">自动完成</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="api.html"
                         title="next chapter">Python API</a></p>
@@ -238,7 +217,7 @@ take effect.</p>
           <a href="api.html" title="Python API"
              >next</a> |</li>
         <li class="right" >
-          <a href="completions.html" title="Completions"
+          <a href="completions.html" title="自动完成"
              >previous</a> |</li>
         <li><a href="../index.html">Sublime Text Unofficial Documentation  documentation</a> &raquo;</li>
           <li><a href="reference.html" >Reference</a> &raquo;</li> 

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Snippets &mdash; Sublime Text Unofficial Documentation  documentation</title>
+    <title>代码片段 &mdash; Sublime Text Unofficial Documentation  documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="Sublime Text Unofficial Documentation  documentation" href="../index.html" />
     <link rel="up" title="Reference" href="reference.html" />
-    <link rel="next" title="Syntax Definitions" href="syntaxdefs.html" />
+    <link rel="next" title="语法定义" href="syntaxdefs.html" />
     <link rel="prev" title="Reference" href="reference.html" /> 
   </head>
   <body>
@@ -36,7 +36,7 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="syntaxdefs.html" title="Syntax Definitions"
+          <a href="syntaxdefs.html" title="语法定义"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="reference.html" title="Reference"
@@ -51,15 +51,15 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="snippets">
-<h1>Snippets<a class="headerlink" href="#snippets" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="compatibility-with-textmate">
-<h2>Compatibility with Textmate<a class="headerlink" href="#compatibility-with-textmate" title="Permalink to this headline">¶</a></h2>
-<p>Generally, Sublime Text snippets are compatible with Textmate snippets.</p>
+  <div class="section" id="id1">
+<h1>代码片段<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="textmate">
+<h2>与Textmate的兼容性<a class="headerlink" href="#textmate" title="Permalink to this headline">¶</a></h2>
+<p>Sublime Text的代码片段与Textmate的代码片段基本兼容。</p>
 </div>
 <div class="section" id="file-format">
 <h2>File Format<a class="headerlink" href="#file-format" title="Permalink to this headline">¶</a></h2>
-<p>Snippet files are XML files with the <tt class="docutils literal"><span class="pre">sublime-snippet</span></tt> extension.</p>
+<p>代码片段文件是有 <tt class="docutils literal"><span class="pre">sublime-snippet</span></tt> 后缀的XML文件。</p>
 <div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;snippet&gt;</span>
     <span class="nt">&lt;content&gt;</span><span class="cp">&lt;![CDATA[]]&gt;</span><span class="nt">&lt;/content&gt;</span>
     <span class="nt">&lt;tabTrigger&gt;&lt;/tabTrigger&gt;</span>
@@ -70,89 +70,89 @@
 </div>
 <dl class="docutils">
 <dt><tt class="docutils literal"><span class="pre">content</span></tt></dt>
-<dd>Actual snippet content.</dd>
+<dd>实际的代码片段内容。</dd>
 <dt><tt class="docutils literal"><span class="pre">tabTrigger</span></tt></dt>
-<dd>Implicit key binding for this snippet. The last key (implicit) is <tt class="docutils literal"><span class="pre">TAB</span></tt>.</dd>
+<dd>与这段代码片段关联的隐式按键绑定。最后一个（隐式的）按键式 <tt class="docutils literal"><span class="pre">TAB</span></tt> 。</dd>
 <dt><tt class="docutils literal"><span class="pre">scope</span></tt></dt>
-<dd>Scope selector to activate this snippet.</dd>
+<dd>适用于这段代码片段的作用域选择器</dd>
 <dt><tt class="docutils literal"><span class="pre">description</span></tt></dt>
-<dd>Friendly description to be used when the snippet is shown as a menu item.</dd>
+<dd>为了菜单项准备的用户友好的说明性文字。</dd>
 </dl>
 </div>
-<div class="section" id="escape-sequences">
-<h2>Escape Sequences<a class="headerlink" href="#escape-sequences" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h2>转义序列<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
 <dt><tt class="docutils literal"><span class="pre">\$</span></tt></dt>
-<dd>Literal <tt class="docutils literal"><span class="pre">$</span></tt>.</dd>
+<dd>常量 <tt class="docutils literal"><span class="pre">$</span></tt>.</dd>
 </dl>
 </div>
-<div class="section" id="environment-variables">
-<h2>Environment Variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h2>环境变量<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
-<col width="24%" />
-<col width="76%" />
+<col width="22%" />
+<col width="78%" />
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">$PARAM1</span> <span class="pre">..</span> <span class="pre">$PARAMn</span></tt></td>
-<td>Arguments passed to the <tt class="docutils literal"><span class="pre">insertSnippet</span></tt> command.</td>
+<td>传递给 <tt class="docutils literal"><span class="pre">insertSnippet</span></tt> 命令的各个参数。</td>
 </tr>
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">$SELECTION</span></tt></td>
-<td>The text that was selected when the snippet was triggered.</td>
+<td>代码片段被触发的时候选中的文本内容</td>
 </tr>
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">$TM_CURRENT_LINE</span></tt></td>
-<td>Content of the line the cursor was in when the snippet was triggered.</td>
+<td>代码片段被触发的时候光标所在行的内容。</td>
 </tr>
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">$TM_CURRENT_WORD</span></tt></td>
-<td>Current word under the cursor when the snippet was triggered.</td>
+<td>代码片段被触发的时候光标所在的单词。</td>
 </tr>
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">$TM_FILENAME</span></tt></td>
-<td>Filename of the file being edited including extension.</td>
+<td>正在编辑的文件名称，包含文件扩展名。</td>
 </tr>
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">$TM_FILEPATH</span></tt></td>
-<td>Path to the file being edited.</td>
+<td>正在编辑的文件的文件路径。</td>
 </tr>
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">$TM_FULLNAME</span></tt></td>
-<td>User&#8217;s user name.</td>
+<td>用户的用户名。</td>
 </tr>
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">$TM_LINE_INDEX</span></tt></td>
-<td>Column where the snippet is being inserted, 0 based.</td>
+<td>插入代码片段的列的位置，位置是从0开始计数的。</td>
 </tr>
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">$TM_LINE_NUMBER</span></tt></td>
-<td>Row where the snippet is being inserted, 1 based.</td>
+<td>插入代码片段的行的位置，位置是从1开始计数的。</td>
 </tr>
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">$TM_SELECTED_TEXT</span></tt></td>
-<td>An alias for <tt class="docutils literal"><span class="pre">$SELECTION</span></tt>.</td>
+<td>与 <tt class="docutils literal"><span class="pre">$SELECTION</span></tt> 是等价的。</td>
 </tr>
 <tr class="row-odd"><td><tt class="docutils literal"><span class="pre">$TM_SOFT_TABS</span></tt></td>
-<td><tt class="docutils literal"><span class="pre">YES</span></tt> if <tt class="docutils literal"><span class="pre">translateTabsToSpaces</span></tt> is true, otherwise <tt class="docutils literal"><span class="pre">NO</span></tt>.</td>
+<td>当 <tt class="docutils literal"><span class="pre">translateTabsToSpaces</span></tt> 选项是真的时候，值是 <tt class="docutils literal"><span class="pre">YES</span></tt> ，否则为 <tt class="docutils literal"><span class="pre">NO</span></tt> 。</td>
 </tr>
 <tr class="row-even"><td><tt class="docutils literal"><span class="pre">$TM_TAB_SIZE</span></tt></td>
-<td>Spaces per-tab (controlled by the <tt class="docutils literal"><span class="pre">tabSize</span></tt> option).</td>
+<td>tab对应的空格数（受 <tt class="docutils literal"><span class="pre">tabSize</span></tt> 选项的控制）。</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="section" id="fields">
-<h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
-<p>Marked positions to cycle through, by pressing <tt class="docutils literal"><span class="pre">TAB</span></tt> or <tt class="docutils literal"><span class="pre">SHIFT</span> <span class="pre">+</span> <span class="pre">TAB</span></tt>.</p>
-<p>Syntax: <tt class="docutils literal"><span class="pre">$1</span></tt> .. <tt class="docutils literal"><span class="pre">$n</span></tt></p>
+<div class="section" id="id4">
+<h2>字域<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>标记代码片段中可以通过 <tt class="docutils literal"><span class="pre">TAB</span></tt> 或 <tt class="docutils literal"><span class="pre">SHIFT</span> <span class="pre">+</span> <span class="pre">TAB</span></tt> 循环的各个位置。</p>
+<p>语法： <tt class="docutils literal"><span class="pre">$1</span></tt> .. <tt class="docutils literal"><span class="pre">$n</span></tt></p>
 <dl class="docutils">
 <dt><tt class="docutils literal"><span class="pre">$0</span></tt></dt>
-<dd>Exit mark. The position where normal text editing should be resumed. By default,
-Sublime Text implicitly sets this mark at the end of the snippet&#8217;s <tt class="docutils literal"><span class="pre">content</span></tt> element.</dd>
+<dd>退出标记。当循环到这个标记的时候，编辑器应该返回至正常的编辑模式。默认情况下，Sublime Text在 <tt class="docutils literal"><span class="pre">content</span></tt>
+元素内容的结尾位置隐式的添加这个标记。</dd>
 </dl>
-<p>Fields with the same name mirror each other.</p>
+<p>有相同名字的字域互相映射。</p>
 </div>
-<div class="section" id="placeholders">
-<h2>Placeholders<a class="headerlink" href="#placeholders" title="Permalink to this headline">¶</a></h2>
-<p>Fields with a default value.</p>
-<p>Syntax: <tt class="docutils literal"><span class="pre">${1:PLACE_HOLDER}</span></tt> .. <tt class="docutils literal"><span class="pre">${n:PLACE_HOLDER}</span></tt></p>
-<p>Fields and placeholders can be combined, and nested within other placeholders.</p>
+<div class="section" id="id5">
+<h2>站位符<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>带有默认值的字域。</p>
+<p>语法：: <tt class="docutils literal"><span class="pre">${1:PLACE_HOLDER}</span></tt> .. <tt class="docutils literal"><span class="pre">${n:PLACE_HOLDER}</span></tt></p>
+<p>字域和站位符可以遇其他的站位符进行组合和嵌套。</p>
 </div>
-<div class="section" id="substitutions">
-<h2>Substitutions<a class="headerlink" href="#substitutions" title="Permalink to this headline">¶</a></h2>
-<p>Syntax:</p>
+<div class="section" id="id6">
+<h2>替换<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>语法：:</p>
 <blockquote>
 <div><ul class="simple">
 <li><tt class="docutils literal"><span class="pre">${var_name/regex/format_string/}</span></tt></li>
@@ -161,23 +161,21 @@ Sublime Text implicitly sets this mark at the end of the snippet&#8217;s <tt cla
 </div></blockquote>
 <dl class="docutils">
 <dt><tt class="docutils literal"><span class="pre">var_name</span></tt></dt>
-<dd>The name of the field to base the substitution on: 1, 2, 3...</dd>
+<dd>需要替换的区域：1，2，3……</dd>
 <dt><tt class="docutils literal"><span class="pre">regex</span></tt></dt>
-<dd>Perl-style regular expression: See the Boost library documentation for more on
-<a class="reference external" href="http://www.boost.org/doc/libs/1_44_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html">regular expressions</a>.</dd>
+<dd>Perl风格的正则表达式：关于`正则表达式 &lt;<a class="reference external" href="http://www.boost.org/doc/libs/1_44_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html">http://www.boost.org/doc/libs/1_44_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html</a>&gt;`_ ，请参考Boost库的文档。</dd>
 <dt><tt class="docutils literal"><span class="pre">format_string</span></tt></dt>
-<dd>See the Boost library documentation for more on
-<a class="reference external" href="http://www.boost.org/doc/libs/1_44_0/libs/regex/doc/html/boost_regex/format/perl_format.html">format strings</a>.</dd>
+<dd>参考Boost库文档的 <a class="reference external" href="http://www.boost.org/doc/libs/1_44_0/libs/regex/doc/html/boost_regex/format/perl_format.html">格式字符串</a> 内容。</dd>
 <dt><tt class="docutils literal"><span class="pre">options</span></tt></dt>
 <dd><dl class="first last docutils">
-<dt>Optional. Any of the following:</dt>
+<dt>可选的。可以选择下面的任何一个：</dt>
 <dd><dl class="first last docutils">
 <dt><tt class="docutils literal"><span class="pre">i</span></tt></dt>
-<dd>Case-insensitive <tt class="docutils literal"><span class="pre">regex</span></tt>.</dd>
+<dd>忽略大小写敏感的正则。</dd>
 <dt><tt class="docutils literal"><span class="pre">g</span></tt></dt>
-<dd>Replace all occurrences of <tt class="docutils literal"><span class="pre">regex</span></tt>.</dd>
+<dd>替换所有匹配 <tt class="docutils literal"><span class="pre">regex</span></tt> 的内容。</dd>
 <dt><tt class="docutils literal"><span class="pre">m</span></tt></dt>
-<dd>Don&#8217;t ignore newlines in the string.</dd>
+<dd>在字符串中不要忽略换行符。</dd>
 </dl>
 </dd>
 </dl>
@@ -194,14 +192,14 @@ Sublime Text implicitly sets this mark at the end of the snippet&#8217;s <tt cla
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Snippets</a><ul>
-<li><a class="reference internal" href="#compatibility-with-textmate">Compatibility with Textmate</a></li>
+<li><a class="reference internal" href="#">代码片段</a><ul>
+<li><a class="reference internal" href="#textmate">与Textmate的兼容性</a></li>
 <li><a class="reference internal" href="#file-format">File Format</a></li>
-<li><a class="reference internal" href="#escape-sequences">Escape Sequences</a></li>
-<li><a class="reference internal" href="#environment-variables">Environment Variables</a></li>
-<li><a class="reference internal" href="#fields">Fields</a></li>
-<li><a class="reference internal" href="#placeholders">Placeholders</a></li>
-<li><a class="reference internal" href="#substitutions">Substitutions</a></li>
+<li><a class="reference internal" href="#id2">转义序列</a></li>
+<li><a class="reference internal" href="#id3">环境变量</a></li>
+<li><a class="reference internal" href="#id4">字域</a></li>
+<li><a class="reference internal" href="#id5">站位符</a></li>
+<li><a class="reference internal" href="#id6">替换</a></li>
 </ul>
 </li>
 </ul>
@@ -211,7 +209,7 @@ Sublime Text implicitly sets this mark at the end of the snippet&#8217;s <tt cla
                         title="previous chapter">Reference</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="syntaxdefs.html"
-                        title="next chapter">Syntax Definitions</a></p>
+                        title="next chapter">语法定义</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../_sources/reference/snippets.txt"
@@ -241,7 +239,7 @@ Sublime Text implicitly sets this mark at the end of the snippet&#8217;s <tt cla
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="syntaxdefs.html" title="Syntax Definitions"
+          <a href="syntaxdefs.html" title="语法定义"
              >next</a> |</li>
         <li class="right" >
           <a href="reference.html" title="Reference"
